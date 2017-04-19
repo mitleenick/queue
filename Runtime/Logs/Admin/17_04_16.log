@@ -1,0 +1,12 @@
+[ 2017-04-16T20:55:00+08:00 ] 140.205.225.187 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000054s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+

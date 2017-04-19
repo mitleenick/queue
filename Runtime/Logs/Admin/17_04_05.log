@@ -1,0 +1,1265 @@
+[ 2017-04-05T09:36:25+08:00 ] 140.205.205.2 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-04-05T09:36:27+08:00 ] 140.205.205.2 /index.php?m=&&m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001391s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001418s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000031s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000023s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000039s ]
+
+[ 2017-04-05T09:43:09+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000061s ]
+
+[ 2017-04-05T09:43:15+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0073','1','2017-04-05 09:43:15','11','VIP','6',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0073'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-04-05T09:43:15+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000050s ]
+
+[ 2017-04-05T09:43:20+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiOSJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0074','1','2017-04-05 09:43:20','11','VIP','9',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0074'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-04-05T09:43:20+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000051s ]
+
+[ 2017-04-05T09:43:24+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiOCJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0007s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0075','1','2017-04-05 09:43:24','11','VIP','8',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0075'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000059s ]
+
+[ 2017-04-05T09:43:24+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000052s ]
+
+[ 2017-04-05T09:43:27+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0076','1','2017-04-05 09:43:27','11','VIP','6',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0076'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000059s ]
+
+[ 2017-04-05T09:43:27+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000052s ]
+
+[ 2017-04-05T09:43:30+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiNyJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0077','1','2017-04-05 09:43:30','11','VIP','7',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0077'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000056s ]
+
+[ 2017-04-05T09:43:30+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000079s ]
+
+[ 2017-04-05T09:43:32+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0078','1','2017-04-05 09:43:32','11','VIP','6',NULL) [ RunTime:0.0003s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0078'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000051s ]
+
+[ 2017-04-05T09:43:32+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000053s ]
+
+[ 2017-04-05T09:43:48+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-04-05T09:43:55+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0010s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0079','1','2017-04-05 09:43:55','11','VIP','6',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0079'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000057s ]
+
+[ 2017-04-05T09:43:55+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000051s ]
+
+[ 2017-04-05T09:43:58+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0080','1','2017-04-05 09:43:58','11','VIP','6',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0080'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000060s ]
+
+[ 2017-04-05T09:43:58+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000053s ]
+
+[ 2017-04-05T09:44:48+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0081','1','2017-04-05 09:44:48','11','VIP','6',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0081'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000060s ]
+
+[ 2017-04-05T09:44:48+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000052s ]
+
+[ 2017-04-05T09:45:03+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-04-05T09:45:06+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0082','1','2017-04-05 09:45:06','11','VIP','6',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0082'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000055s ]
+
+[ 2017-04-05T09:45:06+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-04-05T09:45:24+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000062s ]
+
+[ 2017-04-05T09:46:31+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000059s ]
+
+[ 2017-04-05T09:46:38+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-04-05T09:46:45+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0083','1','2017-04-05 09:46:45','11','VIP','6',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0083'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-04-05T09:46:46+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000050s ]
+
+[ 2017-04-05T09:46:56+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-04-05T09:47:01+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-04-05T09:47:06+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0011s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0084','1','2017-04-05 09:47:06','11','VIP','6',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0084'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000059s ]
+
+[ 2017-04-05T09:47:06+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000046s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000055s ]
+
+[ 2017-04-05T09:47:22+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000056s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0085','1','2017-04-05 09:47:22','11','VIP','6',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0085'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000059s ]
+
+[ 2017-04-05T09:47:22+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000053s ]
+
+[ 2017-04-05T09:47:29+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000059s ]
+
+[ 2017-04-05T09:53:08+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-04-05T10:02:34+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000084s ]
+
+[ 2017-04-05T10:02:51+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000059s ]
+
+[ 2017-04-05T10:02:55+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0086','1','2017-04-05 10:02:55','11','VIP','6',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0086'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000057s ]
+
+[ 2017-04-05T10:02:55+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000052s ]
+
+[ 2017-04-05T10:02:59+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiOCJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000054s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0087','1','2017-04-05 10:02:59','11','VIP','8',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0087'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000061s ]
+
+[ 2017-04-05T10:02:59+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000046s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000054s ]
+
+[ 2017-04-05T10:03:02+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcx%0AMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFu%0AeSI6IjExIiwiYnVzc2luZXNzIjoiOSJ9%0A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000052s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0088','1','2017-04-05 10:03:02','11','VIP','9',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0088'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000061s ]
+
+[ 2017-04-05T10:03:02+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness` ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '8'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '9'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `bussiness` = '7'  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000050s ]
+
+[ 2017-04-05T10:10:43+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0089','1','2017-04-05 10:10:43','11','VIP','6',NULL) [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0089'  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000047s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000070s ]
+
+[ 2017-04-05T10:11:00+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=getCompany
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_company` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_company`  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000060s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-04-05T10:14:50+08:00 ] 113.108.82.36 /index.php?m=Admin&c=Queue&a=getCompany
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_company` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_company`  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000059s ]
+
+[ 2017-04-05T10:15:13+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=getCompany
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+SQL: SHOW COLUMNS FROM `q_company` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_company`  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000062s ]
+
+[ 2017-04-05T17:09:26+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=getCompany
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000089s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_company` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_company`  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-04-05T21:47:12+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-04-05T21:47:12+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001389s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001414s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000023s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000040s ]
+
+[ 2017-04-05T21:47:12+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Public&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-04-05T21:47:29+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_admin` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_admin`  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-04-05T21:47:29+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002591s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002618s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000044s ]
+
+[ 2017-04-05T21:47:32+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=vip
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_user` WHERE `auth` = 'VIP'  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001979s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002009s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000023s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000039s ]
+
+[ 2017-04-05T21:47:33+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=common
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+SQL: SHOW COLUMNS FROM `q_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_user` WHERE `auth` = 'common'  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001949s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001976s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000020s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000036s ]
+
+[ 2017-04-05T21:47:35+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=officer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000069s ]
+SQL: SHOW COLUMNS FROM `q_admin` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_admin`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002220s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000055s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000042s ]
+
+[ 2017-04-05T21:47:38+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=vip
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_user` WHERE `auth` = 'VIP'  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000059s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001978s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000039s ]
+
+[ 2017-04-05T21:47:39+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=common
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+SQL: SHOW COLUMNS FROM `q_user` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_user` WHERE `auth` = 'common'  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001827s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001856s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000018s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000034s ]
+
+[ 2017-04-05T21:47:39+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=officer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+SQL: SHOW COLUMNS FROM `q_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_admin`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001923s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001952s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000020s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000035s ]
+
+[ 2017-04-05T21:47:43+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Statistics&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001567s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001595s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000041s ]
+
+[ 2017-04-05T21:47:44+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=officer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000060s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+SQL: SHOW COLUMNS FROM `q_admin` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_admin`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001906s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001936s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000050s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000020s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000036s ]
+
+[ 2017-04-05T21:47:44+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=common
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+SQL: SHOW COLUMNS FROM `q_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_user` WHERE `auth` = 'common'  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002015s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002048s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000020s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000036s ]
+
+[ 2017-04-05T21:47:45+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=vip
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+SQL: SHOW COLUMNS FROM `q_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_user` WHERE `auth` = 'VIP'  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001909s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001939s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000022s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000041s ]
+
+[ 2017-04-05T22:18:13+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Statistics&a=business
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000066s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001669s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001699s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000023s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000039s ]
+

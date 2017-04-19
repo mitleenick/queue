@@ -1,0 +1,336 @@
+<div class="leaflets_audit_dlg_left">
+        <!-- 可安排工人  -->
+        <div class="leaflet-form">可安排工人
+            <select class="easyui-combobox" name="UserCode" id="UserCode" data-options="onSelect:function(){ curMonth=0; getMyWorks(); }">
+                <?php foreach( $userForPlan as $k=>$v ){ ?>
+                <option value="<?php echo $v->UserCode;?>"><?php echo $v->UserName;?></option>
+                <?php } ?>
+            </select>
+        </div>
+        <!-- 改派图片 -->
+        <div class="leaflet-form">
+            <h3>改派图片</h3>
+            <img id="IMG1" src="" style="width: 50px;height: 50px;cursor:pointer;" title="点击查看大图" onclick="showimg(this)"/>
+            <img id="IMG2" src="" style="width: 50px;height: 50px;cursor:pointer;" title="点击查看大图" onclick="showimg(this)" />
+            <img id="IMG3" src="" style="width: 50px;height: 50px;cursor:pointer;" title="点击查看大图" onclick="showimg(this)" />
+        </div>
+        <!-- 改派原因-->
+        <div class="leaflet-form">
+            <h3>改派原因</h3>
+            <textarea id="remark" readonly="true" style="height:136px;width:302px;resize: none;"></textarea>
+        </div>
+    </div>
+<div class="leaflets_audit_dlg_left">
+        <!-- 工人日程 -->
+        <div class="leaflet-form" >
+            <h3 style="display: inline">工人日程</h3>
+            <h6 style="display: inline;margin-left: 210px;"><a href="#" onclick="curMonth--;getMyWorks();" title="查看上月的工人任务">上月</a>|<a href="#" onclick="curMonth++;getMyWorks();" title="查看下月的工人任务">下月</a></h6>
+            <table id="myWorks">
+                <thead class="mytr">
+                <tr>
+                    <th>开始</th>
+                    <th>结束</th>
+                    <th>任务</th>
+                </tr>
+                </thead>
+                <tbody id="myWorks_tbody">
+                <tr></tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- 修订计划起止时间 -->
+        <div class="leaflet-form">
+            <h3>工序开始时间    ~    工序结束时间</h3>
+            <input id="BeginDate" name="BeginDate" class="easyui-datebox"  style="height:22px;" type="text">
+            ~
+            <input id="EndDate" name="EndDate" class="easyui-datebox"  style="height:22px;" type="text">
+            <a href="javascript:void(0);" class="easyui-linkbutton" onclick="changeUserCodeList(true)">确认</a>
+        </div>
+        <!-- 修订总价 -->
+        <div class="leaflet-form">
+            <h3>修订总价</h3>
+            <input id="Money" name="Money" class="easyui-numberbox" style="height:22px;" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:void(0);" id="btnShowActiveSource" class="easyui-linkbutton">工艺明细</a>
+            <a href="javascript:void(0);" class="easyui-linkbutton" onclick="planWork()">派单</a>
+        </div>
+    </div>
+<div id="planWork_ActiveItemSource_dlg_search" class="easyui-dialog" title="工艺明细" style="width:650px;height:400px;padding-bottom:65px;padding-left: 5px;"
+     data-options="
+		iconCls: 'icon-save',
+		closed: true,
+		resizable:true,
+		buttons: [{
+			text:'确定',
+			iconCls:'iconfont icon-ok',
+			handler:function(){
+				$('#planWork_ActiveItemSource_dlg_search').dialog('close');
+			}
+		}]
+	">
+</div>
+
+<div id="plan_dlg" class="easyui-dialog" title="查看大图"
+     data-options="iconCls:'icon-cancel',resizable:true,modal:true,closed: true,buttons: [{
+			text:'关闭',
+			iconCls:'iconfont icon-ok',
+			handler:function(){$('#plan_dlg').dialog('close');}
+		}]">
+    <div  id="acceptance_dlg_img" >
+        <a href="#prev" title="上一张" class="control prev prev-disabled">
+            <span></span></a>
+        <a href="#next" title="下一张" class="control next next-disabled">
+            <span></span></a>
+        <img id="acceptance_img" src="" class="hover"/>
+    </div>
+</div>
+<script>
+    $(function(){
+        $("#acceptance_dlg_img").unbind("mouseover").unbind("mouseout").bind("mouseover", function () {
+            var id = parseInt($("#acceptance_dlg_img").attr("index"));
+            setControl(id);
+        }).bind("mouseout", function () {
+            $(this).removeClass("hover")
+        });
+        $("#acceptance_dlg_img .prev").unbind('click').click(function () {
+            var m = parseInt($("#acceptance_dlg_img").attr("index")) - 1;
+            if (m < 1) {
+                $("#acceptance_dlg_img").attr("index", 1);
+                $("#acceptance_dlg_img .prev").addClass("prev-disabled");
+                return;
+            }
+            else if (m == 1) {
+                $("#acceptance_dlg_img .prev").addClass("prev-disabled");
+            } else {
+                $("#acceptance_dlg_img .prev").removeClass("prev-disabled");
+            }
+            $("#acceptance_dlg_img").attr("index", m);
+            $("#acceptance_img").attr("src", $("#IMG" + m).attr("src"));
+        });
+
+        $("#acceptance_dlg_img .next").unbind('click').click (function() {
+            var m = parseInt($("#acceptance_dlg_img").attr("index")) + 1;
+            if (m > 3) {
+                $("#acceptance_dlg_img").attr("index", 3);
+                $("#acceptance_dlg_img .next").addClass("next-disabled");
+                return;
+            }
+            else if (m == 3) {
+                $("#acceptance_dlg_img .next").addClass("next-disabled");
+            }else {
+                $("#acceptance_dlg_img .next").removeClass("next-disabled");
+            }
+            $("#acceptance_dlg_img").attr("index", m);
+            $("#acceptance_img").attr("src", $('#IMG' + m).attr("src"));
+        });
+    })
+    var isLoad=false;
+    $.parser.onComplete=function(){changeUserCodeList();}
+    // 更新工人下拉列表
+    function changeUserCodeList(reload) {
+        if (reload == true) {
+            isLoad = false;
+        }
+        if (isLoad == true) {
+            return;
+        }
+        isLoad = true;
+        var pBeginDate = $('#BeginDate').datebox('getValue');
+        var pEndDate = $('#EndDate').datebox('getValue');
+        var params = $.parseJSON('<?PHP echo  $params?>');
+        var beginDate = params.beginDate,
+                endDate = params.endDate,
+                activeitemins = params.activeitemins,
+                ischangeUser = params.ischangeUser,
+                projectcode = params.projectcode,
+                activeitemcode = params.activeitemcode,
+                activeitemname = params.activeitemname,
+                workgroupcode = params.workgroupcode,
+                money = params.money;
+        if (pBeginDate) {
+            beginDate = pBeginDate;
+        } else {
+            $("#BeginDate").datebox('setValue', beginDate);
+        }
+        if (pEndDate) {
+            endDate = pEndDate;
+        }
+        else {
+            $("#EndDate").datebox('setValue', endDate);
+        }
+        if (ischangeUser == 1) {
+            $('#Money').numberbox({
+                max: parseFloat(money), precision: 2, min: 0, disabled: false
+            });
+            //console.log(money);
+        } else {
+            getLastMoney(projectcode, activeitemcode, activeitemins);
+        }
+        $('#btnShowActiveSource').unbind('click');
+        $('#btnShowActiveSource').click(function () {
+            showActiveitemSourceByPlanWork(projectcode, activeitemcode, activeitemins, activeitemname);
+        });
+        queryKillWorkReason(projectcode, activeitemins);
+
+        $('#UserCode').combobox('clear');
+
+        $('#UserCode').combobox({
+            url: "<?php echo U('Leaflets/getUserForPlan');?>&GWC=" + workgroupcode + "&beginDate=" + beginDate + "&endDate=" + endDate,
+            method: 'post',
+            valueField: 'UserCode',
+            textField: 'UserName',
+            onLoadSuccess: function (data) {
+                if (data.length > 0) {
+                    $('#UserCode').combobox('setValue', data[0].UserCode);
+                    getMyWorks();
+                } else {
+                    $('#UserCode').combobox('setValue', null);
+                    $('#myWorks_tbody').html('');
+                }
+            }
+        });
+    }
+    //获取最新的工价
+    function getLastMoney(pc,aci,acii) {
+        $.ajax({
+            type: "POST",
+            url: "<?php echo U('Leaflets/calculateWorkFee');?>",
+            data: {pc: pc, ACII: acii, aci: aci},
+            dataType: "json",
+            success: function (data) {
+                //$('#Money').textbox('setValue', data);
+                $('#Money').numberbox({
+                    max: parseFloat(data), precision: 2, value: data, disabled: true
+                });
+            }
+        });
+    }
+    var curMonth=0;
+    // 获取工人任务
+    function getMyWorks() {
+        var uc = $('#UserCode').combobox('getValue');
+        if (uc) {
+            $.ajax({
+                type: "POST",
+                url: "<?php echo U('Leaflets/myWorks');?>",
+                data: {UC: uc, M: curMonth},
+                dataType: "json",
+                success: function (data) {
+                    var tbody = $('#myWorks_tbody');
+                    $(tbody).html('');
+                    var tr = ''
+                    for (var i = 0; i < data.length; i++) {
+                        var obj = data[i];
+                        tr = tr + '<tr>'
+                        tr = tr + '<td>' + _dateFormat(obj.Begin, 2) + '</td>';
+                        tr = tr + '<td>' + _dateFormat(obj.End, 2) + '</td>';
+                        tr = tr + '<td>' + obj.ActiveitemName + '</td>';
+                        tr = tr + '</tr>';
+                    }
+                    $(tbody).html(tr);
+                }
+            });
+        }
+    }
+    // 获取改派图片和改派原因
+    function queryKillWorkReason(pc,acii){
+        $.ajax({
+            type: "POST",
+            url: "<?php echo U('Leaflets/queryKillWorkReason');?>",
+            data: {PC:pc,ACII:acii},
+            dataType: "json",
+            success: function(data){
+                var img1 = data.IMG1 ? ("http://<?php echo getDomain();?>/yhr/" + data.IMG1) : '';
+                var img2 = data.IMG2 ? ("http://<?php echo getDomain();?>/yhr/" + data.IMG2) : '';
+                var img3 = data.IMG3 ? ("http://<?php echo getDomain();?>/yhr/" + data.IMG3) : '';
+                var remark = data.Remark ? data.Remark : '';
+
+                $("#IMG1").attr('src',img1);
+                $("#IMG2").attr('src',img2);
+                $("#IMG3").attr('src',img3);
+                $("#remark").html(remark);
+            }
+        });
+    }
+    // 派单
+    function planWork(){
+        var params = $.parseJSON( '<?PHP echo  $params?>');
+        var instince=params.activeitemins;
+
+        var beginDate = $("#BeginDate").datebox('getValue');
+        var endDate = $("#EndDate").datebox('getValue');
+        var money = $("#Money").textbox('getValue');
+        var workusercode= $('#UserCode').combobox('getValue');
+        var curDate = new Date();
+        curDate.setDate(curDate.getDate() - 2);
+        if(beginDate=='' || endDate=='' || money==''||workusercode==""){
+            $.messager.alert('错误提示','请填写完整!','error');
+            return false;
+        }else if(new Date(Date.parse(beginDate))<new Date(curDate.toLocaleDateString() )) {
+            $.messager.alert('错误提示', '不能派两天之前的任务!', 'error');
+            return false;
+        }else {
+            $.ajax({
+                type: "POST",
+                url: "<?php echo U('Leaflets/planWork');?>",
+                data: {
+                    WorkUserCode: workusercode,
+                    Instince: instince,
+                    BeginDate: beginDate,
+                    EndDate: endDate,
+                    Money: money
+                },
+                dataType: "json",
+                success: function (data) {
+                    if (data == 1) {
+                        $.messager.alert('消息', '成功!', 'info');
+                        $('#leaflets_audit_dlg').dialog('close');
+                    } else if (data == 0) {
+                        $.messager.alert('错误提示', '服务器异常!', 'error');
+                    } else if (data == 2) {
+                        $.messager.alert('错误提示', '已派单或者不符合派单规则!', 'error');
+                    } else if (data == 3) {
+                        $.messager.alert('错误提示', '用户无此工种不能派单!', 'error');
+                    } else if (data == 4) {
+                        $.messager.alert('错误提示', '查无此装修管家请维护基础数据!', 'error');
+                    } else if (data == 5) {
+                        $.messager.alert('错误提示', '用户设置了不接单,请重新设置工人!', 'error');
+                    } else {
+                        $.messager.alert('错误提示', '未知异常!', 'error');
+                    }
+                }
+            });
+        }
+    }
+    ///显示工艺明细
+    function showActiveitemSourceByPlanWork(pc,aci,acii,acn) {
+        $('#planWork_ActiveItemSource_dlg_search').dialog('open');
+        var url = '<?php echo U("Public/queryActiveitemSource")?>&pc=' + pc + "&aci=" + aci + "&acii=" + acii + "&acn=" + encodeURIComponent(acn);
+        $('#planWork_ActiveItemSource_dlg_search').dialog('refresh', url);
+    }
+    ///大图翻页
+    function setControl(index) {
+        $("#acceptance_dlg_img").addClass("hover");
+        if (index == 1) {
+            $("#acceptance_dlg_img .prev").addClass("pre-disabled");
+            $("#acceptance_dlg_img .next").removeClass("next-disabled");
+        } else if (index == 3) {
+            $("#acceptance_dlg_img .next").addClass("next-disabled");
+            $("#acceptance_dlg_img .prev").removeClass("prev-disabled");
+        } else {
+            $("#acceptance_dlg_img .next").removeClass("next-disabled");
+            $("#acceptance_dlg_img .prev").removeClass("prev-disabled");
+        }
+    }
+    // 点击查看大图
+    function showimg(obj) {
+        var scr = $(obj).attr("src")
+        if (scr) {
+            $("#acceptance_img").attr("src", scr);
+
+            var id = obj.id.replace('IMG', '');
+            $("#acceptance_dlg_img").attr("index", id);
+            setControl(id);
+            $("#plan_dlg").dialog("open");
+        }
+    }
+</script>

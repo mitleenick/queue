@@ -1,0 +1,114 @@
+业主名称:
+<select class="easyui-combobox" name="ProjectName" id="ProjectCode4" style="width:350px;" data-options="
+		url : '<?php echo U('Public/searchProjectByOwner');?>',
+		method:'post',
+		textField : 'Owner',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '业主名称',
+		onSelect: function(value){
+		if(value){
+		    selectItem(this);
+		}},
+	">
+</select>
+
+    <br/><br/><br/>
+
+    工程编号:
+    <select class="easyui-combobox" name="ProjectName" id="ProjectCode1" style="width:350px;" data-options="
+		url : '<?php echo U('Public/searchProjectById');?>',
+		method:'post',
+		textField : 'ProjectName',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '工程编号',
+		onSelect: function(value){
+		if(value){
+		    selectItem(this);
+		}},
+	">
+    </select>
+
+    <br/><br/><br/>
+
+    装修地址:
+    <select class="easyui-combobox" name="ProjectName" id="ProjectCode3" style="width:350px;" data-options="
+		url : '<?php echo U('Public/searchProjectByProjectName');?>',
+		method:'post',
+		textField : 'ProjectName',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '装修地址',
+		onSelect: function(value){
+		if(value){
+		    selectItem(this);
+		}},
+	">
+    </select>
+
+        <br/><br/><br/>
+
+        装修管家:
+        <select class="easyui-combobox" name="ProjectName" id="ProjectCode2" style="width:350px;" data-options="
+		url : '<?php echo U('Public/searchProjectByProjectManagerCode');?>',
+		method:'post',
+		textField : 'ProjectName',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '装修管家',
+		onSelect: function(value){
+		if(value){
+		    selectItem(this);
+		}},
+	">
+    </select>
+    <script>
+        function getReturn() {
+            if ($('#ProjectCode1').combobox('getValue'))
+                return $('#ProjectCode1').combobox('getValue');
+            if ($('#ProjectCode2').combobox('getValue'))
+                return $('#ProjectCode2').combobox('getValue');
+            if ($('#ProjectCode3').combobox('getValue'))
+                return $('#ProjectCode3').combobox('getValue');
+            if ($('#ProjectCode4').combobox('getValue'))
+                return $('#ProjectCode4').combobox('getValue');
+        }
+        function selectItem(obj) {
+            var id =obj.id;
+            switch (id) {
+                case "ProjectCode1":
+                    $("#ProjectCode2").combobox("clear");
+                    $("#ProjectCode3").combobox("clear");
+                    $("#ProjectCode4").combobox("clear");
+                    break;
+                case "ProjectCode2":
+                    $("#ProjectCode1").combobox("clear");
+                    $("#ProjectCode3").combobox("clear");
+                    $("#ProjectCode4").combobox("clear");
+                    break;
+                case "ProjectCode3":
+                    $("#ProjectCode1").combobox("clear");
+                    $("#ProjectCode2").combobox("clear");
+                    $("#ProjectCode4").combobox("clear");
+                    break;
+                case "ProjectCode4":
+                    $("#ProjectCode1").combobox("clear");
+                    $("#ProjectCode2").combobox("clear");
+                    $("#ProjectCode3").combobox("clear");
+                    break;
+            }
+        }
+    </script>

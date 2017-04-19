@@ -1,0 +1,529 @@
+<div class="Bar_tools linkgroupbutton">
+	<!--<a class='easyui-linkbutton' href='JavaScript:void(0);' data-options="iconCls:'iconfont icon-viewlist',plain:true" onclick="reload_Leaflets_Data_List();"><span>刷新</span></a>-->
+	<select class="easyui-combobox" name="GWC" id="GWC" data-options="onSelect:function(){
+			$('#BeginDate').datebox('setValue','');
+			$('#EndDate').datebox('setValue','');
+			$('#Money').textbox('setValue','');
+			reload_Leaflets_Data_List();
+	}">
+		<option value="-1">工种过滤</option>
+		<?php foreach($groupWorkers as $k=>$v){ ?>
+		<option value="<?php echo $k;?>"><?php echo $v;?></option>
+		<?php } ?>
+	</select>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="seachProjectDialog()">工程查询条件</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#Leaflets_audit_dlg_date').dialog('open')">选择时间</a>
+	<a href="#" id="lbtg_grd" class="easyui-linkbutton" sdata="" onclick="changeUser(this)" >改人单</a>
+	<select class="easyui-combobox" name="S" id="S" data-options="onSelect:function(){ reload_Leaflets_Data_List(); }" style="width: 100px;">
+	<option value="1">待派任务</option>
+	<option value="-1">我的派单</option>
+</select>
+	<a href="javascript:void(0);" class="easyui-linkbutton" onclick="lockWorks()">锁定</a>
+	<!--<a href="javascript:void(0);" id="batchPlayWorkButton" class="easyui-linkbutton" onclick="batch_planWork()">批量派单</a>-->
+	<a href="javascript:void(0);" class="easyui-linkbutton" onclick="changeUserCodeListByTool();">派单操作</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="exportcsv(this,'Leaflets_Data_List','',['ck'])" download="派单数据.csv">导出</a>
+</div>
+
+<!-- 数据列表 -->
+<div style="height:92%">
+<div id="Leaflets_Data_List"></div>
+</div>
+
+<!-- 查看图片弹出层 -->
+<div id="leaflets_dlg_img" class="easyui-dialog" title="查看图片" style="width:650px;height:500px;padding:10px;" data-options="iconCls:'icon-cancel',resizable:true,modal:true,closed: true,buttons: [{
+			text:'关闭',
+			iconCls:'iconfont icon-ok',
+			handler:function(){$('#leaflets_dlg_img').dialog('close');}
+		}]">
+	<img id="view_img" style="width:760px;height:740px;" src=""/>
+</div>
+
+<!-- 批量派单-->
+<div class="loading">加载中...</div>
+
+<!-- 修改 弹框 -->
+<div id="leaflets_audit_dlg" class="easyui-dialog" title="修改派单内容" style="width:730px;height:500px;padding:10px;overflow:hidden;" data-options="closed: true,buttons: [{
+			text:'关闭',
+			iconCls:'iconfont icon-ok',
+			handler:function(){$('#leaflets_audit_dlg').dialog('close');
+			reload_Leaflets_Data_List();}
+		}]">
+</div>
+<!--验收单弹窗-->
+<div id="dd" class="easyui-dialog" title="验收单" style="width:650px;height:500px;"
+	 data-options="iconCls:'icon-cancel',resizable:true,modal:true,closed: true,buttons: [{
+			text:'关闭',
+			iconCls:'iconfont icon-ok',
+			handler:function(){$('#dd').dialog('close');}
+		}]">
+</div>
+<div id="Leaflets_ActiveItemSource_dlg_search" class="easyui-dialog" title="工艺明细" style="width:650px;height:400px;padding:10px"
+		   data-options="
+		iconCls: 'icon-save',
+		closed: true,
+		buttons: [{
+			text:'确定',
+			iconCls:'iconfont icon-ok',
+			handler:function(){
+				$('#Leaflets_ActiveItemSource_dlg_search').dialog('close');
+			}
+		}]
+	">
+</div>
+<!-- 工程查询条件 -->
+<div id="Leaflets_audit_dlg_search" class="easyui-dialog" title="更多工程查询条件" style="width:450px;height:400px;padding:10px"
+	 data-options="
+		iconCls: 'icon-save',
+		closed: true,
+		buttons: [{
+			text:'确定',
+			iconCls:'iconfont icon-ok',
+			handler:function(){
+				$('#Leaflets_audit_dlg_search').dialog('close');
+				reload_Leaflets_Data_List(getReturn());
+			}
+		}]
+	">
+</div>
+<div id="Leaflets_audit_dlg_date" class="easyui-dialog" title="选择时间" style="width:550px;height:140px;padding:10px"
+	 data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						$('#Leaflets_audit_dlg_date').dialog('close');
+						reload_Leaflets_Data_List();
+					}
+				}]
+			">
+	<table>
+		<tr>
+			<td>开始时间:</td>
+			<td>
+				<input class="easyui-datebox" id="BT" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-d', time() - 86400 * 30);?>">
+			</td>
+			<td>结束时间:</td>
+			<td>
+				<input class="easyui-datebox" id="ET" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-d', time() + 86400 * 30);?>">
+			</td>
+		</tr>
+	</table>
+	<div id="cc" class="easyui-calendar"></div>
+</div>
+<script type="text/javascript">
+	function seachProjectDialog() {
+		islogin();
+		$('#Leaflets_audit_dlg_search').dialog('open');
+		var url = '<?php echo U("Public/projectSeach")?>';
+		$('#Leaflets_audit_dlg_search').dialog('refresh', url);
+	}
+// 重加载 
+function reload_Leaflets_Data_List(value) {
+	islogin();
+	var ProjectCode = new Array(1);
+	ProjectCode[0] = value;
+	$('#Leaflets_audit_dlg_search').dialog('close');
+	//var ISCU = $('#lbtg_grd').linkbutton('options').selected ? 1 : '';
+	var beginDate = $("#BT").datebox('getValue');
+	var endDate = $("#ET").datebox('getValue');
+	//console.log($("#S").combobox('getValue'));
+	$('#Leaflets_Data_List').datagrid('reload', {
+		'S': $("#S").combobox('getValue'),
+		//'UC' : $("#UC").val(),
+		'BT': beginDate,
+		'ET': endDate,
+		'GWC': $('#GWC').combobox('getValue'),
+		'PCS': ProjectCode,
+		'ISCU': $('#lbtg_grd').attr('sdata')
+	});
+}
+
+function dialg_button_changeUserCodelist() {
+	islogin();
+	var rowindex = $('#selectRowIndex').val();
+	openPlanWork(rowindex);
+}
+	function  changeUserCodeListByTool() {
+		var res = $('#Leaflets_Data_List').datagrid('getSelections');
+		if (res.length == 0) {
+			$.messager.alert('消息', '未选中任何数据!', 'info');
+		} else if (res.length > 1) {
+			$.messager.alert('消息', '只能操作一行数据!', 'info');
+		} else {
+			openPlanWork($('#Leaflets_Data_List').datagrid('getRowIndex', res[0]));
+		}
+	}
+// 更新工人下拉列表
+function openPlanWork(rowindex) {
+	islogin();
+	var re;
+	if (typeof (rowindex) == 'number' && rowindex >= 0) {
+		re = $('#Leaflets_Data_List').datagrid('getRows')[rowindex];
+		$('#selectRowIndex').val(rowindex);
+		if (rowindex == 0) {
+			$('#selectRowIndex').val(-1);
+		}
+	} else {
+		$.messager.alert('消息', '参数异常!', 'error');
+	}
+	$('#leaflets_audit_dlg').dialog('open');
+	var url = '<?php echo U("Public/planWork")?>&projectcode=' + re["projectcode"]
+			+ '&beginDate=' + _dateFormat(re["begindate"],2)
+			+ '&endDate=' + _dateFormat(re["enddate"],2)
+			+ '&activeitemins=' + re["activeitemins"]
+			+ '&ischangeUser=' + re["isChangeUSER"]
+			+ '&activeitemcode=' + re["activeitemcode"]
+			+ '&activeitemname=' + encodeURIComponent(re["activeitemname"])
+			+ '&money=' + re["money"]
+			+ '&workgroupcode=' + re["workgroupcode"];
+	$('#leaflets_audit_dlg').dialog('refresh', url);
+}
+
+// 改人单
+function changeUser(obj) {
+	islogin();
+	var s = $(obj).attr('sdata');
+	if (s == 1) {
+		$(obj).attr('sdata', '');
+		$(obj).removeClass('l-btn-selected');
+	} else {
+		$(obj).attr('sdata', 1);
+		$(obj).addClass('l-btn-selected');
+	}
+	reload_Leaflets_Data_List();
+}
+
+// 锁定
+function lockWorks(){
+	islogin();
+	var re = $('#Leaflets_Data_List').datagrid('getSelections');
+	if(re.length==0){
+		$.messager.alert('消息','您未选择任何数据!','error');
+		return false;
+	}
+	$.ajax({
+		type: 'POST',
+		url: "<?php echo U('Leaflets/lockWorks');?>",
+		data: {RE:re},
+		dataType: 'json',
+		success: function(status){
+			if(status==200){
+				$.messager.alert('消息','操作成功!','info');
+				//reload_Leaflets_Data_List();
+			}else{
+				$.messager.alert('消息','操作失败!','error');
+			}
+		}
+	});
+}
+
+// 派单 
+function planWork(){
+	islogin();
+	var workusercode = $('#UserCode').combobox('getValue');
+	var obj = $("#Leaflets_Data_List").datagrid('getSelected');
+	if (obj==null) {
+		var rowindex = $('#selectRowIndex').val();
+		obj = $("#Leaflets_Data_List").datagrid('getRows')[rowindex];
+	}
+	if(obj==null) {
+		$.messager.alert('错误提示', '隐藏数据获取异常请刷新浏览器!', 'error');
+	}
+	var instince = obj.activeitemins;
+	var beginDate = $("#BeginDate").datebox('getValue');
+	var endDate = $("#EndDate").datebox('getValue');
+	var money = $("#Money").textbox('getValue');
+
+
+	if(beginDate=='' || endDate=='' || money==''||workusercode==""){
+		$.messager.alert('错误提示','请填写完整!','error');
+		return false;
+	}else if(new Date(Date.parse(beginDate))<new Date(new Date().toLocaleDateString())) {
+		$.messager.alert('错误提示', '派单开始时间不能小于当前时间!', 'error');
+		return false;
+	}else {
+		$.ajax({
+			type: "POST",
+			url: "<?php echo U('Leaflets/planWork');?>",
+			data: {
+				WorkUserCode: workusercode,
+				Instince: instince,
+				BeginDate: beginDate,
+				EndDate: endDate,
+				Money: money
+			},
+			dataType: "json",
+			success: function (data) {
+				//console.log(data)
+				if (data == 1) {
+					$.messager.alert('消息', '成功!', 'info');
+					reload_Leaflets_Data_List();
+					$('#selectRowIndex').val('');
+					$('#leaflets_audit_dlg').dialog('close');
+				} else if (data == 0) {
+					$.messager.alert('错误提示', '服务器异常!', 'error');
+				} else if (data == 2) {
+					$.messager.alert('错误提示', '已派单或者不符合派单规则!', 'error');
+				} else if (data == 3) {
+					$.messager.alert('错误提示', '用户无此工种不能派单!', 'error');
+				} else if (data == 4) {
+					$.messager.alert('错误提示', '查无此装修管家请维护基础数据!', 'error');
+				} else if (data == 5) {
+					$.messager.alert('错误提示', '用户设置了不接单,请重新设置工人!', 'error');
+				} else {
+					$.messager.alert('错误提示', '未知异常!', 'error');
+				}
+			}
+		});
+	}
+}
+
+// 批量派单
+function batch_planWork(){
+	islogin();
+	var re = $('#Leaflets_Data_List').datagrid('getSelections');
+	if(re.length==0){
+		$.messager.alert('消息','您未选择任何数据!','error');
+		return false;
+	}
+
+	$(".loading").show();
+
+	for(var i=0;i<re.length;i++) {
+		var obj = re[i];
+		//console.log(obj);
+		var GWC = obj.workgroupcode;
+		var beginDate = _dateFormat(obj.begindate,2);
+		var endDate = _dateFormat(obj.enddate,2);
+		$.ajax({
+			type: 'POST',
+			url: "<?php echo U('Leaflets/getUserForPlanBatch');?>",
+			data: {GWC:GWC,beginDate:beginDate,endDate:endDate,obj:obj},
+			dataType: 'json',
+			success: function(data){
+				var userForPlan = data.userForPlan;
+				var _obj = data.obj;
+				//console.log(data);
+				if (userForPlan.length > 0) {
+					_obj.usercode  = userForPlan[0].UserName;
+					_obj._usercode = userForPlan[0].UserCode;
+					//console.log(_obj);
+					var rows = $('#Leaflets_Data_List').datagrid('getRows');
+					for(var j=0,l=rows.length;j<l;j++){
+						var row = rows[j];
+						if(row.activeitemins==_obj.activeitemins && row.projectcode==_obj.projectcode && row.activeitemcode==_obj.activeitemcode){
+							$('#Leaflets_Data_List').datagrid('updateRow',{index:j,row:{usercode:userForPlan[0].UserName}});
+
+						}
+					}
+				}
+			},
+			error : function (){
+
+			}
+		});
+	}
+
+	/*var _k = false;
+	var rows = $('#Leaflets_Data_List').datagrid('getRows');
+	for(var k=0;k<rows.length;k++){
+
+		console.log(rows[k].usercode);
+		console.log(rows[k]._usercode);
+
+		if(rows[k].usercode!='' && rows[k]._usercode!=''){
+			//console.log(rows[k]);;
+		}
+	}*/
+	$(".loading").hide();
+	$("#batchPlayWorkButton").linkbutton({text:'确认批量派单'});
+	$("#batchPlayWorkButton").bind('click',batch_planWork_s);
+}
+
+function batch_planWork_s(){
+	islogin();
+	var re = $('#Leaflets_Data_List').datagrid('getSelections');
+	$(".loading").show();
+	$.ajax({
+		type: 'POST',
+		url: "<?php echo U('Leaflets/batchPlanWork');?>",
+		data: {RE:re},
+		dataType: 'json',
+		success: function(count){
+			$(".loading").hide();
+			$.messager.alert('消息','成功'+count+'条!','info');
+			if(count>0){
+				$("#batchPlayWorkButton").linkbutton({text:'批量派单'});
+				$("#batchPlayWorkButton").bind('click',batch_planWork);
+				reload_Leaflets_Data_List();
+			}
+		}
+	});
+}
+
+function showActiveitemSource(pc,aci,acii,acn) {
+	islogin();
+	$('#Leaflets_ActiveItemSource_dlg_search').dialog('open');
+	var url = '<?php echo U("Public/queryActiveitemSource")?>&pc=' + pc + "&aci=" + aci + "&acii=" + acii + "&acn=" + encodeURIComponent(acn);
+	console.log(url);
+	$('#Leaflets_ActiveItemSource_dlg_search').dialog('refresh', url);
+}
+
+
+$(function() {
+	islogin();
+	//var initdata=function(){
+	//var wrapwidth=($(".leaflets-wrap").width()-470)+"px";
+	//$(".leaflets-left").css({"width":wrapwidth});
+	$("#Leaflets_Data_List").datagrid({
+		url: "{:U('Leaflets/index')}",
+		fit: true,
+		striped: false,
+		border: false,
+		pagination: true,
+		pageSize: 20,
+		pageList: [20, 30, 40, 50],
+		pageNumber: 1,
+		sortName: '',
+		sortOrder: '',
+		toolbar: '#Worker_Bar',
+		singleSelect: false,
+		fitColumns: false,
+		remoteSort: false,
+		rownumbers: true,
+		columns: [[
+			{field: 'ck', checkbox: true},
+			{field: 'projectcode', title: '工程编号', width: 62, sortable: true},
+			{field: 'projectname', title: '装修地址', width: 170, sortable: true},
+			{field: 'owner', title: '客户姓名', width: 62, sortable: true},
+			{field: 'producttype', title: '客户版本号', width: 90, sortable: true},
+
+			//{field : 'activeitemins',title : '单据号',width : 170,sortable:true},
+			{field: 'workgroupname', title: '工种', width: 90, sortable: true},
+			{field: 'activeitemcode', title: '工序项编号', width: 80, sortable: true},
+			{field: 'activeitemname', title: '工序项目名称', width: 200, sortable: true},
+			{
+				field: 'begindate',
+				title: '开始时间',
+				width: 100,
+				sortable: true,
+				formatter: function (value, rowData, rowIndex) {
+					return _dateFormat(value, 2)
+				}
+			},
+			{
+				field: 'enddate',
+				title: '结束时间',
+				width: 100,
+				sortable: true,
+				formatter: function (value, rowData, rowIndex) {
+					return _dateFormat(value, 2)
+				}
+			},
+			{
+				field: 'finishrate',
+				title: '完成进度',
+				width: 65,
+				align: "right",
+				sortable: true,
+				formatter: function (value) {
+					return value + '%';
+				}
+			},
+			{field: 'projectManagerCode', title: '装修管家编号', width: 90, sortable: true},
+			{field: 'projectManagerName', title: '装修管家名称', width: 90, sortable: true},
+			/* {field : 'isuse',title : '状态',width : 100,sortable:true}, */
+			{
+				field: 'money', title: '金额', width: 60, align: "right", sortable: true, formatter: function (value, rowData, rowindex) {
+				if ($("#S").combobox('getValue') == -1) {
+					return "<a onclick='showActiveitemSource(" + rowData.projectcode + ",&quot;" + rowData.activeitemcode + "&quot;," + rowData.activeitemins + ",&quot;"+rowData.activeitemname+"&quot;);'>" + value.toFixed(2) + '</a>';
+				} else {
+					return value.toFixed(2);
+				}
+			}
+			},
+			{field: 'usercode', title: '工人', width: 100, sortable: true},
+			{
+				field: 'o', title: '操作', width: 130, sortable: false, formatter: function (value, rowData, rowindex) {
+				if ($("#S").combobox('getValue') == -1) {
+					return "<a href='#' onclick='TDialog(" + rowData.projectcode + "," + rowData.activeitemcode + ");'>验收单</a>";
+				} else {
+					return "<a onclick='openPlanWork(" + rowindex + ")' target='_blank' >派单操作</a>";
+				}
+			}
+			},
+			{field: 'planManagerName', title: '派单人', width: 80, sortable: true},
+			{
+				field: 'plantime',
+				title: '派单时间',
+				width: 170,
+				sortable: true,
+				formatter: function (value, rowData, rowIndex) {
+					return _dateFormat(value, 1)
+				}
+			},
+		]],
+		onSelect: function (index, rowdata) {
+			//console.log(index);
+			//console.log(rowdata);
+			//var begindate = rowdata.begindate;
+			//var enddate = rowdata.enddate;
+			//console.log(begindate);
+			//console.log(_dateFormat(begindate,2));
+			//$("#BeginDate").datebox('setValue',_dateFormat(begindate,2) );
+			//$("#EndDate").datebox('setValue',_dateFormat(enddate,2));
+			//$("#Money").textbox('setValue',rowdata.money);
+			//openPlanWork();
+		},
+		onBeforeLoad: function (param) {
+			//$(".datagrid").css({'margin':'27px','border':'1px solid #bdbdbb'});
+		}
+		/*onLoadSuccess: function (data) {
+			var locktimeids = new Array(data.length);
+			if (data.rows.length > 0) {
+				//循环判断操作为新增的不能选择
+				for (var i = 0; i < data.rows.length; i++) {
+					//根据operate让某些行不可选
+					if (data.rows[i].LockTime != "") {
+						//$("input[type='checkbox'][name='ck']")[i].remove();
+						locktimeids[i] = i;
+					}else{
+						locktimeids[i] = null;
+					}
+				}
+			}
+
+			var b = 0;
+			for(var j in locktimeids){
+				if(locktimeids[j]!=null){
+					$("input[type='checkbox'][name='ck']")[j-b].remove();
+					b=b+1;
+				}
+			}
+			getMyWorks();
+		}*/
+	});
+//}
+
+//initdata();
+
+//$(window).resize(function() {
+//  initdata();
+//});
+});
+// 点击查看大图
+function showimg(obj){
+	islogin();
+	var src = $(obj).attr("src");
+	$("#view_img").attr("src",src);
+	$("#leaflets_dlg_img").dialog("open");
+}
+function TDialog(pc,activeItemCode) {
+	islogin();
+	$('#dd').dialog('open');
+	var url = '<?php echo U("Public/acceptance")?>&pc=' + pc + '&activeItemCode=' + activeItemCode;
+	$('#dd').dialog('refresh', url);
+}
+</script>

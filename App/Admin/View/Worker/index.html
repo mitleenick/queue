@@ -1,0 +1,392 @@
+<style type="text/css">
+	.black_overlay{
+	   display: none; 
+	   position: absolute;  
+	   top: 18%;  
+	   left: 25%;  
+	   width: 38%;  
+	   height: 59%;  
+	   background-color: #b2b2b2;  
+	   z-index:1001;  
+	   -moz-opacity: 0.8;  
+	   opacity:.80;  
+	   filter: alpha(opacity=80);  
+	} 
+	.white_content {
+	    display: none;  
+	    position: absolute; 
+	    top: 18%; 
+	    left: 25%; 
+	    width: 37%; 
+	    height: 60%; 
+	    padding: 16px;
+	    border: 2px solid orange; 
+	    background-color: white; 
+	    z-index:1002;
+	    overflow: auto;
+	}  
+</style>
+<div id="Worker_Bar" class="Bar_tools">
+	<select class="easyui-combobox" name="S" id="S" data-options="onSelect:function(){ reload_worker_data_list(); }">
+		<!--2016-01-28 常福鹏-->
+		<option value="-1">认证状态</option>
+		<option value="1">正常</option>
+		<option value="0">新注册</option>
+		<option value="2">上传等待认证</option>
+	</select>
+	工人查询<input id="UC" class="easyui-textbox" style="width:150px;height:22px">
+	<a class='easyui-linkbutton' href='JavaScript:void(0);' onclick="reload_worker_data_list();"><span>搜索</span></a>
+	<a href="<?php echo U('Worker/exportcsv');?>" class="easyui-linkbutton" id="exportlbt">导出全部数据</a>
+	<!--<a href="#" class="easyui-linkbutton">导入CSV</a>-->
+	<a class='easyui-linkbutton' href='JavaScript:void(0);' data-options="iconCls:'iconfont icon-add',plain:true" onclick="addGroupWork();"><span>新增工种</span></a>
+	<a class='easyui-linkbutton' href='JavaScript:void(0);' data-options="iconCls:'iconfont icon-delete',plain:true" onclick="deleteGroupWork()"><span>删除工种</span></a>
+	<!-- <a class='easyui-linkbutton' href='JavaScript:void(0);' data-options="iconCls:'iconfont icon-search',plain:true" onclick="Data_Search('Config_Search_From','Worker_Data_List');"><span>搜索</span></a> -->
+
+	<!-- 工人种类  -->
+	<?php $workerType=key($groupWorkers); ?>
+	<div id="Worker_Type" class="Bar_tools">
+		<a href="#" class="easyui-linkbutton" data-options="toggle:true,group:'g1',selected:true" sdata="-1" onclick="worker_type_change(this)">全部</a>
+		<?php foreach($groupWorkers as $k=>$v){ ?>
+			<?php if($k==$workerType){ ?>
+				<a href="#" class="easyui-linkbutton" data-options="toggle:true,group:'g1',selected:true" sdata="<?php echo $k;?>" onclick="worker_type_change(this)"><?php echo $v;?></a>
+			<?php }else{ ?>
+				<a href="#" class="easyui-linkbutton" data-options="toggle:true,group:'g1'" sdata="<?php echo $k;?>" onclick="worker_type_change(this)"><?php echo $v;?></a>
+			<?php } ?>
+		<?php } ?>
+	</div>
+	<input type="hidden" id="hiddenWorkerType" value="<?php echo $workerType;?>" />
+</div>
+
+<!-- 数据列表 -->
+<table id="Worker_Data_List"></table>
+
+<!-- 新增数据 -->
+<div id="Worker_Data_Add">
+	新工种<input id="GWN" class="easyui-textbox" style="width:100px;height:22px">
+</div>
+<!-- 弹出层-->
+<input type="hidden" id="uc" name="uc" />
+<div id="light" class="white_content">
+<p>填写建议：</p>
+<textarea style="margin-left:10px;margin-top:10px" rows="8" cols="55" id="reason" name="reason"></textarea>
+<p align="right" style="margin-top:30px"><button type="button" style="margin-right:30px" onClick="addreason()">填写建议</button>
+<button type="button" onClick="closeWindow()"> 关闭窗口</button></p>
+</div>
+<div id="fade" class="black_overlay"></div>
+
+<!-- 工人最近施工-->
+
+<div id="showrecent" class="white_content">
+<p>工人最近施工任务：</p>
+<table style="BORDER-COLLAPSE: collapse;margin-left:0px;margin-top:10px" align="center" borderColor=#000000 height=30 cellPadding=1 width=650  border=1>
+	<thead>
+	<tr>
+	    <th width=150>开始</th>
+	    <th width=150>结束</th>
+	    <th width=350>任务</th>
+	</tr>
+	</thead>
+	<tbody id="works">
+	<tr></tr>
+	</tbody>
+</table>
+<p align="right" style="margin-top:30px"><button type="button" onClick="closeWindow2()"> 关闭窗口</button></p>
+</div>
+<div id="fade2" class="black_overlay"></div>
+
+
+<div style="
+    position: absolute;
+    right: 180px;
+    bottom: 9px;width: 200px;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 6px 0 0;
+    padding: 0;">
+	<p id="tongji"></p>
+</div>
+</body>
+<script type="text/javascript">
+	$().ready(function(){
+		$('#UC').textbox('textbox').keydown(function (e) {
+			if (e.keyCode == 13) {
+				reload_worker_data_list();
+			}
+		});
+	});
+	// 切换工种
+function worker_type_change(obj){
+	$('#hiddenWorkerType').val( $(obj).attr('sdata') );
+	reload_worker_data_list();
+}
+
+// 重加载 
+function reload_worker_data_list() {
+	islogin();
+	var S = $("#S").combobox('getValue');
+	var UC = $("#UC").textbox('getValue');
+	var GWC = $('#hiddenWorkerType').val();
+	$('#exportlbt').attr('href', '<?php echo U("Worker/exportcsv");?>&S=' + S + '&UC=' + UC + '&GWC=' + GWC);
+	$('#Worker_Data_List').datagrid('reload', {
+		'S': S,
+		'UC': UC,
+		'GWC': GWC
+	});
+}
+
+// 实名认证 
+function auditUser(uc){
+	$.ajax({
+		type: "POST",
+		url: "<?php echo U('Worker/auditUser');?>",
+		data: {UC:uc},
+		dataType: "json",
+		success: function(data){
+			if(data==1){
+				$.messager.alert('消息','认证成功!','info');
+				reload_worker_data_list();
+			}else{
+				$.messager.alert('消息','认证失败!','error');
+			}
+		}
+	});
+}
+// 实名认证失败
+function auditUserNot(uc){	
+	$("#light").show();
+	$("#fade").show();
+	$("#uc").val(uc);
+}
+
+//关闭窗口
+function closeWindow(){
+	$("#light").hide();
+	$("#fade").hide();
+}
+function closeWindow2(){
+	$("#showrecent").hide();
+	$("#fade2").hide();		
+}
+
+//添加认证不通过原因
+function addreason(){
+	var reason = $("#reason").val();
+	var uc=$("#uc").val();
+	$.ajax({
+		type: "POST",
+		url: "<?php echo U('Worker/auditUserNot');?>",
+		data: {UC:uc,reason:reason},
+		dataType: "json",
+		success: function(data){
+			if(data==1){
+				$.messager.alert('消息','不通过成功!','info');
+				reload_worker_data_list();
+			}else{
+				$.messager.alert('消息','不通过失败!','error');
+				reload_worker_data_list();
+			}
+		}
+	});
+}
+
+// 新增工种 
+function  addGroupWork(){
+	$('#Worker_Data_Add').dialog({
+	    title: '新增工种',
+	    width: 400,
+	    height: 200,
+	    closed: false,
+	    cache: false,
+	    modal: true,
+	    buttons : [{
+				text : '提交',
+				iconCls : 'iconfont icon-add',
+				handler : function () {
+					 $.ajax({
+			             type: "POST",
+			             url: "<?php echo U('Worker/add');?>",
+			             data: {GWN:$("#GWN").textbox('getValue')},
+			             dataType: "json",
+			             success: function(data) {
+							 $('#GWN').empty();
+							 if(data=="-1"){
+								 $.messager.confirm('消息', "工种不能重复新增", 'info');
+							 }
+							 else if (data!="") {
+								// $('#hiddenWorkerType').val(data);
+								 $('#Worker_Data_Add').dialog('close');
+								 $("#GWN").textbox('setValue','');
+								 $.messager.confirm('消息', "新增成功", 'info');
+								 reloadGroupWork('add');
+							 } else {
+								 $.messager.confirm('消息', "新增异常", 'error');
+							 }
+						 }
+			         });
+				}
+		},{
+				text : '取消',
+				iconCls : 'iconfont icon-close',
+				handler : function () {
+					$("#GWN").textbox('setValue' , '');
+					$('#Worker_Data_Add').dialog('close');  
+				}
+		}]
+	});
+}
+
+// 删除工种 
+function deleteGroupWork(){
+	var GWC = $('#hiddenWorkerType').val();
+	$.ajax({
+		type: "POST",
+		url: "<?php echo U('Worker/deleteGroupWork');?>",
+		data: {GWC:GWC},
+		dataType: "json",
+		success: function(data){
+			if(!data.status){
+				$.messager.alert('消息',data.info,'error');
+			}else{
+				$.messager.alert('消息',data.info,'info');
+				reloadGroupWork('delete');
+			}
+		}
+	});
+}
+//最近施工
+function showrecent(uc){ 
+	$("#showrecent").show();
+	$("#fade2").show();
+	  if (uc) {
+          $.ajax({
+              type: "POST",
+              url: "<?php echo U('Leaflets/myRecentWorks');?>",
+              data: {UC: uc},
+              dataType: "json",
+              success: function (data) {
+                  var tbody = $('#works');
+                  $(tbody).html('');
+                  var tr = ''
+                  for (var i = 0; i < data.length; i++) {
+                      var obj = data[i];
+                      tr = tr + '<tr>'
+                      tr = tr + '<td>' + obj.begin + '</td>';
+                      tr = tr + '<td>' + obj.end + '</td>';
+                      tr = tr + '<td>' + obj.activeItemName + '</td>';
+                      tr = tr + '</tr>';
+                  }
+                  $(tbody).html(tr);
+              }
+          });
+      }
+}
+
+
+// 刷新工种
+function reloadGroupWork(type){ 
+	var hiddenWorkerType;
+	if(type=='add') {
+		hiddenWorkerType = $("#hiddenWorkerType").val();
+	}else if (type=='delete') {
+		hiddenWorkerType = '';
+	}else {
+		$.messager.alert('消息','程序错误!','error');
+		return false;
+	}
+	$.ajax({
+		type: "POST",
+		url: "<?php echo U('Public/getGroupWorks');?>",
+		dataType: "json",
+		success: function(data){
+			var workerTypeButtons ;
+			var groupName = "group:'g1'";
+			if(hiddenWorkerType==""){
+				workerTypeButtons='<a href="#" class="easyui-linkbutton" data-options="toggle:true,'+groupName+',selected:true" sdata="-1" onclick="worker_type_change(this)">全部</a>';
+			}else {
+				workerTypeButtons = '<a href="#" class="easyui-linkbutton" data-options="toggle:true,"' + groupName + ' sdata="-1" onclick="worker_type_change(this)">全部</a>';
+			}
+			$("#Worker_Type").html('');
+
+			for(var i=0;i<data.length;i++) {
+				if(data[i]['k']==hiddenWorkerType) {
+					workerTypeButtons += '<a href="#" class="easyui-linkbutton" data-options="toggle:true,'+ groupName +',selected:true" sdata="' + data[i]['k'] + '" onclick="worker_type_change(this)">' + data[i]['v']+ '</a>';
+				}else{
+					workerTypeButtons += '<a href="#" class="easyui-linkbutton" data-options="toggle:true,'+ groupName +'" sdata="' + data[i]['k'] + '" onclick="worker_type_change(this)">' + data[i]['v']+ '</a>';
+				}
+			}
+			$("#Worker_Type").html(workerTypeButtons);
+			$.parser.parse("#Worker_Type");
+			$("#hiddenWorkerType").val(hiddenWorkerType);
+			reload_worker_data_list();
+		}
+	});
+}
+
+$(function() {
+	$("#Worker_Data_List").datagrid({
+		url : "{:U('Worker/index')}",
+		fit : true,
+		striped : true,
+		border : false,
+		pagination : true,
+		pageSize : 50,
+		pageList : [50,100,1000,10000],
+		pageNumber : 1,
+		remoteSort:false,
+		toolbar : '#Worker_Bar',
+		singleSelect : true,
+		rownumbers: true,
+		columns : [[
+            {field : 'usercode',title : '用户编号',width : 100,sortable:true},
+            {field : 'susername',title : '用户名称',width : 100,sortable:true},
+			{field : 'cardno',title : '身份证号码',width : 160,sortable:true},
+            {field : '_sex',title : '性别',width : 60,sortable:true},
+            {field : 'telnumber',title : '手机',width : 100,sortable:true},
+            {field : '_isuse',title : '状态',width : 80,sortable:true},
+			{field : 'registeTime',title : '注册时间',width : 150,sortable:true,formatter: function (value,rowData,rowIndex) {
+				return _dateFormat(value,1);
+			}},
+			{field : 'workgroupname',title : '工种',width : 150,sortable:true},
+            {field : 'isuse1',title : '身份证正',width : 80,sortable:true,formatter:function(value,rowData,rowIndex)
+			{
+				if(rowData.isuse==1||rowData.isuse==2||rowData.isuse==4) {
+					var url = "http://<?php echo getDomain();?>/yhr/userData/" + rowData.usercode + "/identityCode/1.jpg";
+					return "<a href='"+url+"' target='_blank'>查看</a>";
+				}else{
+					return "<p style='color:#D0D0D0;'>查看</p>";
+			}
+
+			}},
+            {field : 'isuse2',title : '身份证反',width : 80,sortable:true,formatter:function(value,rowData,rowIndex) {
+				if(rowData.isuse==1||rowData.isuse==2||rowData.isuse==4) {
+					var url = "http://<?php echo getDomain();?>/yhr/userData/" + rowData.usercode + "/identityCode/0.jpg";
+					return "<a href='" + url + "' target='_blank'>查看</a>";
+				}else {
+					return "<p style='color:#D0D0D0;'>查看</p>";
+				}
+			}},
+			{field : 'operate',title : '操作',width : 90 },
+			{field : 'auditor',title : '操作人',width : 60 },
+			{field : 'auditTime',title : '操作时间',width : 150,formatter: function (value,rowData,rowIndex) {
+				return _dateFormat(value,2);
+			} },
+			{field : 'reason',title : '操作意见',width : 200 },			
+			{field : 'look',title : '查看',width : 90 }
+		]],onLoadSuccess:function(data) {
+			tongji();
+		}
+	});
+});// 底部统计
+function tongji() {
+	var re = $('#Worker_Data_List').datagrid('getRows');
+	var users = new Array();
+	for (var i = 0; i < re.length; i++) {
+		if (users.indexOf(re[i].usercode) == -1) {
+			users.push(re[i].usercode);
+		}
+	}
+	number = users.length;
+	$('#tongji').html ('工人数量：' + number);
+}
+</script>

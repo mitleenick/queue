@@ -1,0 +1,608 @@
+<div id="Audit_Bar" class="Bar_tools">
+	<!--<a class='easyui-linkbutton' href='JavaScript:void(0);' data-options="iconCls:'iconfont icon-viewlist',plain:true" onclick="reload_Audit_data_list();"><span>刷新</span></a> -->
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="toggleselectall('Audit_Data_List')">全部</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="seachProjectDialog()">工程查询条件</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#Audit_audit_dlg_date').dialog('open')">选择时间</a>
+	<select class="easyui-combobox" name="T" id="T" data-options="onSelect:function(){ reload_Audit_data_list(); }" style="width: 150px;">
+		<option value="-1">单据类型</option>
+		<?php foreach($rtype as $k=>$v){ ?>
+		<option value="<?php echo $k;?>"><?php echo $v;?></option>
+		<?php } ?>
+	</select>
+	<select class="easyui-combobox" name="S" id="S" data-options="onSelect:function(){ reload_Audit_data_list(); }" style="width: 100px;">
+		<option value="-1">单据状态</option>
+		<option value="0">申请中</option>
+		<option value="E">打回</option>
+		<option value="F">审核通过</option>
+	</select>
+	
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="auditRecPass()">审核通过</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="auditRecNotPass()">打回</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" id="exportlbt" onclick="exportCsv()">导出CSV</a>
+	<!--<a href="#" class="easyui-menubutton" data-options="menu:'#mm3'">更多操作</a>
+	<div id="mm3">
+		<div><a href="<?php echo U('Audit/exportcsv');?>" class="" id="exportlbt">导出CSV</a></div>
+	</div>
+	-->
+</div>
+
+<!-- 数据列表 -->
+<table id="Audit_Data_List" ></table>
+<div id="Audit_ActiveItemSource_dlg_search" class="easyui-dialog" title="工艺明细" style="width:650px;height:400px;padding-bottom:65px;padding-left: 5px;"
+	 data-options="
+		iconCls: 'icon-save',
+		closed: true,
+		resizable:true,
+		buttons: [{
+			text:'关闭',
+			iconCls:'iconfont icon-ok',
+			handler:function(){
+				$('#Audit_ActiveItemSource_dlg_search').dialog('close');
+			}
+		}]
+	">
+</div>
+<!-- 工程查询条件 -->
+<div id="Audit_audit_dlg_search" class="easyui-dialog" title="更多工程查询条件" style="width:450px;height:400px;padding:10px" 
+	data-options="
+		iconCls: 'icon-save',
+		closed: true,
+		buttons: [{
+			text:'确定',
+			iconCls:'iconfont icon-ok',
+			handler:function(){
+				$('#Audit_audit_dlg_search').dialog('close');
+				reload_Audit_data_list(getReturn());
+			}
+		}]
+	">
+</div>
+
+<!-- 选择时间 -->
+<div id="Audit_audit_dlg_date" class="easyui-dialog" title="选择时间" style="width:550px;height:140px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						$('#Audit_audit_dlg_date').dialog('close');
+						reload_Audit_data_list();
+					}
+				}]
+			">
+	<table>
+		<tr>
+			<td>开始时间:</td>
+			<td>
+				<input class="easyui-datebox" id="BT" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-01' , time());?>">
+			</td>
+			<td>结束时间:</td>
+			<td>
+				<input class="easyui-datebox" id="ET" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-t' , time());?>">
+			</td>
+		</tr>
+	</table>
+	<div id="cc" class="easyui-calendar"></div>
+</div>
+<!--验收单弹窗-->
+<div id="dd" class="easyui-dialog" title="验收单" style="width:650px;height:500px;"
+	 data-options="iconCls:'icon-cancel',resizable:true,modal:true,closed: true,buttons: [{
+			text:'关闭',
+			iconCls:'iconfont icon-ok',
+			handler:function(){$('#dd').dialog('close');}
+		}]">
+</div>
+<!-- 打回原因 -->
+<div id="Audit_audit_dlg" class="easyui-dialog" title="打回原因" style="width:400px;height:200px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						//alert($('#R').val());
+						//console.log($('#Audit_Data_List').datagrid('getSelections'));
+						var r  = $('#R').val();
+						var re = $('#Audit_Data_List').datagrid('getSelections');
+						var s  = 'E';
+						if(r==''){
+							$.messager.alert('消息','请输入打回原因!','error');
+							$('#R').focus();
+							return false;
+						}
+						if(re.length==0){
+							$.messager.alert('消息','您未选择任何数据!','error');
+							return false;
+						}
+						$.ajax({
+							type: 'POST',
+							url: '<?php echo U('Audit/auditRec');?>',
+							data: {R:r,RE:re,S:s},
+							dataType: 'json',
+							success: function(status){
+								if(status==200){
+									$.messager.alert('消息','操作成功!','info');
+									$('#R').val('');
+									$('#Audit_audit_dlg').dialog('close')
+									reload_Audit_data_list();
+								}else if (status == 810) {
+									$.messager.alert('消息', '请将调账处理完成后再进行劳务费的操作!', 'error');
+								} else{
+									$.messager.alert('消息','操作失败!','error');
+								}
+							}
+						});
+					}
+				}]
+			">
+	<textarea class="" id="R" data-options="multiline:true" style="width:345px;height:100px"></textarea>
+</div>
+
+<div style="
+    position: absolute;
+    right: 180px;
+    bottom: 9px;width: 200px;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 6px 0 0;
+    padding: 0;">
+	<p id="tongji">工程数量：0 总价：0</p>
+</div>
+
+<script type="text/javascript">
+	function seachProjectDialog() {
+		$('#Audit_audit_dlg_search').dialog('open');
+		var url = '<?php echo U("Public/projectSeach")?>';
+		$('#Audit_audit_dlg_search').dialog('refresh', url);
+	}
+
+// 重加载 
+function reload_Audit_data_list(value) {
+	islogin();
+	var ProjectCode = new Array(1);
+	ProjectCode[0] = value;
+	var S = $("#S").combobox('getValue');
+	console.log(S);
+	var T = $("#T").combobox('getValue');
+	var BT = $("#BT").datebox('getValue');
+	var ET = $("#ET").datebox('getValue');
+
+	$('#Audit_Data_List').datagrid('reload', {
+		'S': S,
+		'T': T,
+		'BT': BT,
+		'ET': ET,
+		'PCS': ProjectCode
+	});
+}
+	//查看工艺明细
+	function showActiveitemSource(pc,aci,acii,acn) {
+		$('#Audit_ActiveItemSource_dlg_search').dialog('open');
+		var url = '<?php echo U("Public/queryActiveitemSource")?>&pc=' + pc + "&aci=" + aci + "&acii=" + acii + "&acn=" + encodeURIComponent(acn);
+		$('#Audit_ActiveItemSource_dlg_search').dialog('refresh', url);
+	}
+function  auditRecNotPass() {
+	var re = $('#Audit_Data_List').datagrid('getSelections');
+	var isContainTz = false;
+	var isContainM1 = false;
+	for (i = 0; i < re.length; i++) {
+		if (re[i]["status"] != 0) {
+			$.messager.alert("消息", "只能对申请中的数据进行操作", "info");
+			return;
+		}
+		if (re[i]["rtype"] == "M1") {
+			isContainM1 = true;
+		}
+		if (re[i]["rtype"] == "MC" || re[i]["rtype"] == "MD") {
+			if (re[i]["status"] == 0) {
+				isContainTz = true;
+			}
+		}
+		if (isContainTz && isContainM1) {
+			$.messager.alert("消息", "请将调账处理完成后再进行劳务费的操作", "info");
+			return;
+		}
+	}
+	$('#Audit_audit_dlg').dialog('open');
+}
+function  exportCsv() {
+	islogin();
+	var params = $("#Audit_Data_List").datagrid('options').queryParams;
+
+	var url = '<?php echo U("Audit/exportcsv");?>';
+	if (params["S"])
+		url = url + "&S=" + params["S"];
+	if (params["T"])
+		url = url + "&T=" + params["T"];
+	if (params["BT"])
+		url = url + "&BT=" + params["BT"];
+	if (params["ET"])
+		url = url + "&ET=" + params["ET"];
+	if (params["PCS"])
+		url = url + "&PCS=" + params["PCS"];
+	if ($("#Audit_Data_List").datagrid('options').pageNumber)
+		url = url + "&page=" + $("#Audit_Data_List").datagrid('options').pageNumber;
+	if ($("#Audit_Data_List").datagrid('options').pageSize)
+		url = url + "&rows=" + $("#Audit_Data_List").datagrid('options').pageSize;
+	//console.log(url);
+	window.open(url);
+}
+// 但行操作：审核不通过（打回） ，点击打回后，先选中该行，再弹出打回对话框
+function auditRecNotPassSingle(rowIndex) {
+	islogin();
+	var dataRows = $('#Audit_Data_List').datagrid("getRows");
+	var curRow = dataRows[rowIndex];
+	if (curRow["rtype"] == "M1") {
+		var isContainTz = false;
+		var i = rowIndex - 1;
+		while (i >= 0) {
+			//往前查调账单据
+			var row = dataRows[i];
+			if (row.projectCode == curRow.projectCode && row.activeItemCode == curRow.activeItemCode) {
+				//同一个工序下的数据
+				if (row.rtype == "MC" || row.rtype == "MD") {
+					if (row.status == 0) {
+						isContainTz = true;
+						break;
+					}
+				}
+			}
+			i--;
+		}
+		var i = rowIndex + 1;
+		while (i < dataRows.length) {
+			//往后查调账单据
+			var row = dataRows[i];
+			if (row.projectCode == curRow.projectCode && row.activeItemCode == curRow.activeItemCode) {
+				//同一个工序下的数据
+				if (row.rtype == "MC" || row.rtype == "MD") {
+					if (row.status == 0) {
+						isContainTz = true;
+						break;
+					}
+				}
+			}
+			i++;
+		}
+		if (isContainTz) {
+			$.messager.alert("消息", "请将调账处理完成后再进行劳务费的操作", "info");
+			return;
+		}
+	}
+	$('#Audit_audit_dlg').dialog('open');
+}
+
+// 单行操作：审核通过，点击审核通过后，先选中该行，再调用审核通过方法
+function auditRecPassSingle(rowIndex){
+	islogin();
+	var dataRows = $('#Audit_Data_List').datagrid("getRows");
+	var curRow = dataRows[rowIndex];
+	if(curRow["rtype"] == "M1") {
+		var isContainTz = false;
+		var i = rowIndex - 1;
+		while (i >= 0) {
+			//往前查调账单据
+			var row = dataRows[i];
+			i--;
+			if (row.projectCode == curRow.projectCode && row.activeItemCode == curRow.activeItemCode) {
+				//同一个工序下的数据
+				if (row.rtype == "MC" || row.rtype == "MD") {
+					if (row.status == 0) {
+						isContainTz = true;
+						break;
+					}
+				}
+			} else {
+				continue;
+			}
+		}
+		var i = rowIndex + 1;
+		while (i < dataRows.length) {
+			//往后查调账单据
+			var row = dataRows[i];
+			i++;
+			if (row.projectCode == curRow.projectCode && row.activeItemCode == curRow.activeItemCode) {
+				//同一个工序下的数据
+				if (row.rtype == "MC" || row.rtype == "MD") {
+					if (row.status == 0) {
+						isContainTz = true;
+						break;
+					}
+				}
+			} else {
+				continue;
+			}
+		}
+		if (isContainTz) {
+			$.messager.alert("消息", "请将调账处理完成后再进行劳务费的操作", "info");
+			return;
+		}
+	}
+	var re = new Array(1);
+	re[0] = curRow;
+	var s  = 'F';
+	$.ajax({
+		type: 'POST',
+		url: "<?php echo U('Audit/auditRec');?>",
+		data: {RE:re,S:s},
+		dataType: 'json',
+		success: function(status) {
+			if (status == 200) {
+				$.messager.alert('消息', '操作成功!', 'info');
+				reload_Audit_data_list();
+			} else if (status == 810) {
+				$.messager.alert('消息', '请将调账处理完成后再进行劳务费的操作!', 'error');
+			} else {
+				$.messager.alert('消息', '操作失败!', 'error');
+			}
+		}
+	});
+	//auditRecPass();
+}
+
+// 审核通过 
+function auditRecPass() {
+	islogin();
+	var re = $('#Audit_Data_List').datagrid('getSelections');
+
+	var isContainTz = false;
+	var isContainM1 = false;
+	for (i = 0; i < re.length; i++) {
+		if (re[i]["status"] != 0) {
+			$.messager.alert("消息", "只能对申请中的数据进行操作", "info");
+			return;
+		}
+		if (re[i]["rtype"] == "M1") {
+			isContainM1 = true;
+		}
+		if (re[i]["rtype"] == "MC" || re[i]["rtype"] == "MD") {
+			if (re[i]["status"] == 0)
+				isContainTz = true;
+		}
+		if (isContainTz && isContainM1) {
+			$.messager.alert("消息", "请将调账处理完成后再进行劳务费的操作", "info");
+			return;
+		}
+	}
+
+	var s = 'F';
+	if (re.length == 0) {
+		$.messager.alert('消息', '您未选择任何数据!', 'info');
+		return false;
+	}
+
+	$.ajax({
+		type: 'POST',
+		url: "<?php echo U('Audit/auditRec');?>",
+		data: {RE: re, S: s},
+		dataType: 'json',
+		success: function (status) {
+			if (status == 200) {
+				$.messager.alert('消息', '操作成功!', 'info');
+				reload_Audit_data_list();
+			} else if (status == 810) {
+				$.messager.alert('消息', '请将调账处理完成后再进行劳务费的操作!', 'error');
+			} else {
+				$.messager.alert('消息', '操作失败!', 'error');
+			}
+		}
+	});
+}
+
+// 底部统计
+function tongji() {
+	islogin();
+	var re = $('#Audit_Data_List').datagrid('getSelections');
+	var number = 0;
+	var money = 0;
+	if (re.length <= 0) {
+		re = $('#Audit_Data_List').datagrid('getRows');
+	}
+	var projectCodes = new Array();
+	for (var i = 0; i < re.length; i++) {
+		money += re[i].money;
+		if (projectCodes.indexOf(re[i].projectCode) == -1) {
+			projectCodes.push(re[i].projectCode);
+		}
+	}
+	number = projectCodes.length;
+
+	$('#tongji').html ('工程数量：' + number + '  总价：' + money.toFixed(2));
+}
+
+$(function() {
+	islogin();
+	$("#Audit_Data_List").datagrid({
+		url: "{:U('Audit/index')}",
+		fit: true,
+		striped: true,
+		border: false,
+		pagination: true,
+		pageSize: 50,
+		pageList: [50, 100,200,300],
+		pageNumber: 1,
+		//sortName: 'recordCode',
+		//sortOrder: 'desc',
+		toolbar: '#Audit_Bar',
+		singleSelect: false,
+		remoteSort: false,
+		rownumbers: true,
+		columns: [[
+			//常福鹏 160129
+			{field: 'ck', title: '选择', checkbox: true},
+			{field: 'projectCode', title: '工程编号', width: 80, sortable: true},
+			{field : 'projectName',title : '装修地址',width : 170,sortable:true},
+			{field : 'owner',title : '客户姓名',width : 62,sortable:true},
+			{field : 'productType',title : '客户版本号',width : 90,sortable:true},
+			{field: 'activeItemName', title: '工序名称', width: 180, sortable: true},
+			{field: '_rtype', title: '类型', width: 80, sortable: true},
+			{field: 'projectUserTel', title: '装修管家电话', width: 110, sortable: true},
+			{field: 'projectUserCode', title: '装修管家', width: 70, sortable: true},
+			{field: 'userCode', title: '工人编号', width: 110, sortable: true},
+			{field: 'userName', title: '工人名称', width: 70, sortable: true},
+			{
+				field: 'money', title: '金额', width: 80, align: 'right', sortable: true, formatter: function (value) {
+				return value.toFixed(2);
+			}
+			},
+			{field: '_status', title: '状态', width: 80, sortable: true},
+			{
+				field: 'op', title: '操作', width: 185, formatter: function (value, rowData, rowIndex) {
+				if (rowData.status == "0") {
+					if (rowData.rtype == "M1") {
+						return "<a href='#' onclick='auditRecPassSingle(" + rowIndex + ");'>审核通过</a>|" +
+								"<a href='#' onclick='auditRecNotPassSingle(" + rowIndex + ")'>打回</a>|" +
+								"<a href='#' onclick='TDialog(" + rowData.projectCode + "," + rowData.activeItemCode + ");'>验收单</a>|" +
+								"<a href='#' onclick='showActiveitemSource(" + rowData.projectCode + ",&quot;" + rowData.activeItemCode + "&quot;," + rowData.activeItemIns + ",&quot;" + rowData.activeItemName + "&quot;);'>工艺</a>";
+					} else {
+						return "<a href='#' onclick='auditRecPassSingle(" + rowIndex + ");'>审核通过</a>|" +
+								"<a href='#' onclick='auditRecNotPassSingle(" + rowIndex + ")'>打回</a>|" +
+								"<a href='#' onclick='TDialog(" + rowData.projectCode + "," + rowData.activeItemCode + ");'>验收单</a>|" +
+								"<a href='#' onclick='showActiveitemSource(" + rowData.projectCode + ",&quot;" + rowData.activeItemCode + "&quot;," + rowData.activeItemIns + ",&quot;" + rowData.activeItemName + "&quot;);'>工艺</a>";
+					}
+				} else {
+					return "<a href='#' onclick='TDialog(" + rowData.projectCode + "," + rowData.activeItemCode + ");'>验收单</a>|" +
+							"<a href='#' onclick='showActiveitemSource(" + rowData.projectCode + ",&quot;" + rowData.activeItemCode + "&quot;," + rowData.activeItemIns + ",&quot;" + rowData.activeItemName + "&quot;);'>工艺</a>";
+				}
+			}
+			},
+			{field: 'remark', title: '描述', width: 120, sortable: true,formatter: function (value) {
+				return '<p title='+value+'>'+value+'</p>'
+			}},
+			{field: 'recordCode', title: '单据编号', width: 170, sortable: true},
+			{field: 'sbegin', title: '生成时间', width: 170, sortable: true},
+			{field : 'handleUserCode',title : '审核人',width : 70,sortable:true},
+			{field : 'handlerDate',title : '审核时间',width : 150,sortable:true},
+		]],
+		onSelect: function (index, rowdata) {
+			tongji();
+		},
+		onUnselect: function (index, rowdata) {
+			tongji();
+		},
+		onLoadSuccess: function (data) {
+			tongji();
+			var beginindex=0;
+			var oldValue='';
+			var re = $('#Audit_Data_List').datagrid('getRows');
+			for(var i=0;i<re.length;i++) {
+				var newValue = re[i].projectCode;
+				if (oldValue == '') {
+					oldValue = newValue;
+					continue;
+				}
+
+				if (oldValue == newValue) {
+					continue;
+				} else {
+					if (i - beginindex>=2) {
+						$(this).datagrid('mergeCells', {
+							index: beginindex,
+							field: 'projectCode',
+							rowspan: i - beginindex
+						});
+						$(this).datagrid('mergeCells', {
+							index: beginindex,
+							field: 'projectName',
+							rowspan: i - beginindex
+						});
+						$(this).datagrid('mergeCells', {
+							index: beginindex,
+							field: 'owner',
+							rowspan: i - beginindex
+						});
+						$(this).datagrid('mergeCells', {
+							index: beginindex,
+							field: 'productType',
+							rowspan: i - beginindex
+						});
+						MergeActiveItem(beginindex,i);//合并工序项目
+					}
+					beginindex = i;
+					oldValue = newValue;
+				}
+			}
+			if(i-beginindex>=2) {
+				$(this).datagrid('mergeCells', {
+					index: beginindex,
+					field: 'projectCode',
+					rowspan: i - beginindex
+				});
+				$(this).datagrid('mergeCells', {
+					index: beginindex,
+					field: 'projectName',
+					rowspan: i - beginindex
+				});
+				$(this).datagrid('mergeCells', {
+					index: beginindex,
+					field: 'owner',
+					rowspan: i - beginindex
+				});
+				$(this).datagrid('mergeCells', {
+					index: beginindex,
+					field: 'productType',
+					rowspan: i - beginindex
+				});
+				MergeActiveItem(beginindex,i);//合并工序项目
+			}
+		},
+		onSelectAll: function (rows) {
+			tongji();
+		},
+		onUnselectAll: function (rows) {
+			tongji();
+		}
+	});
+	function MergeActiveItem(rowindex,rowend) {
+		islogin();
+		var beginindex = rowindex;
+		var oldValue = '';
+		var re = $('#Audit_Data_List').datagrid('getRows');
+		for (var i = rowindex; i < rowend; i++) {
+			var newValue = re[i].activeItemName;
+			if (oldValue == '') {
+				oldValue = newValue;
+				continue;
+			}
+
+			if (oldValue == newValue) {
+				continue;
+			} else {
+				if (i - beginindex >= 2) {
+					$("#Audit_Data_List").datagrid('mergeCells', {
+						index: beginindex,
+						field: 'activeItemName',
+						rowspan: i - beginindex
+					});
+				}
+				beginindex = i;
+				oldValue = newValue;
+			}
+		}if (i - beginindex >= 2) {
+			$("#Audit_Data_List").datagrid('mergeCells', {
+				index: beginindex,
+				field: 'activeItemName',
+				rowspan: i - beginindex
+			});
+		}
+	}
+});
+function TDialog(pc,activeItemCode) {
+	islogin();
+	$('#dd').dialog('open');
+	var url = '<?php echo U("Public/acceptance")?>&pc=' + pc + '&activeItemCode=' + activeItemCode;
+	$('#dd').dialog('refresh', url);
+}
+function toggleselectall(datagridID) {
+	var rows = $("#" + datagridID).datagrid("getRows");
+	for (var i = 0; i < rows.length; i++) {
+		if (rows[i].status == "0" || rows[i].status == '1') {
+			$("#" + datagridID).datagrid("selectRow", i);
+		}
+	}
+}
+</script>

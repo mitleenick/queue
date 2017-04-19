@@ -1,0 +1,235 @@
+<div id="WorkStatistics_Bar" class="Bar_tools">
+
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="seachProjectDialog()">工程查询条件</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#WorkStatistics_audit_dlg_date').dialog('open')">选择时间</a>
+	<a class='easyui-linkbutton' href='JavaScript:void(0);' onclick="statisticsProject();"><span>统计</span></a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="exportcsv(this,'WorkStatistics_Data_List')" download="工程统计.csv">导出</a>
+</div>
+
+<!-- 数据列表 -->
+<table id="WorkStatistics_Data_List"></table>
+<div class="loading">加载中...</div>
+<!-- 工程查询条件 -->
+<div id="WorkStatistics_audit_dlg_search" class="easyui-dialog" title="更多工程查询条件" style="width:450px;height:400px;padding:10px" 
+	data-options="
+		iconCls: 'icon-save',
+		closed: true,
+		buttons: [{
+			text:'确定',
+			iconCls:'iconfont icon-ok',
+			handler:function(){
+				$('#WorkStatistics_audit_dlg_search').dialog('close');
+				reload_WorkStatistics_data_list(getReturn());
+			}
+		}]
+	">
+</div>
+
+<!-- 选择时间 -->
+<div id="WorkStatistics_audit_dlg_date" class="easyui-dialog" title="选择时间" style="width:550px;height:140px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						$('#WorkStatistics_audit_dlg_date').dialog('close');
+						reload_WorkStatistics_data_list();
+					}
+				}]
+			">
+	<table>
+		<tr>
+			<td>开始时间:</td>
+			<td>
+				<input class="easyui-datebox" id="beginDate" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-d', time() - 86400 * 90);?>">
+			</td>
+			<td>结束时间:</td>
+			<td>
+				<input class="easyui-datebox" id="endDate" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-t' , time());?>">
+			</td>
+		</tr>
+	</table>
+	<div id="cc" class="easyui-calendar"></div>
+</div>
+<script type="text/javascript">
+	function seachProjectDialog() {
+		islogin();
+		$('#WorkStatistics_audit_dlg_search').dialog('open');
+		var url = '<?php echo U("Public/projectSeach")?>';
+		$('#WorkStatistics_audit_dlg_search').dialog('refresh', url);
+	}
+// 重加载 
+function reload_WorkStatistics_data_list(value) {
+	islogin();
+	var ProjectCode = new Array(1);
+	ProjectCode[0] = value;
+	$('#WorkStatistics_Data_List').datagrid('reload', {
+		'beginDate': $("#beginDate").datebox('getValue'),
+		'endDate': $("#endDate").datebox('getValue'),
+		'projectCodes': ProjectCode
+	});
+}
+
+$(function() {
+	islogin();
+	$("#WorkStatistics_Data_List").datagrid({
+		url: "{:U('WorkStatistics/index')}",
+		fit: true,
+		striped: true,
+		border: false,
+		pagination: false,
+		pageSize: 20,
+		pageList: [10, 20, 50],
+		pageNumber: 1,
+		sortName: 'resourcecode',
+		sortOrder: 'desc',
+		toolbar: '#WorkStatistics_Bar',
+		singleSelect: false,
+		rownumbers: true,
+		columns: [[
+			{field: 'projectCode', title: '工程编号', width: 80, sortable: true},
+			{field: 'projectName', title: '工程名称', width: 100, sortable: true},
+			{field: 'owner', title: '客户姓名', width: 100, sortable: true},
+			{
+				field: 'status', title: '工程状态', width: 80, sortable: true, formatter: function (value) {
+				if (value == '1') {
+					return "运行中";
+				} else if (value == 'F') {
+					return "完成";
+				} else {
+					return "未知";
+				}
+			}
+			},
+			{field: 'beginDate', title: '开始时间', width: 110, sortable: true},
+			{field: 'endDate', title: '结束时间', width: 110, sortable: true},
+			{
+				field: 'U1', title: '劳务费用', width: 100, sortable: true, align: "right", formatter: function (value) {
+				if (value != null) {
+					return value.toFixed(2);
+				}
+			}
+			},
+			{
+				field: 'U2', title: '加薪', width: 100, sortable: true, align: "right", formatter: function (value) {
+				if (value != null) {
+					return value.toFixed(2);
+				}
+			}
+			},
+			{
+				field: 'U3', title: '扣薪罚款', width: 100, sortable: true, align: "right", formatter: function (value) {
+				if (value != null) {
+					return value.toFixed(2);
+				}
+			}
+			},
+			{
+				field: 'P1', title: '供应商费用', width: 100, sortable: true, align: "right", formatter: function (value) {
+				if (value != null) {
+					return value.toFixed(2);
+				}
+			}
+			},
+			{
+				field: 'P2', title: '余料退款', width: 100, sortable: true, align: "right", formatter: function (value) {
+				if (value != null) {
+					return value.toFixed(2);
+				}
+			}
+			},
+			{
+				field: 'ExactActiveCount',
+				title: '准时工序',
+				width: 100,
+				sortable: true,
+				align: "right",
+				formatter: function (value) {
+					if (value != null) {
+						return value.toFixed(0);
+					}
+				}
+			},
+			{
+				field: 'DelyActiveCount',
+				title: '延时工序',
+				width: 100,
+				sortable: true,
+				align: "right",
+				formatter: function (value) {
+					if (value != null) {
+						return value.toFixed(0);
+					}
+				}
+			},
+			{
+				field: 'RecordCount',
+				title: '单据数量',
+				width: 100,
+				sortable: true,
+				align: "right",
+				formatter: function (value) {
+					if (value != null) {
+						return value.toFixed(0);
+					}
+				}
+			}
+		]]
+	});
+});
+///查询工程统计
+function statisticsProject()
+{
+	islogin();
+	var rows =$("#WorkStatistics_Data_List").datagrid('getRows');
+	var b= rows.length;
+	if (b==0){return;}
+	var b1=0;
+	$(".loading").show();
+	for(var i=0;i<rows.length;i++) {
+		var obj = rows[i];
+		var pc = obj.projectCode;
+		$.ajax({
+			type: 'POST',
+			url: "<?php echo U('WorkStatistics/statisticsProject');?>",
+			//async:false,
+			data: {PC:pc},
+			dataType: 'json',
+			success: function (data) {
+				b1++;
+				var returnpc = data.PC;
+				var _obj = data.db;
+				if (returnpc.length > 0) {
+					for(var j=0;j<rows.length;j++){
+						var row = rows[j];
+						if(row.projectCode==returnpc) {
+							$('#WorkStatistics_Data_List').datagrid('updateRow', {
+								index: j,
+								row: {
+									U1: _obj.U1,
+									U2: _obj.U2,
+									U3: _obj.U3,
+									P1: _obj.P1,
+									P2: _obj.P2,
+									ExactActiveCount: _obj.ExactActiveCount,
+									DelyActiveCount: _obj.DelyActiveCount,
+									RecordCount: _obj.RecordCount,
+								}
+							});
+							break;
+						}
+					}
+				}
+				if(b1==b)
+				{
+					$(".loading").hide();
+				}
+			},
+			error : function (){
+			}
+		});
+	}
+}
+</script>

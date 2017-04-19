@@ -1,0 +1,98 @@
+<table style="text-align: left">
+    <tr>
+        <td width="140">工序项编号：</td>
+        <td width="140"><strong><label id="curActiveitemCode"></label></strong></td>
+        <td  width="140">工序项名称：</td>
+        <td><strong><label id="curActivtitemName" ></label></strong></td>
+
+    </tr>
+    <tr>
+        <td>预计劳务费：</td>
+        <td><strong><label id="curSumMoneyPlan"></label></strong></td>
+        <td>实际劳务费：</td>
+        <td><strong><label id="curSumMoney"></label></strong></td>
+    </tr>
+</table>
+<br/>
+<!-- 数据列表 -->
+<table id="ActiveitemSource_Data_List" style="height: 150px;width: 450px;"></table>
+<script>
+    $("#ActiveitemSource_Data_List").datagrid({
+        fit: true,
+        fitColumns: true,
+        striped: true,
+        border: false,
+        pagination: false,
+        toolbar: false,
+        rownumbers:true,
+        singleSelect: true,
+        columns: [[
+            //{field: 'activeitemCode', title: '工序项编号', width: 100, sortable: true},
+            //{field: 'activeitemName', title: '工序项名称', width: 200, sortable: true},
+            {field: 'sourceName', title: '工艺项目', width: 250, sortable: true,formatter:function(value){
+                return '<p title='+value+'>'+value+'</p>';
+            }},
+            {
+                field: 'budNumber', title: '计划数量', width: 120, sortable: true, formatter: function (value) {
+                if (value)
+                    return value.toFixed(4);
+                else
+                    return 0;
+            }
+            },{
+                field: 'usedNumber', title: '实际数量', width: 120, sortable: true, formatter: function (value) {
+                    if (value)
+                        return value.toFixed(4);
+                    else
+                        return 0;
+                }
+            },
+            {field: 'sourceUnit', title: '单位', width: 80, sortable: true},
+            {field: 'price', title: '单价', width: 100, sortable: true},
+            {
+                field: 'money', title: '计划总价', width: 120, sortable: true, formatter: function (value) {
+                if (value)
+                    return value.toFixed(4);
+                else
+                    return 0;
+            }
+            },
+            {
+                field: 'cost', title: '实际总价', width: 120, sortable: true, formatter: function (value) {
+                    if (value)
+                        return value.toFixed(4);
+                    else
+                        return 0;
+                }
+            }
+        ]],
+        onLoadSuccess: function (data) {
+        }
+    });
+
+    $('#ActiveitemSource_Data_List').datagrid({
+        rowStyler: function (index, row) {
+            if (row.cost != row.money) {
+                return 'background-color:#FFDE47;color:blue;font-weight:bold;';
+            }
+        }
+    });
+
+    var source = $.parseJSON('<?PHP echo $data?>');
+    $("#curActiveitemCode").html("<?PHP echo $aci ?>");
+    $("#curActivtitemName").html("<?PHP echo $acn ?>");
+    var moneySun= 0,moneyCosSun=0;
+    for(var i= 0;i<source.length;i++) {
+        moneySun+=source[i].money;
+        moneyCosSun+=source[i].cost;
+    }
+    if(moneySun)
+        $("#curSumMoneyPlan").html(moneySun.toFixed(2));
+    else
+        $("#curSumMoneyPlan").html(0);
+    if(moneyCosSun)
+        $("#curSumMoney").html(moneyCosSun.toFixed(2));
+    else
+        $("#curSumMoney").html(0);
+    $('#ActiveitemSource_Data_List').datagrid('loadData',source);
+</script>

@@ -1,0 +1,470 @@
+<style type="text/css">
+	.black_overlay{
+	   display: none; 
+	   position: absolute;  
+	   top: 18%;  
+	   left: 25%;  
+	   width: 38%;  
+	   height: 59%;  
+	   background-color: #b2b2b2;  
+	   z-index:1001;  
+	   -moz-opacity: 0.8;  
+	   opacity:.80;  
+	   filter: alpha(opacity=80);  
+	} 
+	.white_content {
+	    display: none;  
+	    position: absolute; 
+	    top: 18%; 
+	    left: 25%; 
+	    width: 37%; 
+	    height: 60%; 
+	    padding: 16px;
+	    border: 2px solid orange; 
+	    background-color: white; 
+	    z-index:1002;
+	    overflow: auto;
+	}  
+</style>
+<div id="Work_Bar" class="Bar_tools">
+	<!--<a class='easyui-linkbutton' href='JavaScript:void(0);' data-options="iconCls:'iconfont icon-viewlist',plain:true" onclick="reload_Work_data_list();"><span>刷新</span></a>-->
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="seachProjectDialog()">工程查询条件</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#Work_audit_dlg_date').dialog('open')">选择时间</a>
+	<select class="easyui-combobox" name="S" id="S" data-options="onSelect:function(){ reload_Work_data_list(); }" style="width: 100px;">
+		<option value="-1">工程状态</option>
+		<option value="1">运行中</option>
+		<option value="D">转售后</option>
+		<option value="E">终止</option> 
+		<option value="F">完成</option>
+	</select>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="getActiveItemInStatus();">查看工序状态</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="exportcsv(this,'Work_Data_List',['projectCode'])" download="工程数据.csv">导出</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="auditExtract()">删除测试数据</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="uploadContract()">上传合同</a>
+</div>
+
+<!-- 数据列表 -->
+<table id="Work_Data_List"></table>
+<!-- 工程查询条件 -->
+<div id="Work_audit_dlg_search" class="easyui-dialog" title="更多工程查询条件" style="width:450px;height:400px;padding:10px" 
+	data-options="
+		iconCls: 'icon-save',
+		closed: true,
+		buttons: [{
+			text:'确定',
+			iconCls:'iconfont icon-ok',
+			handler:function(){
+				reload_Work_data_list(getReturn());
+			}
+		}]
+	">
+</div>
+
+<!-- 选择时间 -->
+<div id="Work_audit_dlg_date" class="easyui-dialog" title="选择时间" style="width:550px;height:140px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						$('#Work_audit_dlg_date').dialog('close');
+						reload_Work_data_list();
+					}
+				}]
+			">
+	<table>
+		<tr>
+			<td>开始时间:</td>
+			<td>
+				<input class="easyui-datebox" id="BT" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-d', time() - 86400 * 60);?>">
+			</td>
+			<td>结束时间:</td>
+			<td>
+				<input class="easyui-datebox" id="ET" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-d', time()+86400*60);?>">
+			</td>
+		</tr>
+	</table>
+	<div id="cc" class="easyui-calendar"></div>
+</div>
+
+<div class="loading">加载中...</div>
+<!-- 百度地图定位 -->
+<div id="dlg_baiDuMap" class="easyui-dialog" title="查看定位" style="width:550px;height:550px;padding:10px"
+	 data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						$('#allmap').html('');
+						$('#dlg_baiDuMap').dialog('close');
+					}
+				}]
+			">
+	<div id="allmap" style="width: 100%;height: 100%;overflow: hidden;margin:0;font-family:'微软雅黑';"></div>
+</div>
+<!-- 上传用户合同 -->
+<div id="upContract" class="white_content">
+<p>上传用户合同：</p>
+<form id="contractForm" method="post" action="<?php echo U('Work/upContract');?>" onSubmit="return check();"  enctype="multipart/form-data" >
+<p>合同照片一：<input type="file" name="img1" id="img1" /></p>
+<p>合同照片二：<input type="file" name="img2" id="img2" /></p>
+<p>合同照片三：<input type="file" name="img3" id="img3" /></p>
+<p style="margin-top:40px"><button id="upImg">上传照片</button></p>
+<input type="hidden" name="projectId" id="projectId" value=""/>
+</form>
+<p align="right" style="margin-top:30px"><button type="button" onClick="closeWindow()"> 关闭窗口</button></p>
+</div>
+<div id="fade" class="black_overlay"></div>
+
+
+<!-- 显示上传的合同 -->
+<div id="showContract" class="white_content">
+<p>用户合同：</p>
+<p>合同照片一：<img id="showimg1" width=400 src="" /></p>
+<p>合同照片二：<img id="showimg2" width=400 src="" /></p>
+<p>合同照片三：<img id="showimg3" width=400 src="" /></p>
+
+<p align="right" style="margin-top:30px"><button type="button" onClick="closeWindow2()"> 关闭窗口</button></p>
+</div>
+<div id="fade_show" class="black_overlay"></div>
+
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=0B1fa6684afd9b48beb6013bb145a2e2"></script>
+
+<script type="text/javascript">
+
+
+
+//查看合同
+function showpic(projectCode){
+	$("#showContract").show();
+	$("#fade_show").show();
+	$.ajax({
+		type: 'POST',
+		url: "<?php echo U('Work/getContract');?>",
+		//async:false,
+		data: {ProjectCode: projectCode},
+		dataType: 'json',
+		success: function (data) {
+			$("#showimg1").attr('src',data.img1);
+			$("#showimg2").attr('src',data.img2);
+			$("#showimg3").attr('src',data.img3);
+			console.log(data)
+		},
+		error: function () {
+			
+		}
+	});	
+}
+function closeWindow2(){
+	$("#showContract").hide();
+	$("#fade_show").hide();
+}
+
+function closeWindow(){
+	$("#upContract").hide();
+	$("#fade").hide();
+}
+
+function check(){
+	if($("#img1").val()==''&&$("#img2").val()==''&&$("#img3").val()==''){
+		alert('请选择上传文件');
+		return false;
+	}
+}
+function seachProjectDialog() {
+	$('#Work_audit_dlg_search').dialog('open');
+	var url = '<?php echo U("Public/projectSeach")?>';
+	$('#Work_audit_dlg_search').dialog('refresh', url);
+}
+
+//上传用户合同
+function uploadContract(){
+	var re = $('#Work_Data_List').datagrid('getSelections');
+	if(re==null||re==''){
+		alert('请选择一个工程')
+		exit;
+	}
+	if(re.length>1){
+		alert('请只选择一个用户上传合同');
+		exit;
+	}
+	$("#upContract").show();
+	$("#fade").show();
+	$("#projectId").val(re[0].projectCode);
+}
+
+
+
+function auditExtract(value){
+	islogin();
+	var ProjectCode = new Array(1);
+	ProjectCode[0]=value;
+    var strstr='';
+
+	var re = $('#Work_Data_List').datagrid('getSelections');
+    for(i=0;i<re.length;i++) {
+    	strstr=strstr+re[i]["projectCode"]+",";	
+	}
+	// var ddate = {};
+	// for(var j=0;j<Param.length;j++)
+	// {
+	//     ddate[j]=Param[j];
+	// }
+    console.log(strstr);
+	$('#Work_Data_List').datagrid('reload', {
+		'delOrderId':strstr,
+		'beginDate': $("#BT").datebox('getValue'),
+		'endDate': $("#ET").datebox('getValue'),
+		'projectCodes':ProjectCode,
+	});
+}
+// 重加载 
+function reload_Work_data_list(value) {
+	islogin();
+	var ProjectCode = new Array(1);
+	ProjectCode[0]=value;
+	$('#Work_audit_dlg_search').dialog('close');
+	$('#Work_Data_List').datagrid('reload', {
+		'S': $("#S").combobox('getValue'),
+		'beginDate': $("#BT").datebox('getValue'),
+		'endDate': $("#ET").datebox('getValue'),
+		'projectCodes':ProjectCode,
+	});
+}
+
+// 打开百度地图定位
+function openBaiDuMap(lo,la){
+	console.log(lo);
+	console.log(la);
+
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point( lo,  la);
+	map.centerAndZoom(point, 15);
+
+	var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+	var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+	var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
+	map.addControl(top_left_control);
+	map.addControl(top_left_navigation);
+	map.addControl(top_right_navigation);
+
+	//var marker = new BMap.Marker(new BMap.Point( lo,  la)); // 创建点
+
+	//map.addOverlay(marker);
+
+	$('#dlg_baiDuMap').dialog('open');
+}
+
+$(function() {
+	$("#Work_Data_List").datagrid({
+		url: "{:U('Work/index')}",
+		fit: true,
+		striped: true,
+		border: false,
+		pagination: true,
+		pageSize: 50,
+		pageList: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+		pageNumber: 1,
+		sortName: 'projectCode',
+		sortOrder: 'desc',
+		toolbar: '#Work_Bar',
+		singleSelect: false,
+		rownumbers: true,
+		remoteSort: false,
+		columns: [[
+		    {field : 'ck',title : '选择',checkbox:true},
+			{
+				field: 'projectCode',
+				title: '工程编号',
+				width: 80,
+				sortable: true,
+				resizable: true,
+				align: "right",
+				formatter: function (value, rowData, rowIndex) {
+					return "<a  target='_blank' href='index.php?m=Admin&c=Procedure&a=index&projectCode=" + value + "'>" + value + "</a>";
+				}
+			},
+			{field: 'cityName', title: '所属城市', width: 80, sortable: true, resizable: true},
+			{field: 'regionName', title: '所属区域', width: 80, sortable: true, resizable: true},
+			{field: 'owner', title: '客户姓名', width: 80, sortable: true, resizable: true},
+			{field: 'telNumber', title: '联系电话', width: 110, sortable: true, resizable: true},
+			{field: 'constructionTemplateName', title: '期数', width: 100, sortable: true, resizable: true},
+			{field: 'productType', title: '客户类型', width: 130, sortable: true, resizable: true},
+			{field: 'projectName', title: '装修地址', width: 200, sortable: true, resizable: true},
+			{
+				field: 'area',
+				title: '建筑面积(㎡)',
+				width: 90,
+				sortable: true,
+				align: 'right',
+				resizable: true,
+				formatter: function (value) {
+					return value.toFixed(2);
+				}
+			},
+			{
+				field: 'status',
+				title: '工程状态',
+				width: 70,
+				sortable: true,
+				resizable: true,
+				formatter: function (value) {
+					if (value == "0") {
+						return "接入待启动";
+					} else if (value == '1') {
+						return "运行中";
+					} else if (value == 'F') {
+						return "完成";
+					} else if(value=="E"){
+						return "终止";
+					}else {
+						return "未知";
+					}
+				}
+			},
+			{field: 'activeitemname', title: '工序', width: 100, sortable: true, resizable: true},
+			{field: 'activeitemnamestatus', title: '施工状态', width: 100, sortable: true, resizable: true},
+			{field: 'projectManagerCode', title: '装修管家', width: 80, sortable: true, resizable: true},
+			{field: 'regionManager', title: '区域经理', width: 80, sortable: true, resizable: true},
+			{field: 'projectTel', title: '装修管家电话', width: 110, sortable: true, resizable: true},
+			{field: 'budgeter', title: '预算员', width: 110, sortable: true, resizable: true},
+			{field: 'usercode', title: '工人编号', width: 110, sortable: true, resizable: true},
+			{field: 'username', title: '工人姓名', width: 110, sortable: true, resizable: true},
+
+			{field: 'beginDate', title: '计划开始时间', width: 100, sortable: true},
+			{field: 'beginReality', title: '实际开始时间', width: 100, sortable: true},
+			{field: 'endDate', title: '计划完工时间', width: 100, sortable: true},
+			{field: 'endReality', title: '实际完工时间', width: 100, sortable: true},
+			{field: 'reserveId', title: '客户服务编号', width: 100, sortable: true, resizable: true},
+			{
+				field: 'loaction',
+				title: '位置查看',
+				width: 100,
+				sortable: false,
+				resizable: true,
+				formatter: function (value, rowData, rowIndex) {
+					if (rowData.lo != 0 && rowData.la != 0) {
+						var url = '<?php echo U("Work/map")?>' + "&lo=" + rowData.lo + "&la=" + rowData.la + "&projectCode=" + rowData.projectCode + "&projectName=" + rowData.projectName;
+						return "<a href='" + url + "' target='_blank' >地图查看位置</a>";
+					} else {
+						return "<p style='color:#D0D0D0;'>地图查看位置</p>";
+					}
+				}
+			},
+			{field: 'remark', title: '描述', width: 100, sortable: true},
+			{field: 'constructionTemplateId', title: '流程版本号', width: 100, sortable: true, resizable: true},
+			{field: 'showpic', title: '查看合同', width: 100, sortable: true},
+			//{field : 'year',title : '年份',width : 50,sortable:true,resizable:true},
+			//{field : 'balcony',title : '阳台',width : 90,sortable:true,resizable:true},
+			//{field : 'roomNum',title : '居室',width : 40,sortable:true,resizable:true},
+			//{field : 'bedRoomNum',title : '卧室',width : 40,sortable:true,resizable:true},
+			//{field : 'kitchenNum',title : '厨房',width : 40,sortable:true,resizable:true},
+			//{field : 'toiletNum',title : '卫生间',width : 50,sortable:true,resizable:true},
+
+
+		]], onLoadSuccess: function (data) {
+			//drag();
+		}
+	});
+});
+
+
+
+///计划实现行拖拽
+function drag() {
+	$('.datagrid-header-inner .datagrid-cell').draggable({
+		revert: true,
+		proxy: 'clone'
+	}).droppable({
+		accept: '.datagrid-header-inner .datagrid-cell',
+		onDrop: function (e, source) {
+			//取得拖动源的html值
+			var src = $(e.currentTarget.innerHTML).html();
+			//取得拖动目标的html值
+			var sou = $(source.innerHTML).html();
+			var tempcolsrc;//拖动后源和目标列交换
+			var tempcolsou;
+			var tempcols=[];
+			for (var i = 0; i < cols.length; i++) {
+				if (cols[i].title == sou) {
+					tempcolsrc = cols[i];//循环读一遍列把源和目标列都记下来
+				}
+				else if (cols[i].title == src) {
+					tempcolsou = cols[i];
+				}
+			}
+			for (var i = 0; i < cols.length; i++) {
+				//再循环一遍，把源和目标的列对换
+				var col = {
+					field: cols[i].field,
+					title: cols[i].title,
+					align: cols[i].align,
+					width: cols[i].width
+				};
+				if (cols[i].title == sou) {
+					col = tempcolsou;
+				}
+				else if (cols[i].title == src) {
+					col = tempcolsrc;
+				}
+				tempcols.push(col);
+			}
+			cols = tempcols;
+			timeid = setTimeout("init()", 1000);
+		}
+	});
+}
+//查询行状态
+function getActiveItemInStatus() {
+	var rows = $("#Work_Data_List").datagrid('getRows');
+	var b = rows.length;
+	if (b==0){return;}
+	var b1 = 0;
+	$(".loading").show();
+	for (var i = 0; i < rows.length; i++) {
+		var obj = rows[i];
+		var pc = obj.projectCode;
+		$.ajax({
+			type: 'POST',
+			url: "<?php echo U('Work/getCurActiveItemInStatus');?>",
+			//async:false,
+			data: {PC: pc},
+			dataType: 'json',
+			success: function (data) {
+				b1++;
+				var returnpc = data.PC;
+				var _obj = data.db;
+				if (returnpc.length > 0) {
+					for (var j = 0; j < rows.length; j++) {
+						var row = rows[j];
+						if (row.projectCode == returnpc) {
+							$('#Work_Data_List').datagrid('updateRow', {
+								index: j,
+								row: {
+									activeitemname: _obj.ActiveItemName,
+									activeitemnamestatus: _obj.Status,
+									usercode: _obj.UserCode,
+									username: _obj.UserName
+								}
+							});
+							break;
+						}
+					}
+				}
+				if (b1 == b) {
+					$(".loading").hide();
+				}
+			},
+			error: function () {
+				b1++;
+			}
+		});
+	}
+	//$(".loading").hide();
+}
+</script>

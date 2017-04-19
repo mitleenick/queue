@@ -1,0 +1,623 @@
+<div id="Procedure_Bar" class="Bar_tools"  style="height: 80px">
+	业主名称:
+	<select class="easyui-combobox" name="ProjectName" id="ProjectCode4" style="width:200px;" data-options="
+		url : '<?php echo U('Public/searchProjectByOwner');?>',
+		method:'post',
+		textField : 'Owner',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '业主名称',
+		onSelect : function(){
+			selectItem(this);
+			reload_Procedure_data_list('ProjectCode4');
+		}
+	">
+	</select>
+
+	工程编号:
+	<select class="easyui-combobox" name="ProjectName" id="ProjectCode1" style="width:200px;" data-options="
+		url : '<?php echo U('Public/searchProjectById');?>',
+		method:'post',
+		textField : 'ProjectName',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '工程编号',
+		onSelect : function(){
+		 	var value = $('#ProjectCode1').combobox('getValue');
+		 	if(value){
+				selectItem(this);
+				reload_Procedure_data_list('ProjectCode1');
+			}
+		}
+	">
+	</select>
+
+	装修地址:
+	<select class="easyui-combobox" name="ProjectName" id="ProjectCode3" style="width:200px;" data-options="
+		url : '<?php echo U('Public/searchProjectByProjectName');?>',
+		method:'post',
+		textField : 'ProjectName',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '装修地址',
+		onSelect : function(){
+			selectItem(this);
+			reload_Procedure_data_list('ProjectCode3');
+		}
+	">
+	</select>
+
+	装修管家:
+	<select class="easyui-combobox" name="ProjectName" id="ProjectCode2" style="width:200px;" data-options="
+		url : '<?php echo U('Public/searchProjectByProjectManagerCode');?>',
+		method:'post',
+		textField : 'ProjectName',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '装修管家',
+		onSelect : function(){
+			selectItem(this);
+			reload_Procedure_data_list('ProjectCode2');
+		}
+	">
+	</select>
+
+	<div style="margin-top: 10px">
+	装修管家电话：<strong><label id="curOwnerTel" style="display:inline-block; width:100px;"></label></strong>&nbsp;&nbsp;
+	客户姓名：<strong><label id="curOwner" style="display:inline-block; width:100px;" ></label></strong>&nbsp;&nbsp;
+	装修地址：<strong><label id="curProjectName"></label></strong>
+	</div>
+	<!-- 修改 弹框 -->
+	<div id="procedure_audit_dlg" class="easyui-dialog" title="修改派单内容" style="width:730px;height:500px;padding:10px;overflow:hidden;" data-options="closed: true,buttons: [{
+			text:'关闭',
+			iconCls:'iconfont icon-ok',
+			handler:function(){
+			$('#procedure_audit_dlg').dialog('close');
+			$('#Procedure_Data_List').datagrid('reload');}
+		}]">
+	</div>
+</div>
+<script>
+	function selectItem(obj) {
+		var id =obj.id;
+		switch (id) {
+			case "ProjectCode1":
+				$("#ProjectCode2").combobox("clear");
+				$("#ProjectCode3").combobox("clear");
+				$("#ProjectCode4").combobox("clear");
+				break;
+			case "ProjectCode2":
+				$("#ProjectCode1").combobox("clear");
+				$("#ProjectCode3").combobox("clear");
+				$("#ProjectCode4").combobox("clear");
+				break;
+			case "ProjectCode3":
+				$("#ProjectCode1").combobox("clear");
+				$("#ProjectCode2").combobox("clear");
+				$("#ProjectCode4").combobox("clear");
+				break;
+			case "ProjectCode4":
+				$("#ProjectCode1").combobox("clear");
+				$("#ProjectCode2").combobox("clear");
+				$("#ProjectCode3").combobox("clear");
+				break;
+		}
+	}
+</script>
+<!-- 数据列表 -->
+<table id="Procedure_Data_List"></table>
+
+<!-- 查看图片弹出层
+<div id="procedure_dlg_img" class="easyui-dialog" title="查看大图" style="width:800px;height:800px;padding:10px;" data-options="closed: true">
+	<img id="view_img" style="width:760px;height:740px;" src=""/>
+</div> -->
+<!--验收单弹窗-->
+<div id="dd" class="easyui-dialog" title="验收单" style="width:650px;height:500px;"
+	 data-options="iconCls:'icon-cancel',resizable:true,modal:true,closed: true,buttons: [{
+			text:'关闭',
+			iconCls:'iconfont icon-ok',
+			handler:function(){
+			$('#dd').dialog('close');},
+		}]">
+</div>
+<!-- 劳务费 -->
+<div id="gzd_dlg" class="easyui-dialog linkgroupbutton" title="劳务费" style="width:600px;height:400px;padding:10px"
+	 data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						$('#gzd_dlg').dialog('close');
+					}
+				}],
+				onClose:function (){
+					clearDialogGzd();
+				}
+			">
+	<a href="#" id="_gzd_gr" class="easyui-linkbutton" data-options="toggle:true,group:'procedure_gzd'" sdata="1" onclick="gzd_type_change(this)" style="float: left;">工人</a>
+	<a href="#" class="easyui-linkbutton" data-options="toggle:true,group:'procedure_gzd'" sdata="2" onclick="gzd_type_change(this)" style="float: left;margin-left: 8px;">供应商</a>
+	<input type="hidden" id="hiddenGzdType" value="-1" />
+	<!-- 数据列表 -->
+	<table id="Procedure_Gzd_Data_List"></table>
+</div>
+
+
+<!-- 物料单 -->
+<div id="wld_dlg" class="easyui-dialog linkgroupbutton" title="物料单" style="width:700px;height:400px;padding:10px 10px 100px 10px"
+	 data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						$('#qr_img_1').attr('src','');
+						$('#qr_img_2').attr('src','');
+						$('#qr_img_3').attr('src','');
+						$('#qr_img').hide();
+						$('#wld_dlg').dialog('close');
+					}
+				}],
+				onClose:function (){
+					$('#qr_img_1').attr('src','');
+					$('#qr_img_2').attr('src','');
+					$('#qr_img_3').attr('src','');
+					$('#qr_img').hide();
+					clearDialogWld();
+				}
+			">
+	<a href="#" id="_wld_wl" class="easyui-linkbutton" data-options="toggle:true,group:'procedure_wld'" sdata="1" onclick="wld_type_change(this)" style="float: left;">物料数据</a>
+	<a href="#" class="easyui-linkbutton" data-options="toggle:true,group:'procedure_wld'" sdata="2" onclick="wld_type_change(this)" style="float: left;margin-left: 8px;">到场数据</a>
+	<a href="#" class="easyui-linkbutton" data-options="toggle:true,group:'procedure_wld'" sdata="3" onclick="wld_type_change(this)" style="float: left;margin-left: 8px;">增加数据</a>
+	<a href="#" class="easyui-linkbutton" data-options="toggle:true,group:'procedure_wld'" sdata="4" onclick="wld_type_change(this)" style="float: left;margin-left: 8px;">余料数据</a>
+	<input type="hidden" id="hiddenWldType" value="-1" />
+	<!-- 数据列表 -->
+	<table id="Procedure_Wld_Data_List" style="height: 150px;"></table>
+	<!-- 到场确认图片／余料确认图片-->
+	<table id="qr_img" style="display: none;">
+		<tr>
+			<td id="qr_img_title"></td>
+			<td><img id="qr_img_1" src="" style="width: 50px;height: 50px;"/></td>
+			<td><img id="qr_img_2" src="" style="width: 50px;height: 50px;"/></td>
+			<td><img id="qr_img_3" src="" style="width: 50px;height: 50px;"/></td>
+		</tr>
+	</table>
+</div>
+<!-- 公用隐藏数据 工程编号、 -->
+<input type="hidden" id="PC" value="" />
+<input type="hidden" id="activeItemCode" value="" />
+<input type="hidden" id="get_projectCode" value="<?php echo $projectCode;?>"/>
+<input type="hidden" id="get_projectName" value="<?php echo $result->projectName;?>"/>
+
+<script type="text/javascript">
+
+/******************************
+  派工单相关方法
+ *******************************/
+// 派工单弹出层
+function TDialog(pc,activeItemCode){
+		$('#dd').dialog('open');
+		var url = '<?php echo U("Public/acceptance")?>&pc=' + pc + '&activeItemCode=' + activeItemCode;
+		//console.log(url);
+		$('#dd').dialog('refresh', url);
+}
+
+// 派工单弹出层－清除数据
+function clearDialogPgd(){
+	$('#pgd_activeItemName').html('');
+	$('#pgd_activeItemCode').html('');
+	$('#pgd_userCode').html('');
+	$('#pgd_userName').html('');
+	$('#pgd_workUserName').html('');
+	$('#pgd_status').html('');
+	$('#pgd_begin').html('');
+	$('#pgd_end').html('');
+	$('#pgd_sbegin').html('');
+	$('#pgd_send').html('');
+	$('#pgd_image1').attr('src' , '');
+	$('#pgd_image2').attr('src' , '');
+	$('#pgd_image3').attr('src' , '');
+	$('#pgd_image4').attr('src' , '');
+	$('#pgd_image5').attr('src' , '');
+	$('#pgd_image6').attr('src' , '');
+}
+
+/******************************
+ 劳务费相关方法
+ *******************************/
+// 劳务费弹出层
+function openDialogGzd(pc,activeItemCode){
+	$('#PC'). val( pc );
+	$('#activeItemCode').val( activeItemCode );
+	$('#_gzd_gr').linkbutton('select');
+	$('#hiddenGzdType').val(1);
+	reload_Procedure_Gzd_Data_List();
+	$('#gzd_dlg').dialog('open');
+}
+
+// 劳务费弹出层－清除数据
+function clearDialogGzd(){
+
+}
+
+// 劳务费弹出层－切换劳务费类型[工人、供应商]
+function gzd_type_change(obj){
+	$(obj).linkbutton('select');
+	$('#hiddenGzdType').val( $(obj).attr('sdata') );
+	reload_Procedure_Gzd_Data_List();
+}
+
+// 劳务费弹出层表格重加载
+function reload_Procedure_Gzd_Data_List(){
+
+	var gzdtype = $('#hiddenGzdType').val();
+	if(gzdtype==-1) {
+		gzdtype=1;
+	}
+
+	var clumns =[];
+	if(gzdtype==1) {
+		clumns = [[
+			{field : 'usercode',title : '工人编号',width : 100,sortable:true},
+			{field : 'username',title : '工人名称',width : 100,sortable:true},
+			{field : 'income',title : '收入',width : 70,sortable:true},
+			{field : 'outgo',title : '支出',width : 70,sortable:true},
+			{field : 'surplus',title : '余额',width : 70,sortable:true},
+			{field : '_mtype',title : '类型',width : 80,sortable:true},
+			{field : 'status',title : '状态',width : 80,formatter:function(value){
+				if (value == 0) {
+					return "申请中";
+				} else if (value == "F") {
+					return "审核成功";
+				}  else if (value == "E") {
+					return "打回";
+				} else if (value == "G") {
+					return "已打款";
+				} else {
+					return "未知状态";
+				}
+			}}
+		]];
+	}else if(gzdtype==2){
+		clumns = [[
+			{field : 'usercode',title : '供应商编号',width : 100,sortable:true},
+			{field : 'username',title : '供应商名称',width : 100,sortable:true},
+			{field : 'income',title : '收入',width : 70,sortable:true},
+			{field : 'outgo',title : '支出',width : 70,sortable:true},
+			{field : 'surplus',title : '余额',width : 70,sortable:true},
+			{field : '_mtype',title : '类型',width : 80,sortable:true},
+			{field : 'Status',title : '状态',width : 80,formatter:function(value){
+				if (value == 1) {
+					return "申请中";
+				} else if (value == "F") {
+					return "审核成功";
+				}  else if (value == "E") {
+					return "打回";
+				} else if (value == "G") {
+					return "已打款";
+				} else {
+					return value;
+				}
+			}}
+		]];
+	}
+
+	$("#Procedure_Gzd_Data_List").datagrid({
+		url : "{:U('Procedure/getRecordDetail')}",
+		queryParams:{datatype:3,gzdtype:gzdtype,PC:$('#PC'). val(),AC:$('#activeItemCode').val()},
+		fit : true,
+		striped : true,
+		border : false,
+		pagination : false,
+		toolbar : false,
+		singleSelect : true,
+		columns : clumns
+	});
+}
+
+/******************************
+ 物料单相关方法
+ *******************************/
+// 物料单弹出层
+function openDialogWld(pc,activeItemCode){
+	islogin();
+	$('#PC'). val( pc );
+	$('#activeItemCode').val( activeItemCode );
+	$('#_wld_wl').linkbutton('select');
+	$('#hiddenWldType').val(1);
+	reload_Procedure_Wld_Data_List();
+	$('#wld_dlg').dialog('open');
+}
+
+// 物料单弹出层－清除数据
+function clearDialogWld(){
+
+}
+
+// 物料单弹出层－切换物料单类型[1.物料数据 2.到场数据 3.增加数据 4.余料数据]
+function wld_type_change(obj){
+	$(obj).linkbutton('select');
+	$('#hiddenWldType').val( $(obj).attr('sdata') );
+	reload_Procedure_Wld_Data_List();
+}
+
+// 劳务费弹出层表格重加载
+function reload_Procedure_Wld_Data_List(){
+	islogin();
+	var wldtype = $('#hiddenWldType').val();
+	if(wldtype==-1) {
+		wldtype=1;
+	}
+
+	var clumns =[];
+	if(wldtype==1) {
+		clumns = [[
+			{field : 'resourcecode',title : '物料编号',width : 80,sortable:true},
+			{field : 'resourcename',title : '物料名称',width : 200,sortable:true},
+			{field : 'norms',title : '物料规格',width : 200,sortable:true},
+			{field : 'number',title : '物料数量',width : 70,sortable:true,align:'right',fommater:function(value){
+				return value.toFixed(2);
+			}},
+			{field : 'unit',title : '单位',width : 70,sortable:true},
+			{field : '_rtype',title : '类型',width : 70,sortable:true}
+			//{field : 'mtype',title : '备注',width : 80}
+		]];
+	}else if(wldtype==2){
+		clumns = [[
+			{field : 'resourcecode',title : '物料编号',width : 100,sortable:true},
+			{field : 'resourcename',title : '物料名称',width :200,sortable:true},
+			{field : 'norms',title : '物料规格',width : 70,sortable:true,align:'right',fommater:function(value){
+				return value.toFixed(2);
+			}},
+			{field : 'number',title : '物料数量',width : 70,sortable:true,align:'right',fommater:function(value){
+				return value.toFixed(2);
+			}},
+			{field : 'qnumber',title : '到场数量',width : 70,sortable:true,align:'right',fommater:function(value){
+				return value.toFixed(2);
+			}},
+			{field : 'unit',title : '单位',width : 70,sortable:true},
+			{field : '_rtype',title : '类型',width : 70,sortable:true}
+		]];
+	}else if(wldtype==3){
+		clumns = [[
+			{field : 'resourcecode',title : '物料编号',width : 100,sortable:true},
+			{field : 'resourcename',title : '物料名称',width : 100,sortable:true},
+			{field : 'norms',title : '物料规格',width : 70,sortable:true},
+			{field : 'number',title : '物料数量',width : 70,sortable:true,align:'right',fommater:function(value){
+				return value.toFixed(2);
+			}},
+			{field : 'unit',title : '单位',width : 70,sortable:true},
+			{field : '_rtype',title : '类型',width : 100,sortable:true}
+		]];
+	}else if(wldtype==4){
+		clumns = [[
+			{field : 'resourcecode',title : '物料编号',width : 100,sortable:true},
+			{field : 'resourcename',title : '物料名称',width : 100,sortable:true},
+			{field : 'norms',title : '物料规格',width : 70,sortable:true},
+			{field : 'number',title : '物料数量',width : 70,sortable:true,align:'right',fommater:function(value){
+				return value.toFixed(2);
+			}},
+			{field : 'qnumber',title : '到场数量',width : 70,sortable:true,align:'right',fommater:function(value){
+				return value.toFixed(2);
+			}},
+			{field : 'snumber',title : '结余数量',width : 70,sortable:true,align:'right',fommater:function(value){
+				return value.toFixed(2);
+			}},
+			{field : 'unit',title : '单位',width : 70,sortable:true},
+			{field : '_rtype',title : '类型',width : 70,sortable:true}
+		]];
+	}
+
+	$("#Procedure_Wld_Data_List").datagrid({
+		url : "{:U('Procedure/getRecordDetail')}",
+		queryParams:{datatype:2,wldtype:wldtype,PC:$('#PC'). val(),AC:$('#activeItemCode').val()},
+		fit : true,
+		fitColumns:true,
+		striped : true,
+		border : false,
+		pagination : false,
+		toolbar : false,
+		singleSelect : true,
+		columns : clumns,
+		onLoadSuccess: function (data) {
+			$("#Procedure_Wld_Data_List").datagrid('resize', {
+				height: "100px"
+			});
+			if(wldtype==2){
+				$("#qr_img_title").html("到场确认图片")
+				$("#qr_img_1").attr('src' , data.image1? "http://<?php echo getDomain();?>/yhr/" + data.image1:"");
+				$("#qr_img_2").attr('src' , data.image2? "http://<?php echo getDomain();?>/yhr/" + data.image2:"");
+				$("#qr_img_3").attr('src' , data.image3? "http://<?php echo getDomain();?>/yhr/" + data.image3:"");
+				$("#qr_img").show();
+			}else if(wldtype==4){
+				$("#qr_img_title").html("余料确认图片");
+				$("#qr_img_1").attr('src' , data.image1? "http://<?php echo getDomain();?>/yhr/" + data.image1:"");
+				$("#qr_img_2").attr('src' , data.image2? "http://<?php echo getDomain();?>/yhr/" + data.image2:"");
+				$("#qr_img_3").attr('src' , data.image3? "http://<?php echo getDomain();?>/yhr/" + data.image3:"");
+				$("#qr_img").show();
+			}else{
+				$("#qr_img_1").attr('src' , "");
+				$("#qr_img_2").attr('src' , "");
+				$("#qr_img_3").attr('src' , "");
+				$("#qr_img").hide();
+			}
+		}
+	});
+}
+
+/******************************
+ 页面主数据表相关方法
+ *******************************/
+// 加载页面主数据表
+$(function() {
+	islogin();
+	$("#Procedure_Data_List").datagrid({
+		url: "{:U('Procedure/index')}",
+		fit: true,
+		striped: true,
+		border: false,
+		pagination: false,
+		pageSize: 50,
+		pageList: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+		pageNumber: 1,
+		//sortName : 'ActiveItemCode',
+		//sortOrder : 'esc',
+		toolbar: '#Procedure_Bar',
+		singleSelect: true,
+		columns: [[
+			{field: 'ActiveItemCode', title: '工序项编号', width: 80, sortable: true},
+			{field: 'ActiveItemName', title: '工序项名称', width: 200, sortable: true},
+			{field: 'WorkGroupName', title: '工种', width: 120, sortable: true},
+			{
+				field: 'BeginDate',
+				title: '开始时间',
+				width: 100,
+				sortable: true,
+				formatter: function (value, rowData, rowIndex) {
+					return _dateFormat(value, 2)
+				}
+			},
+			{
+				field: 'EndDate',
+				title: '结束时间',
+				width: 100,
+				sortable: true,
+				formatter: function (value, rowData, rowIndex) {
+					return _dateFormat(value, 2)
+				}
+			},
+			{
+				field: 'BeginReality',
+				title: '实际开始时间',
+				width: 170,
+				sortable: true,
+				formatter: function (value, rowData, rowIndex) {
+					//return value;
+					return _dateFormat(value, 1)
+				}
+			},
+			{
+				field: 'EndReality',
+				title: '实际结束时间',
+				width: 170,
+				sortable: true,
+				formatter: function (value, rowData, rowIndex) {
+					//return value;
+					return _dateFormat(value, 1)
+				}
+			},
+			{field: '_status', title: '状态', width: 90, sortable: true},
+			{field: 'operator_pgd', title: '验收单', width: 60,formatter:function(value,rowData,rowIndex){
+				return value;
+				//var pc=$("#get_projectCode").val();
+				//return "<a href='#' onclick='TDialog(" + pc + "," + rowData.ActiveItemCode + ");'>验收单</a>";
+			}},
+			{field: 'operator_wld', title: '物料单', width: 60},
+			{field: 'operator_gzd', title: '劳务费', width: 60},
+			{field: 'operator_pd', title: '派单操作', width: 60,formatter: function(value,rowData,rowIndex){
+				if(rowData.Status==1||rowData.Status==3){
+					return "<a href='#' onclick='openPlanWork(" + rowIndex + ");'>派单</a>";
+				}
+			}}
+		]],
+		onLoadSuccess: function (data) {
+			var get_projectCode = $("#get_projectCode").val();
+			var get_projectName = $("#get_projectName").val();
+			if (get_projectCode != '') {
+				//console.log(get_projectCode);
+				$('#ProjectCode1').combobox('setValue', get_projectCode);
+				$('#ProjectCode1').combobox('setText', get_projectCode + '-' + get_projectName);
+				//console.log($('#ProjectCode1').combobox('getValue'));
+				reload_Procedure_data_list('ProjectCode1');
+				$("#get_projectCode").val('');
+				$("#get_projectName").val('');
+			}
+		}
+	});
+});
+
+// 重加载页面主数据表
+function reload_Procedure_data_list(ProjectCodeId) {
+islogin();
+	$('#Procedure_Data_List').datagrid('reload', {
+		'PC': $('#' + ProjectCodeId).combobox('getValue')
+	});
+	$.ajax({
+		type: "POST",
+		url: "<?php echo U('Procedure/getProject');?>",
+		data: {'PC': $('#' + ProjectCodeId).combobox('getValue')},
+		dataType: "json",
+		success: function (data) {
+			$("#curProjectName").html(data.projectName);
+			$("#curOwner").html(data.owner)
+			$("#curOwnerTel").html(data.projectTel);
+		}
+	});
+}
+
+/******************************
+ 导出
+ *******************************/
+// 导出
+function exportcsv(){
+	islogin();
+	$.ajax({
+		type: "POST",
+		url: "<?php echo U('Procedure/exportcsv');?>",
+		data: {'GWC' : $('#hiddenProcedureType').val(),'S' : $("#S").val()},
+		dataType: "json",
+		success: function(data){
+			if(data==1){
+				$.messager.alert('消息','认证成功!','info');
+				reload_Procedure_data_list();
+			}else{
+				$.messager.alert('消息','认证失败!','error');
+			}
+		}
+	});
+}
+
+// 点击查看大图
+function showimg(obj){
+	islogin();
+	var src = $(obj).attr("src");
+	$("#view_img").attr("src",src);
+	$("#procedure_dlg_img").dialog("open");
+}
+// 更新工人下拉列表
+function openPlanWork(rowindex) {
+	islogin();
+	var re;
+	if (typeof (rowindex) == 'number' && rowindex >= 0) {
+		re = $('#Procedure_Data_List').datagrid('getRows')[rowindex];
+	} else {
+		$.messager.alert('消息', '参数异常!', 'error');
+	}
+	$('#procedure_audit_dlg').dialog('open');
+
+	var url = '<?php echo U("Public/planWork")?>&projectcode=' + '<?php echo $projectCode;?>'
+			+ '&beginDate=' + _dateFormat(re["BeginDate"].replace(/[:' ']/g, ""), 2)
+			+ '&endDate=' + _dateFormat(re["EndDate"].replace(/[:' ']/g, ""), 2)
+			+ '&activeitemins=' + re["ActiveItemCodeIns"]
+			+ '&ischangeUser=' + re["IsChangeUser"]
+			+ '&activeitemcode=' + re["ActiveItemCode"]
+			+ '&activeitemname=' + encodeURIComponent(re["ActiveItemName"])
+			+ '&money=' + re["Money"]
+			+ '&workgroupcode=' + re["WorkGroupCode"];
+	$('#procedure_audit_dlg').dialog('refresh', url);
+}
+</script>

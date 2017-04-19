@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>添加工作人员</title>  
+    <link rel="stylesheet" href="__PUBLIC__/css/pintuer.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/admin.css">
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/pintuer.js"></script> 
+    <script src="__PUBLIC__/js/jscolor.js"></script>  
+</head>
+<body>
+<div class="panel admin-panel margin-top">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>工作人员</strong></div>
+  <div class="body-content">
+    <form method="post" class="form-x" action="{:U('addOfficer')}">   
+      <input type="hidden" name="id"  value="" />  
+      <div class="form-group">
+        <div class="label">
+          <label>用户名：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" name="name" value="" data-validate="required:请输入用户名" />         
+          <div class="tips"></div>
+        </div>
+        <br>
+         <br>
+        <div class="label">
+          <label>密码：</label>
+        </div>
+        <div class="field">
+          <input type="password" class="input w50" name="password" value="" data-validate="required:请输入密码" />字体为排队机默认字体倍数0.5--3.0,请设置中间值        
+          <div class="tips"></div>
+        </div>
+         <br>
+        <div class="label">
+          <label>员工编号：</label>
+        </div>
+        <div class="field">
+          <input class="jscolor input w50" name='icard' value="" />         
+          <div class="tips"></div>
+        </div>
+
+      <div class="label">
+          <label>所属分公司：</label>
+        </div>
+        <div class="field" class="input w50">
+          <select name='fontType'>
+          <volist name='company' id='vo'>
+	          <option value='{$vo.id}' >{$vo.name}</option>
+          </volist>
+          </select>        
+          <div class="tips"></div>
+        </div>
+     </div> 
+     <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body></html>
+<script>
+function del(id){
+	if(confirm("您确定要删除吗?")){
+		
+	}
+}
+function updatesort(id,bid){
+	var sort = $("#sort"+id).val();
+	$.ajax({    
+	    url:'/index.php?m=Admin&c=Bussiness&a=updateSort',  
+	    data:{id:bid,sort:sort},    
+	    type:'post',    
+	    cache:false,    
+	    dataType:'',    
+	    success:function(data) {
+	    	if(data=='-1'){
+	    		alert('未更新或更新失败');
+	    	}
+	    	if(data=='ok'){
+	    		alert('更新成功');
+	    	}
+	    	location.reload();
+	     },    
+	     error : function() {
+	        alert(data);
+	     }    
+	});
+}
+	
+</script>

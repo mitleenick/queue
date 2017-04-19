@@ -1,0 +1,384 @@
+<div id="ProcedureStatistics_Bar" class="Bar_tools">
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="seachProjectDialog()">工程查询条件</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#ProcedureStatistics_audit_dlg_date').dialog('open')">选择时间</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="exportcsv(this,'ProcedureStatistics_Data_List',['ProjectCode'])" download="工序统计.csv">导出</a>
+</div>
+<!-- 数据列表 -->
+<table id="ProcedureStatistics_Data_List"></table>
+<!-- 选择时间 -->
+<div id="ProcedureStatistics_audit_dlg_date" class="easyui-dialog" title="选择时间" style="width:550px;height:140px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						$('#ProcedureStatistics_audit_dlg_date').dialog('close');
+						reload_ProcedureStatistics_data_list();
+					}
+				}]
+			">
+	<table>
+		<tr>
+			<td>开始时间:</td>
+			<td>
+				<input class="easyui-datebox" id="beginDate" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-01' , time() - 86400 * 60);?>">
+			</td>
+			<td>结束时间:</td>
+			<td>
+				<input class="easyui-datebox" id="endDate" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-d' , time()+86400);?>">
+			</td>
+		</tr>
+	</table>
+	<div id="cc" class="easyui-calendar"></div>
+</div>
+</div>
+<div id="dd" class="easyui-dialog" title="更多工程查询条件" style="width:450px;height:400px;padding:10px"
+		data-options="
+		iconCls: 'icon-save',
+		closed: true,
+		buttons: [{
+			text:'确定',
+			iconCls:'iconfont icon-ok',
+			handler:function(){
+				$('#dd').dialog('close');
+				reload_ProcedureStatistics_data_list(getReturn());
+			}
+		}]
+	"></div>
+<script type="text/javascript">
+
+// 重加载 
+function reload_ProcedureStatistics_data_list(projectCode) {
+islogin();
+	var pc = projectCode;
+	var beginDate = $("#beginDate").datebox('getValue');
+	var endDate = $("#endDate").datebox('getValue');
+
+	$('#ProcedureStatistics_Data_List').datagrid('reload', {
+		'PC': pc,
+		'beginDate': beginDate,
+		'endDate': endDate,
+	});
+}
+function setColbgColor(value, rowData, rowIndex)
+{
+	islogin();
+	return 'background-color:#ed9121;';
+}
+function seachProjectDialog() {
+	islogin();
+	$('#dd').dialog('open');
+	var url = '<?php echo U("Public/projectSeach")?>';
+	$('#dd').dialog('refresh', url);
+}
+$(function() {
+	islogin();
+	$("#ProcedureStatistics_Data_List").datagrid({
+		url: "{:U('ProcedureStatistics/index')}",
+		fit: true,
+		striped: true,
+		border: false,
+		pagination: true,
+		pageSize: 100,
+		pageList: [100, 1000, 5000],
+		pageNumber: 1,
+		toolbar: '#ProcedureStatistics_Bar',
+		singleSelect: false,
+		rownumbers: true,
+		remoteSort: false,
+		columns: [[
+			{
+				field: 'ProjectCode',
+				title: '工程编号',
+				width: 80,
+				sortable: true,
+				resizable: true,
+				align: "right",
+				formatter: function (value, rowData, rowIndex) {
+					if (value)
+						return "<a  target='_blank' href='index.php?m=Admin&c=Procedure&a=index&projectCode=" + value + "'>" + value + "</a>";
+				}
+			},
+			{field: 'ProjectName', title: '装修地址', width: 200, sortable: true, resizable: true},
+			{field: 'Owner', title: '客户姓名', width: 80, sortable: true, resizable: true},
+			{field: 'ProductType', title: '客户类型', width: 130, sortable: true, resizable: true},
+			{field: 'ActiveitemCode', title: '工序项编号', width: 100, sortable: true, resizable: true},
+			{field: 'ActiveitemName', title: '工序项名称', width: 100, sortable: true, resizable: true},
+			{field: 'WorkUserName', title: '工种', width: 100, sortable: true, resizable: true},
+			{
+				field: 'Count',
+				title: '总成本',
+				width: 100,
+				sortable: true,
+				align: 'right',
+				formatter: function (value, rowData, rowIndex) {
+					var sum = rowData.WorkTotalCost + rowData.MainMaterialTotal + rowData.SupplementMaterialTotal;
+					if (sum)
+						return sum.toFixed(2);
+					else
+						return 0;
+				}
+			},
+			{
+				field: 'Money',
+				title: '劳务费用',
+				width: 80,
+				sortable: true,
+				align: 'right',
+				styler: setColbgColor,
+				formatter: function (value) {
+					if (value)
+						return value.toFixed(2);
+					else
+						return 0;
+				}
+			},
+			{
+				field: 'AddWorkMoney',
+				title: '加薪',
+				width: 80,
+				sortable: true,
+				align: 'right',
+				styler: setColbgColor,
+				formatter: function (value) {
+					if (value)
+						return value.toFixed(2);
+					else
+						return 0;
+				}
+			},
+			{
+				field: 'CutMoney',
+				title: '扣薪罚款',
+				width: 80,
+				sortable: true,
+				align: 'right',
+				styler: setColbgColor,
+				formatter: function (value) {
+					if (value)
+						return value.toFixed(2);
+					else
+						return 0;
+				}
+			},
+			{
+				field: 'WorkTotalCost',
+				title: '工人成本',
+				width: 80,
+				sortable: true,
+				align: 'right',
+				styler: setColbgColor,
+				formatter: function (value) {
+					if (value)
+						return value.toFixed(2);
+					else
+						return 0;
+				}
+			},
+			{
+				field: 'MainMaterialCost',
+				title: '主料费用',
+				width: 80,
+				sortable: true,
+				align: 'right',
+				formatter: function (value) {
+					if (value)
+						return value.toFixed(2);
+					else
+						return 0;
+				}
+			},
+			{
+				field: 'AddMainMaterial',
+				title: '加料',
+				width: 80,
+				sortable: true,
+				align: 'right',
+				formatter: function (value) {
+					if (value)
+						return value.toFixed(2);
+					else
+						return 0;
+				}
+			}, {
+				field: 'RestMainMaterial',
+				title: '余料',
+				width: 80,
+				sortable: true,
+				align: 'right',
+				formatter: function (value) {
+					if (value)
+						return value.toFixed(2);
+					else
+						return 0;
+				}
+			}, {
+				field: 'MainMaterialTotal',
+				title: '主料总成本',
+				width: 80,
+				sortable: true,
+				align: 'right',
+				formatter: function (value) {
+					if (value)
+						return value.toFixed(2);
+					else
+						return 0;
+				}
+			},
+			{
+				field: 'SupplementMaterialCost',
+				title: '辅料',
+				width: 80,
+				sortable: true,
+				align: 'right',
+				styler: setColbgColor,
+				formatter: function (value) {
+					if (value)
+						return value.toFixed(2);
+					else
+						return 0;
+				}
+			},
+			{
+				field: 'AddSupplementMaterial',
+				title: '加料',
+				width: 80,
+				sortable: true,
+				align: 'right',
+				styler: setColbgColor,
+				formatter: function (value) {
+					if (value)
+						return value.toFixed(2);
+					else
+						return 0;
+				}
+			},
+			{
+				field: 'RestSupplementMaterial',
+				title: '余料',
+				width: 80,
+				sortable: true,
+				align: 'right',
+				styler: setColbgColor,
+				formatter: function (value) {
+					if (value)
+						return value.toFixed(2);
+					else
+						return 0;
+				}
+			},
+			{
+				field: 'SupplementMaterialTotal',
+				title: '辅料总成本',
+				width: 80,
+				sortable: true,
+				align: 'right',
+				styler: setColbgColor,
+				formatter: function (value) {
+					if (value)
+						return value.toFixed(2);
+					else
+						return 0;
+				}
+			},
+		]],
+		onLoadSuccess: function (data) {
+			var beginindex = 0;
+			var oldValue = '';
+			var re = $('#ProcedureStatistics_Data_List').datagrid('getRows');
+			for (var i = 0; i < re.length; i++) {
+				var newValue = re[i].ProjectCode;
+				if (oldValue == '') {
+					oldValue = newValue;
+					continue;
+				}
+
+				if (oldValue == newValue) {
+					continue;
+				} else {
+					if (i - beginindex >= 2) {
+						$(this).datagrid('mergeCells', {
+							index: beginindex,
+							field: 'ProjectCode',
+							rowspan: i - beginindex
+						});
+						$(this).datagrid('mergeCells', {
+							index: beginindex,
+							field: 'ProjectName',
+							rowspan: i - beginindex
+						});
+						$(this).datagrid('mergeCells', {
+							index: beginindex,
+							field: 'Owner',
+							rowspan: i - beginindex
+						});
+						$(this).datagrid('mergeCells', {
+							index: beginindex,
+							field: 'ProductType',
+							rowspan: i - beginindex
+						});
+					}
+					beginindex = i;
+					oldValue = newValue;
+				}
+			}
+			if (i - beginindex >= 2) {
+				$(this).datagrid('mergeCells', {
+					index: beginindex,
+					field: 'ProjectCode',
+					rowspan: i - beginindex
+				});
+				$(this).datagrid('mergeCells', {
+					index: beginindex,
+					field: 'ProjectName',
+					rowspan: i - beginindex
+				});
+				$(this).datagrid('mergeCells', {
+					index: beginindex,
+					field: 'Owner',
+					rowspan: i - beginindex
+				});
+				$(this).datagrid('mergeCells', {
+					index: beginindex,
+					field: 'ProductType',
+					rowspan: i - beginindex
+				});
+			}
+			$('#ProcedureStatistics_Data_List').datagrid('appendRow', {
+				WorkUserName: '合计',
+				Count: compute("Count"),
+				Money: compute("Money"),
+				AddWorkMoney: compute("AddWorkMoney"),
+				CutMoney: compute("CutMoney"),
+				WorkTotalCost: compute("WorkTotalCost"),
+				MainMaterialCost: compute("MainMaterialCost"),
+				AddMainMaterial: compute("AddMainMaterial"),
+				RestMainMaterial: compute("RestMainMaterial"),
+				MainMaterialTotal: compute("MainMaterialTotal"),
+				SupplementMaterialCost: compute("SupplementMaterialCost"),
+				AddSupplementMaterial: compute("AddSupplementMaterial"),
+				RestSupplementMaterial: compute("RestSupplementMaterial"),
+				SupplementMaterialTotal: compute("SupplementMaterialTotal"),
+			});
+		},
+	});
+	$('#ProcedureStatistics_Data_List').datagrid({
+		rowStyler:function(index,row){
+			if (row.WorkUserName=='合计'){
+				return 'background-color:#FFDE47;color:blue;font-weight:bold;';
+			}
+		}
+	});
+	function compute(colName) {
+		islogin();
+		var rows = $('#ProcedureStatistics_Data_List').datagrid('getRows');
+		var total = 0;
+		for (var i = 0; i < rows.length; i++) {
+			total += parseFloat(rows[i][colName]);
+		}
+		return total;
+	}
+});
+</script>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>营业时间设置</title>  
+    <link rel="stylesheet" href="__PUBLIC__/css/pintuer.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/admin.css">
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/pintuer.js"></script>
+    <script src="__PUBLIC__/js/Calendar.js"></script>
+</head>
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
+  <div class="padding border-bottom">  
+  <a class="button border-yellow" href=""><span class="icon-plus-square-o"></span> 添加内容</a>
+  </div> 
+  <table class="table table-hover text-center">
+    <tr>
+      <th width="5%">ID</th>     
+      <th>窗口名字</th>  
+      <th>分公司</th>  
+      <th>业务</th>  
+      <th>窗口编号</th>  
+      <th>工作人员</th>   
+      <th width="250">操作</th>
+    </tr>
+ <volist name="list" id="vo">   
+    <tr>
+      <td>{$vo.id}</td>      
+      <td>{$vo.name}</td>  
+      <td>{$vo.company}</td>  
+      <td>{$vo.bussiness}</td> 
+      <td>{$vo.windownum}</td> 
+      <td>{$vo.uid}</td>      
+      <td>
+      <div class="button-group">
+      <a type="button" class="button border-main" href="#"><span class="icon-edit"></span>修改</a>
+      </div>
+      </td>
+    </tr> 
+ </volist>     
+    
+  </table>
+</div>
+
+<div class="panel admin-panel margin-top">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>添加窗口</strong></div>
+  <div class="body-content">
+    <form method="post" class="form-x" action="{:U('setWindows')}">   
+      <input type="hidden" name="id"  value="" />  
+      <div class="form-group">
+        <div class="label">
+          <label>窗口名字：</label>
+        </div>
+        <div class="field">
+		<input name="name" type="text" id="control_date" size="20" maxlength="20"  />		
+      </div> 
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>所属分公司：</label>
+        </div>
+        <div class="field">
+        <select name='company'>
+        <volist name='company' id='vo'>
+		<option value='{$vo.id}'>{$vo.name}</option>
+		</volist>
+		</select>
+      </div> 
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>办理业务：</label>
+        </div>
+        <div class="field">
+		<select name='bussiness'>
+		<volist name='bussiness' id='vo'>
+		<option value='{$vo.id}'>{$vo.name}</option>
+		</volist>
+		</select>
+      </div> 
+      </div> 
+      <div class="form-group">
+        <div class="label">
+          <label>窗口号：</label>
+        </div>
+        <div class="windowNum">
+		<input name="pmendtime" type="text" id="control_date" size="20" maxlength="20" onclick="new Calendar().show(this,null,1);" />	
+      </div> 
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>该窗口工作人员：</label>
+        </div>
+        <div class="field">
+		<select name='uid'>
+		<volist name='admin' id='vo'>
+		<option value='{$vo.id}'>{$vo.name}</option>
+		</volist>
+		</select>
+        </div>
+      </div>
+     <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body></html>
+<script>
+function del(id){
+	if(confirm("您确定要删除吗?")){
+		
+	}
+}
+</script>

@@ -1,0 +1,260 @@
+<table>
+    <tr>
+        <td class="pro-label" width="140">装修地址:</td>
+        <td id="pgd_projectName" width="100" class="pro-content"></td>
+        <td class="pro-label" width="140">客户姓名:</td>
+        <td id="pgd_owner" class="pro-content"></td>
+    </tr>
+    <tr>
+        <td class="pro-label">工序项名称:</td>
+        <td id="pgd_activeItemName" class="pro-content"></td>
+        <td class="pro-label">单据编号:</td>
+        <td id="pgd_activeItemCode" class="pro-content"></td>
+    </tr>
+    <tr> 
+        <td class="pro-label">工人编号:</td>
+        <td id="pgd_userCode" class="pro-content"></td>
+        <td class="pro-label">工人名称:</td>
+        <td id="pgd_userName" class="pro-content"></td>
+    </tr>
+    <tr>
+        <td class="pro-label">工种:</td>
+        <td id="pgd_workUserName" class="pro-content"></td>
+        <td class="pro-label">状态:</td>
+        <td id="pgd_status" class="pro-content"></td>
+    </tr>
+    <tr>
+        <td class="pro-label">计划开工:</td>
+        <td id="pgd_begin" class="pro-content-time"></td>
+        <td class="pro-label">计划完工:</td>
+        <td id="pgd_end" class="pro-content-time"></td>
+    </tr>
+    <tr>
+        <td class="pro-label">实际开工:</td>
+        <td id="pgd_sbegin" class="pro-content-time"></td>
+        <td class="pro-label">实际完工:</td>
+        <td id="pgd_send" class="pro-content-time"></td>
+    </tr>
+    <tr>
+        <td class="pro-label">开工前图片:</td>
+        <td colspan="2">
+            <img id="pgd_image1" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/>&nbsp;
+            <img id="pgd_image2" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/>&nbsp;
+            <img id="pgd_image3" title="点击查看大图" onclick="showimg(this)"  style="height: 50px;width: 50px;"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="pro-label">申请验收图片:</td>
+        <td colspan="2">
+            <img id="pgd_image4" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/>&nbsp;
+            <img id="pgd_image5" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/>&nbsp;
+            <img id="pgd_image6" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/><br/>
+            <img id="pgd_image16" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/>&nbsp;
+            <img id="pgd_image17" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/>&nbsp;
+            <img id="pgd_image18" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/>
+        </td>
+    </tr>
+        <tr>
+        <td class="pro-label">监理审核图片:</td>
+        <td colspan="2">
+            <img id="pgd_image7" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/>&nbsp;
+            <img id="pgd_image8" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/>&nbsp;
+            <img id="pgd_image9" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/><br/>
+            <img id="pgd_image10" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/>&nbsp;
+            <img id="pgd_image11" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/>&nbsp;
+            <img id="pgd_image12" title="点击查看大图" onclick="showimg(this)" style="height: 50px;width: 50px;"/>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" height="50" style="text-align: left" ><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装修管家评价</strong>
+        </td>
+    </tr>
+    <tr>
+        <td class="pro-label">服务态度:</td>
+        <td id="pgd_w1" class="pro-content-time">N星</td>
+        <td class="pro-label">专业程度:</td>
+        <td id="pgd_w2" class="pro-content-time">N星</td>
+    </tr>
+    <tr style="vertical-align: top;">
+        <td class="pro-label" style="vertical-align: top;">评价内容:</td>
+        <td colspan="2" style="padding-left: 0px;" >
+            <textarea class="" name="pgd_remark" id="pgd_evaluateRemark" readonly="true" data-options="multiline:true" style="width:250px;height:100px;resize: none;" ></textarea>
+        </td>
+        </tr>
+    <tr>
+        <td colspan="2" height="50" style="text-align: left" ><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装修用户评价</strong>
+        </td>
+    </tr>
+    <tr>
+        <td class="pro-label">服务态度:</td>
+        <td id="user_w1" class="pro-content-time">N星</td>
+        <td class="pro-label">专业程度:</td>
+        <td id="user_w2" class="pro-content-time">N星</td>
+    </tr>
+    <tr style="vertical-align: top;">
+        <td class="pro-label" style="vertical-align: top;">评价内容:</td>
+        <td colspan="2" style="padding-left: 0px;" >
+            <textarea class="" name="user_remark" id="user_Remark" readonly="true" data-options="multiline:true" style="width:250px;height:100px;resize: none;" ></textarea>
+        </td>
+        </tr>
+</table>
+<!-- 查看图片弹出层 -->
+<!--<div id="acceptance_dlg_img" class="easyui-dialog" title="查看大图" style="width:650px;height:500px;padding:10px;"
+           data-options="iconCls:'icon-cancel',resizable:true,modal:true,closed: true,buttons: [{
+			text:'关闭',
+			iconCls:'iconfont icon-ok',
+			handler:function(){$('#acceptance_dlg_img').dialog('close');}
+		}]">
+    <img id="acceptance_img" src=""/>
+</div>-->
+
+<div id="acceptance_dlg" class="easyui-dialog" title="查看大图"
+     data-options="iconCls:'icon-cancel',resizable:true,modal:true,closed: true,buttons: [{
+			text:'关闭',
+			iconCls:'iconfont icon-ok',
+			handler:function(){$('#acceptance_dlg').dialog('close');}
+		}]">
+    <div  id="acceptance_dlg_img" style="overflow:auto;width:750;height:750">
+    <a href="#prev" title="上一张" class="control prev prev-disabled">
+    <span></span></a>
+    <a href="#next" title="下一张" class="control next next-disabled">
+        <span></span></a>
+    <img id="acceptance_img" src="" class="hover"/>
+    </div> 
+</div>
+<script>
+    $().ready(function() {
+        openDialogPgd("<?php echo $pc ?>", "<?php echo $activeItemCode ?>");
+
+        $("#acceptance_dlg_img").unbind("mouseover").unbind("mouseout").bind("mouseover", function () {
+            var id = parseInt($("#acceptance_dlg_img").attr("index"));
+            setControl(id);
+        }).bind("mouseout", function () {
+            $(this).removeClass("hover")
+        });
+        $("#acceptance_dlg_img .prev").unbind('click').click(function () {
+            var m = parseInt($("#acceptance_dlg_img").attr("index")) - 1;
+            if (m < 1) {
+                $("#acceptance_dlg_img").attr("index", 1);
+                $("#acceptance_dlg_img .prev").addClass("prev-disabled");
+                return;
+            }
+            else if (m == 1) {
+                $("#acceptance_dlg_img .prev").addClass("prev-disabled");
+            } else {
+                $("#acceptance_dlg_img .prev").removeClass("prev-disabled");
+            }
+            $("#acceptance_dlg_img").attr("index", m);
+
+            $("#acceptance_img").attr("src", $('#dd img').eq(m-1).attr("src"));
+        });
+
+        $("#acceptance_dlg_img .next").unbind('click').click (function() {
+            var m = parseInt($("#acceptance_dlg_img").attr("index")) + 1;
+            if (m > 12) {
+                $("#acceptance_dlg_img").attr("index", 12);
+                $("#acceptance_dlg_img .next").addClass("next-disabled");
+                return;
+            }
+            else if (m == 12) {
+                $("#acceptance_dlg_img .next").addClass("next-disabled");
+            }else {
+                $("#acceptance_dlg_img .next").removeClass("next-disabled");
+            }
+            $("#acceptance_dlg_img").attr("index", m);
+            $("#acceptance_img").attr("src", $('#dd img').eq(m-1).attr("src"));
+            // $("#acceptance_img").attr("src", $('#pgd_image' + m).attr("src"));
+        });
+    });
+    function setControl(index) {
+        $("#acceptance_dlg_img").addClass("hover");
+        if (index == 1) {
+            $("#acceptance_dlg_img .prev").addClass("pre-disabled");
+            $("#acceptance_dlg_img .next").removeClass("next-disabled");
+        } else if (index == 12) {
+            $("#acceptance_dlg_img .next").addClass("next-disabled");
+            $("#acceptance_dlg_img .prev").removeClass("prev-disabled");
+        } else {
+            $("#acceptance_dlg_img .next").removeClass("next-disabled");
+            $("#acceptance_dlg_img .prev").removeClass("prev-disabled");
+        }
+    }
+    function openDialogPgd(pc,activeItemCode) {
+        $.ajax({
+            type: "POST",
+            url: "<?php echo U('Procedure/getRecordDetail');?>",
+            data: {'PC': pc, 'AC': activeItemCode, 'datatype': 1},
+            dataType: "json",
+            success: function (data) {
+                $('#pgd_projectName').html(data.projectName);
+                $('#pgd_owner').html(data.owner);
+                $('#pgd_activeItemName').html(data.activeItemName);
+                $('#pgd_activeItemCode').html(data.recordCode);
+                $('#pgd_userCode').html(data.userCode);
+                $('#pgd_userName').html(data.userName);
+                $('#pgd_workUserName').html(data.workUserName);
+                $('#pgd_status').html(data._status);
+                $('#pgd_begin').html(_dateFormat(data.begin, 1));
+                $('#pgd_end').html(_dateFormat(data.end, 1));
+                $('#pgd_sbegin').html(_dateFormat(data.sbegin, 1));
+                $('#pgd_send').html(_dateFormat(data.send, 1));
+                $('#pgd_image1').attr('src', data._image1);
+                $('#pgd_image2').attr('src', data._image2);
+                $('#pgd_image3').attr('src', data._image3);
+                $('#pgd_image4').attr('src', data._image4);
+                $('#pgd_image5').attr('src', data._image5);
+                $('#pgd_image6').attr('src', data._image6);
+                $('#pgd_image7').attr('src', data._image10);
+                $('#pgd_image8').attr('src', data._image11);
+                $('#pgd_image9').attr('src', data._image12);
+                $('#pgd_image10').attr('src', data._image13);
+                $('#pgd_image11').attr('src', data._image14);
+                $('#pgd_image12').attr('src', data._image15);
+                $('#pgd_image16').attr('src', data._image16);
+                $('#pgd_image17').attr('src', data._image17);
+                $('#pgd_image18').attr('src', data._image18);
+                if (data.w1) {
+                    $('#pgd_w1').html(data.w1 + "星");
+                } else {
+                    $('#pgd_w1').html("暂未评价")
+                }
+                if (data.w2) {
+                    $('#pgd_w2').html(data.w2 + "星");
+                } else {
+                    $('#pgd_w2').html("暂未评价");
+                }
+                $('#pgd_evaluateRemark').html(data.evaluateRemark);
+                $('#pgd_dlg').dialog('open');
+            }
+        });
+        
+        $.ajax({
+            type: "POST",
+            url: "<?php echo U('Pj/getPj');?>",
+            data: {'PC': pc, 'AC': activeItemCode, 'datatype': 1},
+            dataType: "json",
+            success: function (data) {
+                if (data.pj1) {
+                    $('#user_w1').html(data.pj1 + "星");
+                } else {
+                    $('#user_w1').html("暂未评价")
+                }
+                if (data.pj2) {
+                    $('#user_w2').html(data.pj2 + "星");
+                } else {
+                    $('#user_w2').html("暂未评价");
+                }
+                $('#user_Remark').html(data.Remark);
+
+            }
+        });
+    }
+    // 点击查看大图
+    function showimg(obj) {
+        $("#acceptance_img").attr("src", $(obj).attr("src"));
+        var id = obj.id.replace('pgd_image', '');
+        $("#acceptance_dlg_img").attr("index", id);
+        setControl(id);
+        $("#acceptance_dlg").dialog("open");
+    }
+</script>

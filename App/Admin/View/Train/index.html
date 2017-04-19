@@ -1,0 +1,244 @@
+<div style="margin:20px 0;"></div>
+
+<div  class="train-inputwrap1" class="">
+	<input type="radio" name="isExam" value="1" checked onchange="loadExamList()"/>考试
+	<input type="radio" name="isExam" value="0" onchange="loadExamList()" class="train-secondradio"/>培训
+	
+	<br/><br/><br/><br/>
+	
+	适合工种 <br/>
+	<select id="workgroupcode" class="easyui-combobox" data-options="onSelect:function(){ loadExamList(); }">
+		<?php foreach($groupWorkers as $k=>$v){ ?>
+		<option value="<?php echo $k;?>"><?php echo $v;?></option>
+		<?php }?>
+	</select>
+	<br/><br/>
+	培训考题列表
+	<select size="10" onchange="loadExam()" id="examList">
+		<?php foreach($list as $k=>$v){?>
+		<option value="<?php echo $v->EXAMCODE;?>" isuse="<?php echo $v->ISUSE;?>" gtype="<?php echo $v->GTYPE;?>" type="<?php echo $v->TYPE;?>" path="<?php echo $v->PATH;?>" remark="<?php echo $v->REMARK;?>"  apath="<?php echo $v->APATH;?>" <?php if($k==0){ ?> selected="selected" <?php } ?>><?php echo $v->TITLE;?></option>
+		<?php }?>
+	</select>
+
+	<br/><br/>
+	
+	<span class="l-btn-left" style="float:right;margin-right:12px;"><span class="l-btn-text" id="a_examstatus" examcode="" isuse="" onclick="delete_confirm()">禁用</span></span>
+	
+	
+	
+	<br/><br/><br/><br/><br/><br/><br/><br/>
+	
+	<a id="a_examtool" href="http://<?php echo getDomain();?>/yhr/data/exam/ExamTool.zip">考试编制工具下载</a>
+	
+</div>
+
+<div style="border-right:1px dashed #ccc; height:100%; width:1px;float:left;"></div>
+
+<div style="float:left;">
+	<form id="ff" class="train-form" enctype="multipart/form-data" method="post" action="<?php echo U('Train/uploadfile');?>">
+		<!-- <table cellpadding="5">
+			<tr>
+				<td>商品名称:</td>
+				<td><input class="easyui-textbox" type="text" name="d_title" id="d_title" data-options="required:true" /></td>
+			</tr>
+			<tr>
+				<td>类型:</td>
+				<td>
+					<input type="radio" name="d_isExam" value="1" checked/>考试
+					<input type="radio" name="d_isExam" value="0" />培训
+				</td>
+			</tr>
+			<tr>
+				<td>适合工种:</td>
+				<td>
+					<select id="d_workgroupcode" class="easyui-combobox">
+						<?php foreach($groupWorkers as $k=>$v){ ?>
+						<option value="<?php echo $k;?>"><?php echo $v;?></option>
+						<?php }?>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>文件内容:</td>
+				<td>
+					<input class="easyui-filebox" name="d_path" id="d_path" data-options="prompt:'Choose a file...'" style="width:100%">
+					<a href="javascript:void(0);" id="d_path_download" class="easyui-linkbutton">下载</a>
+				</td>
+			</tr>
+			<tr>
+				<td>答案:</td>
+				<td>
+					<input class="easyui-filebox" name="d_apath" id="d_apath" data-options="prompt:'Choose a file...'" style="width:100%">
+					<a href="javascript:void(0);" id="d_apath_download" class="easyui-linkbutton">下载</a>
+				</td>
+			</tr>
+			<tr>
+				<td>描述内容:</td>
+				<td>
+					<input class="easyui-textbox" name="d_remark" id="d_remark" data-options="multiline:true" style="height:60px" />
+				</td>
+			</tr>
+		</table> -->
+		<div>
+			<label>内容名称:</label><input class="easyui-textbox" type="text" name="d_title" id="d_title" data-options="required:true" />
+		</div>
+		<div>
+			<label>类型:</label><input type="radio" name="d_isExam" value="1" checked/>考试
+					<input type="radio" name="d_isExam" value="0" />培训
+		</div>
+		<div>
+			<label>适合工种:</label>
+			        <select id="d_workgroupcode" class="easyui-combobox">
+						<?php foreach($groupWorkers as $k=>$v){ ?>
+						<option value="<?php echo $k;?>"><?php echo $v;?></option>
+						<?php }?>
+					</select>
+		</div>
+		<div>
+			<label>文件内容:</label>
+			 <input class="easyui-filebox" name="uf_exam" accept="application/zip" id="d_path" data-options="buttonText:'选择文件'" style="width:100%">
+					<a href="javascript:void(0);" id="d_path_download" >下载</a>
+		</div>
+		<div>
+			<label>答案:</label>
+			 <input class="easyui-filebox" name="uf_answer" accept="text/plain" id="d_apath" data-options="buttonText:'选择文件'" style="width:100%">
+					<a href="javascript:void(0);" id="d_apath_download" >下载</a>
+		</div>
+		<div >
+			<label style="vertical-align: top;">描述内容:</label>
+			 <textarea class="" name="d_remark" id="d_remark" data-options="multiline:true" style="width:273px;height:260px;resize: none;" ></textarea>
+		</div>
+		<div style="text-align:right;width:68%">
+			<!--<input type="submit" value="上传" class="easyui-linkbutton"/>-->
+		</div>
+
+		<div id="Settlement_audit_dlg" class="easyui-dialog" title="删除提醒" style="width:400px;height:200px;padding:10px"
+			 data-options="
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+
+					}
+				}]
+			"></div>
+	</form>
+</div>
+
+<script>
+	$().ready(function(){
+		$("#d_path").attr("accept","application/zip");
+		$("#d_apath").attr("accept","text/plain");
+	});
+	/*
+		改变考题(培训)列表
+		触发条件 1.考题or培训 checkbox 2.选择工种
+		出发后   1.列表改变 2.右侧默认展示列表第一个详细内容
+	 */
+	function loadExamList(){
+		islogin();
+		// 加载列表
+		var workgroupcode = $('#workgroupcode').combobox('getValue');
+
+		var isexam = $('input[name="isExam"]:checked').val();
+
+		$.ajax({
+			type: 'POST',
+			url: "<?php echo U('Train/index');?>",
+			data: {isExam:isexam,workGroupCode:workgroupcode,isAjax:1},
+			dataType: 'json',
+			success: function(data){
+				var opts = "";
+				for(var i=0;i<data.length;i++){
+					opts += "<option value='"+ data[i].EXAMCODE +"' isuse='" + data[i].ISUSE + "' gtype='"+ data[i].GTYPE +"' type='"+ data[i].TYPE +"' path='"+ data[i].PATH +"' apath='"+ data[i].APATH +"' remark='"+ data[i].REMARK +"' " + ((i==0) ? "selected='selected'":"") +" >";
+					opts += data[i].TITLE;
+					opts += "</option>";
+				}
+				$("#examList").html(opts);
+				if(data.length>0){
+					loadExam();
+				}else {
+					clearExamDetail();
+				}
+			}
+		});
+	}
+
+	/*
+		选择考题(培训)
+		触发后 1. 判断启用禁用按钮 2.右侧详细内容变化
+	 */
+	function loadExam(){
+		var exam = new Object();
+		var selectedExam = $("#examList").find("option:selected");
+		exam.isuse = $(selectedExam).attr("isuse");
+		exam.examcode = $(selectedExam).attr("value");
+		exam.gtype = $(selectedExam).attr("gtype");
+		exam.type = $(selectedExam).attr("type");
+		exam.path = $(selectedExam).attr("path");
+		exam.apath = $(selectedExam).attr("apath");
+		exam.remark = $(selectedExam).attr("remark");
+		exam.title = $(selectedExam).text();
+		//console.log(exam);
+		// 处理启用(禁用)按钮
+		$("#a_examstatus").attr('examcode',exam.examcode);
+		$("#a_examstatus").attr('isuse',( exam.isuse==1?0:1 ));
+		$("#a_examstatus").html('删除');
+		//加载右侧数据
+		loadExamDetail(exam);
+		//$('#d_title').textbox('setValue',$(selectedExam).text());
+	}
+
+	//加载右侧数据
+	function loadExamDetail(exam) {
+		$('#d_title').textbox('setValue', exam.title);
+		$('#d_remark').html(exam.remark);
+		$("input[name='d_isExam']").attr("value", exam.isExam);
+		$('#d_workgroupcode').combobox('setValue', exam.gtype);
+		$("#d_path_download").attr("href", "http://<?php echo getDomain();?>" + exam.path);
+		$("#d_apath_download").attr("href", "http://<?php echo getDomain();?>" + exam.apath);
+	}
+
+	//清空右侧数据
+	function clearExamDetail(exam){
+		$('#d_title').textbox('setValue','') ;
+		$('#d_workgroupcode').combobox('setValue','') ;
+		$('#d_remark').textbox('setValue','') ;
+		$("input[name='d_isExam']").attr("value",'');
+		$("#d_path_download").attr("href" , "javascript:void(0);");
+		$("#d_apath_download").attr("href" , "javascript:void(0);");
+	}
+
+	//启用禁用
+	function removeExam() {
+			var examCode = $("#a_examstatus").attr("examcode");
+			var isUse = $("#a_examstatus").attr("isuse");
+
+			$.ajax({
+				type: 'POST',
+				url: "<?php echo U('Train/removeExam');?>",
+				data: {examCode: examCode, isUse: isUse},
+				dataType: 'json',
+				success: function (status) {
+					if (status == 200) {
+						$.messager.alert('消息', '操作成功!', 'info');
+						loadExamList();
+					} else {
+						$.messager.alert('消息', '操作失败!', 'error');
+					}
+				}
+			});
+	}
+	function delete_confirm(e) {
+		$.messager.confirm("警告提醒", "删除不可逆，确认删除吗？", function (r) {
+			if (r) {
+				removeExam();
+			}
+		})
+	}
+	setTimeout(function(){
+		loadExam(),0
+	});
+
+</script>

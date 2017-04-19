@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>管理控制台 | {:C('GMS_NAME')}</title>
+    <link href="__IMG__/favicon.ico" mce_href="__IMG__/favicon.ico" rel="bookmark" type="image/x-icon" />
+    <link href="__IMG__/favicon.ico" mce_href="__IMG__/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="__IMG__/favicon.ico" mce_href="__IMG__/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/Easyui/themes/metro/easyui.css">
+    <link rel="stylesheet" href="__STATIC__/Font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/Easyui/themes/color.css">
+    <link rel="stylesheet" href="__STATIC__/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="__STATIC__/kindeditor/themes/simple/simple.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/main.css">
+    <script type="text/javascript" src="__STATIC__/Jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/Easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/Easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script charset="utf-8" src="__STATIC__/kindeditor/kindeditor-min.js"></script>
+    <script charset="utf-8" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script charset="utf-8" src="__STATIC__/Echarts/echarts.js"></script>
+    <script type="text/javascript" src="__JS__/main.js"></script>
+    <script>
+        var ke_pasteType=2;
+        var ke_fileManagerJson="{:U('Admin/FilesUpdata/filemanager')}";
+        var ke_uploadJson="{:U('Admin/FilesUpdata/upload')}";
+        var ke_Uid='{:session(C("AUTH_KEY"));}';
+        var Root='__ROOT__';
+    </script>
+    <script>
+    	$(document).ready(function(e) {
+            $("#Main_Layout_Center").css("display","block");
+        });
+    </script>
+</head>
+<body class="easyui-layout" id="Main_Layout_Box">
+<div id="Main_Layout_North" data-options="region:'north',split:false">
+    <div id="header_logo">
+        <a href="{:U('Admin/Index/index')}">{:C('GMS_NAME')}</a>
+        <i class="opacity-80">v1.1</i>
+        <!-- <a class="justify" href="javascript:void(0);"></a> -->
+    </div>
+    <ul class="header_nav" style="float:right">
+<a href="#"><li><?php echo session('UserInfo')->RoleName;?>    [<?php echo session('UserInfo')->UN;?>]</li></a>
+<a><li>当前城市[<?php echo session('UserInfo')->CityName;?>]</li></a>
+<a href="{:U('Public/logout')}"><li>退出</li></a>
+</ul>
+</div>
+<!--<div id="Main_Layout_South" data-options="region:'south',split:false">Powered by <a href="{:C('GMS_SITE')}" style="color:#666">{:C('GMS_NAME')} v {:C('GMS_VERSION')}</a> | Copyright © <a href="{:C('GMS_AUTHOR_SITE')}" style="color:#666">{:C('GMS_AUTHOR')}</a> All rights reserved.</div>-->
+<div id="Main_Layout_West" data-options="region:'west',split:false">
+    <div class="right_box">
+        <dl id="Left_4_box" class="selected">
+            <dd>
+                <ul>
+                    <?php
+                    $AdminMenu = get_menu();
+                    foreach($AdminMenu as $k=>$v){ ?>
+                        <li>
+                        <a href="<?php echo U($v->MENUPATH);?>"  style="display:list-item;*width:120px" class="<?php if(strpos($v->MENUPATH,('Admin/' . CONTROLLER_NAME .'/index'))!== false)?>">
+                        <i class="icon iconfont iconfont icon-shezhi"></i><?php echo $v->MENUNAME;?></a></li>
+                    
+                    <?php } ?>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+</div>
+<div id="Main_Layout_Center" data-options="region:'center',split:false" style="padding:5px;">
+    {__CONTENT__}
+    <!--<div id="MainTabs" class="easyui-tabs" data-options="fit:true,border:false">
+
+    </div>-->
+</div>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        //G_Ajax(this,'ul','Main_Layout_West','{:U("Index/menu",array("pid"=>1))}')
+		var url=self.location.href;
+		//菜单样式
+		var i=0;
+		$("#Main_Layout_West .right_box dd li").each(function(index, element) {
+			i++;
+			if(url.indexOf($(this).children("a").attr("href"))>0){
+				$(this).css({"background-image":""})
+				 $(this).css({"background-image":"url(__IMG__/Main/btnbg2hover.jpg)"})
+			}
+           
+        });
+    })
+</script>

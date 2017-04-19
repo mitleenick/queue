@@ -1,0 +1,177 @@
+<div id="Payroll_Bar" class="Bar_tools">
+	<!--<a class='easyui-linkbutton' href='JavaScript:void(0);' data-options="iconCls:'iconfont icon-viewlist',plain:true" onclick="reload_Payroll_data_list();"><span>刷新</span></a>-->
+	
+	<!--<select class="easyui-combobox" name="userCode" id="userCode" data-options="onSelect:function(){ reload_Payroll_data_list(); }" style="width: 100px;">
+		<option value="-1">用户编号</option>
+	</select>-->
+	工人查询<input id="UC" class="easyui-textbox" style="width:150px;height:22px">
+	<a class='easyui-linkbutton' href='JavaScript:void(0);' onclick="reload_Payroll_data_list();"><span>搜索</span></a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#Payroll_audit_dlg_date').dialog('open')">选择时间</a>
+	<select class="easyui-combobox" name="type" id="type" data-options="onSelect:function(){ reload_Payroll_data_list(); }" style="width: 100px;">
+		<option value="-1">流水类型</option>
+		<?php foreach($mtype as $k=>$v){ ?>
+		<option value="<?php echo $k;?>"><?php echo $v;?></option>
+		<?php } ?>
+	
+	</select>
+	<!--<a id ="exportlbt" class='easyui-linkbutton' href="<?php echo U('Payroll/exportcsv');?>"><span>导出CSV</span></a>-->
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="exportcsv(this,'Payroll_Data_List','',['ck'])" download="劳务费.csv">导出</a>
+</div>
+
+<!-- 数据列表 -->
+<table id="Payroll_Data_List"></table>
+
+<!-- 选择时间 -->
+<div id="Payroll_audit_dlg_date" class="easyui-dialog" title="选择时间" style="width:550px;height:140px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						$('#Payroll_audit_dlg_date').dialog('close');
+						reload_Payroll_data_list();
+					}
+				}]
+			">
+	<table>
+		<tr>
+			<td>开始时间:</td>
+			<td>
+				<input class="easyui-datebox" id="beginDate" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-01' , time());?>">
+			</td>
+			<td>结束时间:</td>
+			<td>
+				<input class="easyui-datebox" id="endDate" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-t' , time());?>">
+			</td>
+		</tr>
+	</table>
+	<div id="cc" class="easyui-calendar"></div>
+</div>
+
+<div style="position: absolute;
+    right: 80px;
+    bottom: 9px;width: 200px;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 6px 0 0;
+    padding: 0;">
+	<p id="tongji">总收入：0 总支出：0</p>
+</div>
+<div id="dd" class="easyui-dialog" title="条件" style="width:650px;height:500px;"
+	 data-options="iconCls:'icon-cancel',resizable:true,modal:true,closed: true,buttons: [{
+			text:'关闭',
+			iconCls:'iconfont icon-ok',
+			handler:function(){$('#dd').dialog('close');}
+		}]">
+</div>
+
+<script type="text/javascript">
+	$().ready(function(){
+		islogin();
+		$('#UC').textbox('textbox').keydown(function (e) {
+			if (e.keyCode == 13) {
+				reload_Payroll_data_list();
+			}
+		});
+	});
+// 重加载 
+function reload_Payroll_data_list(){
+islogin();
+	var type=$("#type").combobox('getValue');
+	var beginDate=$("#beginDate").datebox('getValue');
+	var endDate=$("#endDate").datebox('getValue');
+	var userCode=$("#UC").textbox('getValue');
+
+	$('#exportlbt').attr('href' , '<?php echo U("Payroll/exportcsv");?>&type=' + type + '&beginDate=' + beginDate + '&endDate=' + endDate+'&userCode=' + userCode);
+	$('#Payroll_Data_List').datagrid('reload',{
+		'type' : type,
+		'beginDate':beginDate ,
+		'endDate':endDate,
+		'userCode':userCode
+	});
+}
+// 底部统计
+function tongji(){
+	islogin();
+	var re = $('#Payroll_Data_List').datagrid('getSelections');
+	var income = 0;
+	var outgo = 0;
+	if(re.length<=0){
+		re = $('#Payroll_Data_List').datagrid('getRows');
+	}
+
+	for(var i=0;i<re.length;i++){
+		income += re[i].income;
+		outgo += re[i].outgo;
+	}
+
+	$('#tongji').html ('总收入：' + income + '  总支出：' + outgo);
+}
+
+$(function() {
+	islogin();
+	$("#Payroll_Data_List").datagrid({
+		url : "{:U('Payroll/index')}",
+		fit : true,
+		striped : true,
+		border : false,
+		pagination : true,
+		pageSize : 50,
+		pageList : [50,100,500,1000,10000 ],
+		pageNumber : 1,
+		toolbar : '#Payroll_Bar',
+		singleSelect : false,
+		remoteSort:false,
+		rownumbers: true,
+		columns : [[
+			{field : 'ck',title : '选择',checkbox:true},
+            {field : 'no',title : '流水号',width : 160,sortable:true},
+            {field : 'recordCode',title : '单号',width : 160,sortable:true},
+            {field : 'userCode',title : '用户编号',width : 110,sortable:true},
+			{field : 'userName',title : '用户名称',width : 100,sortable:true},
+            {field : 'income',title : '收入',width : 100, sortable:true,align:'right',formatter:function(value) {
+				if (value) {
+					return value.toFixed(2);
+				} else {
+					return 0;
+				}
+			}},
+            {field : 'outgo',title : '支出',width : 100,sortable:true,align:'right',formatter:function(value){
+				if (value) {
+					return value.toFixed(2);
+				} else {
+					return 0;
+				}
+			}},
+            {field : 'surplus',title : '余额',width : 100,sortable:true,align:'right',formatter:function(value){
+				if (value) {
+					return value.toFixed(2);
+				} else {
+					return 0;
+				}
+			}},
+            {field : 'auditDateTime',title : '审核时间',width : 170,sortable:true},
+			{field : 'status',title : '状态',width : 100,sortable:true},
+            {field : 'mtype',title : '类型',width : 90,sortable:true}
+		]],
+		onSelect : function(index,rowdata){
+			tongji();
+		},
+		onUnselect : function(index,rowdata){
+			tongji();
+		},
+		onLoadSuccess: function (data) {
+			tongji();
+		},
+		onSelectAll: function (rows) {
+			tongji();
+		},
+		onUnselectAll: function (rows) {
+			tongji();
+		}
+	});
+});
+</script>

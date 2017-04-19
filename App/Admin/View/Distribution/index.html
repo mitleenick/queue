@@ -1,0 +1,244 @@
+<div id="Distribution_Bar" class="Bar_tools">
+	<a class='easyui-linkbutton' href='JavaScript:void(0);' data-options="iconCls:'iconfont icon-viewlist',plain:true" onclick="reload_Distribution_data_list();"><span>刷新</span></a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="toggleselectall('Distribution_Data_List')">全部</a>
+	工程编号:
+	<select class="easyui-combobox" name="ProjectName" id="ProjectCode" style="width:100px;" data-options="
+		url : '<?php echo U('Public/searchProjectById');?>',
+		method:'post',
+		textField : 'ProjectName',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '工程编号',
+		onChange : function (){
+			reload_Distribution_data_list();
+		}
+	">
+	</select>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#Distribution_audit_dlg_date').dialog('open')">选择时间</a>
+	<select class="easyui-combobox" name="U" id="U" data-options="onSelect:function(){ reload_Distribution_data_list(); }" style="width: 80px;">
+		<option value="-1">供应商</option>
+	</select>
+	<select class="easyui-combobox" name="S" id="S" data-options="onSelect:function(){ reload_Distribution_data_list(); }" style="width: 100px;">
+		<option value="-1">配送状态</option>
+		<option value="1">配送中</option>
+		<option value="F">完成</option>
+	</select>
+	
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="auditRecPass()">配送完成</a>
+	<a href="<?php echo U('Distribution/exportcsv');?>" class="easyui-linkbutton" id="exportlbt">导出</a>
+</div>
+
+<!-- 数据列表 -->
+<table id="Distribution_Data_List"></table>
+
+<!-- 选择时间 -->
+<div id="Distribution_audit_dlg_date" class="easyui-dialog" title="选择时间" style="width:550px;height:140px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						$('#Distribution_audit_dlg_date').dialog('close');
+						reload_Distribution_data_list();
+					}
+				}]
+			">
+	<table>
+		<tr>
+			<td>开始时间:</td>
+			<td>
+				<input class="easyui-datebox" id="BT" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-01' , time());?>">
+			</td>
+			<td>结束时间:</td>
+			<td>
+				<input class="easyui-datebox" id="ET" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-t' , time());?>">
+			</td>
+		</tr>
+	</table>
+	<div id="cc" class="easyui-calendar"></div>
+</div>
+
+<!-- 选择配送供应商 -->
+<div id="Distribution_gys_dlg" class="easyui-dialog" title="选择配送供应商" style="width:400px;height:200px;padding:10px"
+			data-options="
+				//iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'确定',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						var pc = $('#Distribution_gys_dlg_h').attr('hpc');
+						var recode = $('#Distribution_gys_dlg_h').attr('hrecode');
+						var resourcecode = $('#Distribution_gys_dlg_h').attr('hresourcecode');
+						var uc = $('#UC').combobox('getValue');
+						//console.log(pc);
+						//console.log(recode);
+						//console.log(resourcecode);
+						//console.log(uc);
+						$.ajax({
+							type: 'POST',
+							url: '<?php echo U('Distribution/auditResource');?>',
+							data: {PC:pc,RECODE:recode,UC:uc,ResourceCode:resourcecode},
+							dataType: 'json',
+							success: function(status){
+								console.log(status);
+								if(status==200){
+									$.messager.alert('消息','操作成功!','info');
+									$('#Distribution_gys_dlg_h').attr('hpc','');
+									$('#Distribution_gys_dlg_h').attr('hrecode','');
+									$('#Distribution_gys_dlg_h').attr('hresourcecode','');
+									//$('Distribution_gys_dlg').dialog('close')
+									//reload_Distribution_data_list();
+								}else{
+									$.messager.alert('消息','操作失败!','error');
+								}
+							}
+						});
+					}
+				}]
+			">
+	<select class="easyui-combobox" name="UC" id="UC">
+		<option value="18612247158">常福鹏</option>
+	</select>
+	<input type="hidden" id="Distribution_gys_dlg_h" hpc="" hrecode="" hresourcecode=""/>
+</div>
+
+<!-- 审核不通过 -->
+<div id="Distribution_audit_dlg" class="easyui-dialog" title="审核不通过原因" style="width:400px;height:200px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						//alert($('#R').val());
+						//console.log($('#Distribution_Data_List').datagrid('getSelections'));
+						var r  = $('#R').val();
+						var re = $('#Distribution_Data_List').datagrid('getSelections');
+						var s  = 'E';
+						if(r==''){
+							$.messager.alert('消息','请输入审核不通过原因!','error');
+							$('#R').focus();
+							return false;
+						}
+						if(re.length==0){
+							$.messager.alert('消息','您未选择任何数据!','error');
+							return false;
+						}
+						$.ajax({
+							type: 'POST',
+							url: '<?php echo U('Distribution/auditResource');?>',
+							data: {R:r,RE:re,S:s},
+							dataType: 'json',
+							success: function(status){
+								if(status==200){
+									$.messager.alert('消息','操作成功!','info');
+									$('#R').val('');
+									$('#Distribution_audit_dlg').dialog('close')
+									reload_Distribution_data_list();
+								}else{
+									$.messager.alert('消息','操作失败!','error');
+								}
+							}
+						});
+					}
+				}]
+			">
+	<input class="easyui-textbox" id="R" data-options="multiline:true" style="width:345px;height:105px">
+</div>
+
+<script type="text/javascript">
+
+// 重加载 
+function reload_Distribution_data_list(){
+	var S = $("#S").combobox('getValue');
+	var BT = $("#BT").datebox('getValue');
+	var ET = $("#ET").datebox('getValue');
+	var PCS = $('#ProjectCode').combobox('getValue');
+
+	$('#exportlbt').attr('href' , '<?php echo U("Distribution/exportcsv");?>&S=' + S + '&BT=' + BT + '&ET=' + ET + '&PCS=' + PCS);
+
+	$('#Distribution_Data_List').datagrid('reload',{
+		'S' : S,
+		'BT': BT,
+		'ET': ET,
+		'PCS' : PCS
+	});
+}
+
+// 配送完成 
+function auditRecPass(){
+	var re = $('#Distribution_Data_List').datagrid('getSelections');
+	var s  = 'F';
+	if(re.length==0){
+		$.messager.alert('消息','您未选择任何数据!','error');
+		return false;
+	}
+	$.ajax({
+		type: 'POST',
+		url: "<?php echo U('Distribution/auditRec');?>",
+		data: {RE:re,S:s},
+		dataType: 'json',
+		success: function(status){
+			if(status==200){
+				$.messager.alert('消息','操作成功!','info');
+				reload_Distribution_data_list();
+			}else{
+				$.messager.alert('消息','操作失败!','error');
+			}
+		}
+	});
+}
+
+$(function() {
+	$("#Distribution_Data_List").datagrid({
+		url : "{:U('Distribution/index')}",
+		fit : true,
+		striped : true,
+		border : false,
+		pagination : true,
+		pageSize : 20,
+		pageList : [10,20,30,40,50,60,70,80,90,100 ],
+		pageNumber : 1,
+		sortName : 'resourcecode',
+		sortOrder : 'desc',
+		toolbar : '#Distribution_Bar',
+		singleSelect : false,
+		remoteSort:false,
+		columns : [[
+					{field : 'ck',title : '选择',checkbox:true},
+					{field : 'recordCode',title : '单据号',width : 150,sortable:true},
+					{field : 'projectCode',title : '工程编号',width : 80,sortable:true},
+					{field : 'projectName',title : '工程名称',width : 150,sortable:true},
+					{field : 'activeItemName',title : '工序项名称',width : 100,sortable:true},
+					{field : 'resourcecode',title : '资源编号',width : 100,sortable:true},
+					{field : 'begin',title : '开始时间',width : 150,sortable:true},
+					{field : 'end',title : '结束时间',width : 150,sortable:true},
+					{field : 'resourcename',title : '材料',width : 150,sortable:true},
+					{field : 'suppliercode',title : '供应商编号',width : 110,sortable:true},
+					{field : 'suppliername',title : '供应商名称',width : 80,sortable:true},
+					{field : 'norms',title : '品类',width : 250,sortable:true},
+					{field : 'number',title : '数量',width : 50,sortable:true,align:'right'},
+					{field : 'moneyunit',title : '单价',width : 50,sortable:true,align:'right',formatter:function(value){
+						return value.toFixed(2);
+					}},
+					{field : 'status',title : '状态',width : 80,sortable:true,formatter:function(value)
+					{
+						if (value=='1'){
+							return"配送中";
+						}else if (value=='F'){
+							return "完成";
+						}else{
+							return "未知";
+						}
+					}}
+		]]
+	});
+});
+</script>

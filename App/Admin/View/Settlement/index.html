@@ -1,0 +1,406 @@
+<div id="Settlement_Bar" class="Bar_tools">
+	<!--<a class='easyui-linkbutton' href='JavaScript:void(0);' data-options="iconCls:'iconfont icon-viewlist',plain:true" onclick="reload_Settlement_data_list();"><span>刷新</span></a>-->
+	
+	<input type="checkbox" id="check_gr" value="M9" checked="true" onchange="reload_Settlement_data_list()"/>工人
+	<input type="checkbox" id="check_gys" value="M2" onchange="reload_Settlement_data_list()"/>供应商
+	
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="toggleselectall('Settlement_Data_List')">全部</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#Settlement_audit_dlg_date').dialog('open')">选择时间</a>
+	<select class="easyui-combobox" name="S" id="S" data-options="onSelect:function(){ reload_Settlement_data_list(); }" style="width: 100px;">
+		<option value="">单据状态</option>
+		<option value="0">申请中</option>
+		<option value="F">审核通过</option>
+		<option value="E">审核不通过</option>
+		<option value="G">已打款</option>
+	</select>
+	<select class="easyui-combobox" name="week" id="week" data-options="onSelect:function(){ reload_Settlement_data_list(); }">
+	<option value="-1">请选择周</option>
+	<for start="1" end="$week">
+	<option value="{$i}">第{$i}周</option>
+	</for>
+	</select> 
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="">重绘结账单</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="auditExtract()">审核通过</a>
+	<!--<a href="javascript:void(0)" class="easyui-linkbutton" onclick="auditNotExtract()">打回</a>-->
+	<!--<a href="javascript:void(0)" class="easyui-linkbutton" onclick="moneyExtractFinish()">模拟ERP打款</a>-->
+	<a href="javascript:void(0)" class="easyui-linkbutton" id="exportlbt" onclick="exportCsv('')">导出CSV</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" id="exportlbt" onclick="exportCsv('week')">按周导出CSV</a>	
+	<!--<a href="javascript:void(0)" class="easyui-linkbutton" onclick="exportcsv(this,'Settlement_Data_List')" download="结算单.csv">导出</a>-->
+</div>
+
+<!-- 数据列表 -->
+<table id="Settlement_Data_List"></table>
+
+
+<!-- 选择时间 -->
+<div id="Settlement_audit_dlg_date" class="easyui-dialog" title="选择时间" style="width:550px;height:140px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						$('#Settlement_audit_dlg_date').dialog('close');
+						reload_Settlement_data_list();
+					}
+				}]
+			">
+	<table>
+		<tr>
+			<td>开始时间:</td>
+			<td>
+				<input class="easyui-datebox" id="BT" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-01' , time());?>">
+			</td>
+			<td>结束时间:</td>
+			<td>
+				<input class="easyui-datebox" id="ET" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-t' , time());?>">
+			</td>
+		</tr>
+	</table>
+	<div id="cc" class="easyui-calendar"></div>
+</div>
+
+<!-- 审核不通过 -->
+<div id="Settlement_audit_dlg" class="easyui-dialog" title="审核不通过原因" style="width:400px;height:200px;padding:10px"
+	 data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						console.log($('#audit_dlg_recordCode').val());
+						var recordCode = $('#audit_dlg_recordCode').val();
+						var r  = $('#R').val();
+						var s  = 'E';
+						if(r==''){
+							$.messager.alert('消息','请输入审核不通过原因!','error');
+							$('#R').focus();
+							return false;
+						}
+						$.ajax({
+							type: 'POST',
+							url: '<?php echo U('Settlement/opAuditRec');?>',
+							data: {R:r,recordCode:recordCode,S:s},
+							dataType: 'json',
+							success: function(status){
+								if(status==200){
+									$.messager.alert('消息','操作成功!','info');
+									$('#R').val('');
+									$('#audit_dlg_recordCode').val('');
+									$('#Settlement_audit_dlg').dialog('close')
+									reload_Settlement_data_list();
+								}else{
+									$.messager.alert('消息','操作失败!','error');
+								}
+							}
+						});
+
+
+					}
+				}]
+			">
+	<input type="hidden" name="audit_dlg_recordCode" id="audit_dlg_recordCode"/>
+	<textarea class="" id="R" data-options="multiline:true" style="width:345px;height:100px"></textarea>
+</div>
+
+<div id="Settlement_Extract" class="easyui-dialog" title="凭证号录入" style="width:400px;height:200px;padding:10px"
+	 data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						var recordCode = $('#audit_dlg_recordCode').val();
+						var t  = $('#T').val();
+						if(t==''){
+							$.messager.alert('消息','请输入凭证号内容!','error');
+							$('#T').focus();
+							return false;
+						}
+						$.ajax({
+							type: 'POST',
+							url: '<?php echo U('Settlement/moneyExtractFinish');?>',
+							data: {RE:recordCode,T:t},
+							dataType: 'json',
+							success: function(status){
+								if(status==200){
+									$.messager.alert('消息','操作成功!','info');
+									$('#T').val('');
+									$('#audit_dlg_recordCode').val('');
+									$('#Settlement_Extract').dialog('close');
+									reload_Settlement_data_list();
+								}else{
+									$.messager.alert('消息','操作失败!','error');
+								}
+							}
+						});
+					}
+				}]
+			">
+	<textarea class="" id="T" data-options="multiline:true" style="width:345px;height:100px"></textarea>
+</div>
+
+<div class="loading">加载中...</div>
+
+<div style="position: absolute;
+    right: 180px;
+    bottom: 9px;width: 200px;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 6px 0 0;
+    padding: 0;">
+	<p id="tongji">总价：0</p>
+</div>
+
+
+<script type="text/javascript">
+
+// 重加载 
+function reload_Settlement_data_list(){
+	islogin();
+	
+	var t = new Array(2);
+	//console.log($("#check_gr").prop("checked"));
+	if($("#check_gr").prop("checked")){
+		t[0] = 'M9';
+    }else{
+    	t[0] = '';
+    }
+	if($("#check_gys").prop("checked")){
+		t[1] = 'M2';
+    }else{
+    	t[1] = '';
+    }
+
+	var S = $("#S").combobox('getValue');
+	var week = $("#week").combobox('getValue');
+	var BT = $("#BT").datebox('getValue');
+	var ET = $("#ET").datebox('getValue');
+	
+	$('#Settlement_Data_List').datagrid('reload',{
+		'S' : S,
+		'week':week,
+		'BT': BT,
+		'ET': ET,
+		'PCS': '[]',
+		'T':t
+	});
+}
+function auditNotExtract() {
+	islogin();
+	var re = $('#Settlement_Data_List').datagrid('getSelections');
+	for (i = 0; i < re.length; i++) {
+		if (re[i]["status"] != 0) {
+			$.messager.alert("消息", "只能对申请中的数据进行操作", "info");
+			return;
+		}
+	}
+	$('#Settlement_audit_dlg').dialog('open');
+}
+// 通过 
+function auditExtract(){
+	islogin();
+	var re = $('#Settlement_Data_List').datagrid('getSelections');
+	var s  = 'F';
+	if(re.length==0){
+		$.messager.alert('消息','您未选择任何数据!','error');
+		return false;
+	}
+	for(i=0;i<re.length;i++) {
+		if (re[i]["status"] != 0) {
+			$.messager.alert("消息", "只能对申请中的数据进行操作", "info");
+			return;
+		}
+	}
+	$.ajax({
+		type: 'POST',
+		url: "<?php echo U('Settlement/auditRec');?>",
+		data: {RE:re,S:s},
+		dataType: 'json',
+		success: function(status){
+			if(status==200){
+				$.messager.alert('消息','操作成功!','info');
+				reload_Settlement_data_list();
+			}else{
+				$.messager.alert('消息','操作失败!','error');
+			}
+		}
+	});
+}
+
+// 审核通过，点击操作里的通过。 单条操作
+function op_auditExtract(recordCode , S){
+	islogin();
+	//审核通过
+	if(S=='F'){
+		$.ajax({
+			type: 'POST',
+			url: "<?php echo U('Settlement/opauditRec');?>",
+			data: {recordCode:recordCode,S:S},
+			dataType: 'json',
+			success: function(status){
+				if(status==200){
+					$.messager.alert('消息','操作成功!','info');
+					reload_Settlement_data_list();
+				}else{
+					$.messager.alert('消息','操作失败!','error');
+				}
+			}
+		});
+	}
+	//审核不通过
+	if(S=='E'){
+		$('#audit_dlg_recordCode').val(recordCode);
+		$('#Settlement_audit_dlg').dialog('open');
+	}
+}
+
+//常福鹏 16-01-31 模拟ERP已打款，后续移除
+function moneyExtractFinish(recordCode){
+	islogin();
+	var s  = 'G';
+	if(recordCode==null) {
+		$.messager.alert('消息', '您未选择任何数据!', 'info');
+		return false;
+	}
+	console.log(recordCode);
+	$('#audit_dlg_recordCode').val(recordCode);
+	$('#Settlement_Extract').dialog('open');
+}
+function  exportCsv($str) {
+	islogin();
+	var params = $("#Settlement_Data_List").datagrid('options').queryParams;
+
+	var url = '<?php echo U("Settlement/exportcsv");?>';
+	if (params["S"])
+		url = url + "&S=" + params["S"];
+	if (params["T"])
+		url = url + "&T=" + params["T"];
+	if (params["BT"])
+		url = url + "&BT=" + params["BT"];
+	if (params["ET"])
+		url = url + "&ET=" + params["ET"];
+	if (params["PCS"])
+		url = url + "&PCS=" + params["PCS"];
+	if ($("#Settlement_Data_List").datagrid('options').pageNumber)
+		url = url + "&page=" + $("#Settlement_Data_List").datagrid('options').pageNumber;
+	if ($("#Settlement_Data_List").datagrid('options').pageSize)
+		url = url + "&rows=" + $("#Settlement_Data_List").datagrid('options').pageSize;
+	if($str=='week'){
+		if(params['week']){
+			url = url + "&week=" + params['week'];
+		}
+	}
+	window.open(url);
+}
+// 底部统计
+function tongji(){
+	islogin();
+	var re = $('#Settlement_Data_List').datagrid('getSelections');
+	var money = 0;
+	if(re.length<=0){
+		re = $('#Settlement_Data_List').datagrid('getRows');
+	}
+
+	for(var i=0;i<re.length;i++){
+		money += re[i].money;
+	}
+
+	$('#tongji').html ('总价：' + money.toFixed(2));
+}
+function print(value) {
+	islogin();
+	$(".loading").show();
+	$.ajax({
+		type:"POST",
+		url:"<?php echo U('Settlement/loadMoneyExtractPDF');?>",
+		data:{RC:value},
+		dataType:"json",
+		success:function(data) {
+			if (data.STATUS == 803) {
+				$.messager.alert('消息', '传递参数未查到数据!', 'info');
+			}else if(data.STATUS==200) {
+				window.open(data.RESULT);
+			}
+			$(".loading").hide();
+		},
+		error:function(data)
+		{
+			$(".loading").hide();
+		}
+	});
+}
+
+$(function() {
+	islogin();
+	$("#Settlement_Data_List").datagrid({
+		url : "{:U('Settlement/index')}",
+		fit : true,
+		striped : true,
+		border : false,
+		pagination : true,
+		pageSize : 50,
+		pageList : [10,20,30,40,50,60,70,80,90,100 ],
+		pageNumber : 1,
+		sortName : 'recordCode',
+		sortOrder : 'desc',
+		remoteSort:false,
+		toolbar : '#Settlement_Bar',
+		singleSelect : false,
+		rownumbers: true,
+		columns : [[
+			{field : 'ck',title : '选择',checkbox:true},
+            {field : 'recordCode',title : '单据编号',width : 160,sortable:true},
+            {field : 'qijian',title : '期间',width : 100,sortable:true},
+            {field : 'sbegin',title : '申请日期',width : 170,sortable:true},
+            {field : 'userCode',title : '用户编号',width : 110,sortable:true},
+            {field : 'userName',title : '用户名称',width : 70,sortable:true},
+            {field : 'money',title : '金额',width : 80,align:'right', sortable:true,formatter:function(value){
+				return value.toFixed(2);
+			}},
+			{field : 'handleUserCode',title : '审核人',width : 70,sortable:true},
+			{field : 'handlerDate',title : '审核时间',width : 150,sortable:true},
+			{field : 'remark',title : '审核意见',width : 100,sortable:true,formatter: function (value) {
+				return '<p title='+value.replace(/[\r\n]/g,"")+'>'+value+'</p>';
+			}},
+			{field : 't5',title : '汇款人',width : 70,sortable:true},
+			{field : 't7',title : '汇款时间',width : 150,sortable:true},
+			{field : 't8',title : '汇款回执单',width : 150,sortable:true,formatter: function (value) {
+				return '<p title='+value+'>'+value+'</p>';
+			}},
+            {field : '_status',title : '状态',width : 80,sortable:true},
+			{field : 'operator',title : '操作',width : 120,sortable:true},
+			{field : 't2',title : '提现银行',width : 80,sortable:true},
+			{field : 't1',title : '银行卡',width : 180,sortable:true},
+			{field : 't3',title : '支行名称',width : 180,sortable:true},
+		]],
+		onSelect : function(index,rowdata){
+			tongji();
+		},
+		onUnselect : function(index,rowdata){
+			tongji();
+		},
+		onLoadSuccess: function (data) {
+			tongji();
+		},
+		onSelectAll: function (rows) {
+			tongji();
+		},
+		onUnselectAll: function (rows) {
+			tongji();
+		}
+	});
+});
+function toggleselectall(datagridID) {
+	var rows = $("#" + datagridID).datagrid("getRows");
+	for (var i = 0; i < rows.length; i++) {
+		if (rows[i].status == "0" || rows[i].status == '1') {
+			$("#" + datagridID).datagrid("selectRow", i);
+		}
+	}
+}
+</script>

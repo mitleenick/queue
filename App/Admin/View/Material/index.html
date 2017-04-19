@@ -1,0 +1,342 @@
+<div id="Material_Bar" class="Bar_tools">
+	<a class='easyui-linkbutton' href='JavaScript:void(0);' data-options="iconCls:'iconfont icon-viewlist',plain:true" onclick="reload_Material_data_list();"><span>刷新</span></a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="toggleselectall('Material_Data_List')">全部</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#Material_audit_dlg_search').dialog('open')">工程查询条件</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#Material_audit_dlg_date').dialog('open')">选择时间</a>
+	<select class="easyui-combobox" name="U" id="U" data-options="onSelect:function(){ reload_Material_data_list(); }" style="width: 80px;">
+		<option value="-1">供应商</option>
+	</select>
+	<select class="easyui-combobox" name="S" id="S" data-options="onSelect:function(){ reload_Material_data_list(); }" style="width: 100px;">
+		<option value="-1">单据状态</option>
+		<option value="0">申请</option>
+		<option value="F">通过</option>
+		<option value="G">配送完成</option>
+	</select>
+	
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="auditResourcePass()">审核通过</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#material_audit_dlg').dialog('open')">审核不通过</a>
+</div>
+
+<!-- 数据列表 -->
+<table id="Material_Data_List"></table>
+
+<!-- 工程查询条件 -->
+<div id="Material_audit_dlg_search" class="easyui-dialog" title="更多工程查询条件" style="width:450px;height:400px;padding:10px" 
+	data-options="
+		iconCls: 'icon-save',
+		closed: true,
+		buttons: [{
+			text:'确定',
+			iconCls:'iconfont icon-ok',
+			handler:function(){
+				$('#Material_audit_dlg_search').dialog('close');
+				reload_Material_data_list();
+			}
+		}]
+	">
+	工程编号:
+	<select class="easyui-combobox" name="ProjectName" id="ProjectCode1" style="width:350px;" data-options="
+		url : '<?php echo U('Public/searchProjectById');?>',
+		method:'post',
+		textField : 'ProjectName',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '工程编号'
+	">
+	</select>
+	
+	<br/><br/><br/>
+	
+	装修管家:
+	<select class="easyui-combobox" name="ProjectName" id="ProjectCode2" style="width:350px;" data-options="
+		url : '<?php echo U('Public/searchProjectByProjectManagerCode');?>',
+		method:'post',
+		textField : 'ProjectName',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '装修管家'
+	">
+	</select>
+	
+	<br/><br/><br/>
+	
+	装修地址:
+	<select class="easyui-combobox" name="ProjectName" id="ProjectCode3" style="width:350px;" data-options="
+		url : '<?php echo U('Public/searchProjectByProjectName');?>',
+		method:'post',
+		textField : 'ProjectName',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '装修地址'
+	">
+	</select>
+	
+	<br/><br/><br/>
+	
+	业主名称:
+	<select class="easyui-combobox" name="ProjectName" id="ProjectCode4" style="width:350px;" data-options="
+		url : '<?php echo U('Public/searchProjectByOwner');?>',
+		method:'post',
+		textField : 'Owner',
+		valueField : 'ProjectCode',
+		mode : 'remote',
+		panelHeight : 'auto',
+		delay : 500,
+		value : '',
+		prompt: '业主名称'
+	">
+	</select>
+</div>
+
+<!-- 选择时间 -->
+<div id="Material_audit_dlg_date" class="easyui-dialog" title="选择时间" style="width:550px;height:140px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						$('#Material_audit_dlg_date').dialog('close');
+						reload_Material_data_list();
+					}
+				}]
+			">
+	<table>
+		<tr>
+			<td>开始时间:</td>
+			<td>
+				<input class="easyui-datebox" id="BT" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-01' , time());?>">
+			</td>
+			<td>结束时间:</td>
+			<td>
+				<input class="easyui-datebox" id="ET" data-options="sharedCalendar:'#cc'" value="<?php echo date('Y-m-t' , time());?>">
+			</td>
+		</tr>
+	</table>
+	<div id="cc" class="easyui-calendar"></div>
+</div>
+
+<!-- 选择配送供应商 -->
+<div id="material_gys_dlg" class="easyui-dialog" title="选择配送供应商" style="width:400px;height:200px;padding:10px"
+			data-options="
+				//iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'确定',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						var pc = $('#material_gys_dlg_h').attr('hpc');
+						var recode = $('#material_gys_dlg_h').attr('hrecode');
+						var resourcecode = $('#material_gys_dlg_h').attr('hresourcecode');
+						var uc = $('#UC').combobox('getValue');
+						//console.log(pc);
+						//console.log(recode);
+						//console.log(resourcecode);
+						//console.log(uc);
+						$.ajax({
+							type: 'POST',
+							url: '<?php echo U('Material/allotUserToRes');?>',
+							data: {PC:pc,RECODE:recode,UC:uc,ResourceCode:resourcecode},
+							dataType: 'json',
+							success: function(status){
+								console.log(status);
+								if(status==200){
+									$.messager.alert('消息','操作成功!','info');
+									$('#material_gys_dlg_h').attr('hpc','');
+									$('#material_gys_dlg_h').attr('hrecode','');
+									$('#material_gys_dlg_h').attr('hresourcecode','');
+									//$('material_gys_dlg').dialog('close')
+									//reload_Material_data_list();
+								}else{
+									$.messager.alert('消息','操作失败!','error');
+								}
+							}
+						});
+					}
+				}]
+			">
+	<select class="easyui-combobox" name="UC" id="UC">
+		<option value="18612247158">常福鹏</option>
+	</select>
+	<input type="hidden" id="material_gys_dlg_h" hpc="" hrecode="" hresourcecode=""/>
+</div>
+
+<!-- 审核不通过 -->
+<div id="material_audit_dlg" class="easyui-dialog" title="审核不通过原因" style="width:400px;height:200px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				closed: true,
+				buttons: [{
+					text:'ok',
+					iconCls:'iconfont icon-ok',
+					handler:function(){
+						//alert($('#R').val());
+						//console.log($('#Material_Data_List').datagrid('getSelections'));
+						var r  = $('#R').val();
+						var re = $('#Material_Data_List').datagrid('getSelections');
+						var s  = 'E';
+						if(r==''){
+							$.messager.alert('消息','请输入审核不通过原因!','error');
+							$('#R').focus();
+							return false;
+						}
+						if(re.length==0){
+							$.messager.alert('消息','您未选择任何数据!','error');
+							return false;
+						}
+						$.ajax({
+							type: 'POST',
+							url: '<?php echo U('Material/auditResource');?>',
+							data: {R:r,RE:re,S:s},
+							dataType: 'json',
+							success: function(status){
+								if(status==200){
+									$.messager.alert('消息','操作成功!','info');
+									$('#R').val('');
+									$('#material_audit_dlg').dialog('close')
+									reload_Material_data_list();
+								}else{
+									$.messager.alert('消息','操作失败!','error');
+								}
+							}
+						});
+					}
+				}]
+			">
+	<input class="easyui-textbox" id="R" data-options="multiline:true" style="width:345px;height:105px">
+</div>
+
+<script type="text/javascript">
+
+// 重加载 
+function reload_Material_data_list(){
+	var ProjectCode = new Array(4);
+	if($('#ProjectCode1').combobox('getText')!='') {
+		ProjectCode[0] = $('#ProjectCode1').combobox('getValue');
+	}
+	if($('#ProjectCode2').combobox('getText')!='') {
+		ProjectCode[1] = $('#ProjectCode2').combobox('getValue');
+	}
+	if($('#ProjectCode3').combobox('getText')!='') {
+		ProjectCode[2] = $('#ProjectCode3').combobox('getValue');
+	}
+	if($('#ProjectCode4').combobox('getText')!='') {
+		ProjectCode[3] = $('#ProjectCode4').combobox('getValue');
+	}
+	$('#Material_Data_List').datagrid('reload',{
+		'S' : $("#S").combobox('getValue'),
+		'BT': $("#BT").datebox('getValue'),
+		'ET': $("#ET").datebox('getValue'),
+		'PCS' : ProjectCode
+	});
+}
+
+// 导出 
+function exportcsv(){
+	$.ajax({
+		type: "POST",
+		url: "<?php echo U('Material/exportcsv');?>",
+		data: {'GWC' : $('#hiddenMaterialType').val(),'S' : $("#S").val()},
+		dataType: "json",
+		success: function(data){
+			if(data==1){
+				$.messager.alert('消息','认证成功!','info');
+				reload_Material_data_list();
+			}else{
+				$.messager.alert('消息','认证失败!','error');
+			}
+		}
+	});
+}
+
+// 审核通过 
+function auditResourcePass(){
+	var re = $('#Material_Data_List').datagrid('getSelections');
+	var s  = 'F';
+	if(re.length==0){
+		$.messager.alert('消息','您未选择任何数据!','error');
+		return false;
+	}
+	$.ajax({
+		type: 'POST',
+		url: "<?php echo U('Material/auditResource');?>",
+		data: {RE:re,S:s},
+		dataType: 'json',
+		success: function(status){
+			if(status==200){
+				$.messager.alert('消息','操作成功!','info');
+				reload_Material_data_list();
+			}else{
+				$.messager.alert('消息','操作失败!','error');
+			}
+		}
+	});
+}
+
+
+$(function() {
+	$("#Material_Data_List").datagrid({
+		url : "{:U('Material/index')}",
+		fit : true,
+		striped : true,
+		border : false,
+		pagination : true,
+		pageSize : 20,
+		pageList : [10,20,30,40,50,60,70,80,90,100 ],
+		pageNumber : 1,
+		sortName : 'resourcecode',
+		sortOrder : 'desc',
+		toolbar : '#Material_Bar',
+		remoteSort:false,
+		singleSelect : false,
+		columns : [[
+			{field : 'ck',title : '选择',checkbox:true},
+            {field : 'recordCode',title : '单据号',width : 150,sortable:true},
+            {field : 'projectCode',title : '工程编号',width : 80,sortable:true},
+            {field : 'projectName',title : '工程名称',width : 150,sortable:true},
+            {field : 'activeItemName',title : '工序项名称',width : 100,sortable:true},
+            {field : 'resourcecode',title : '资源编号',width : 100,sortable:true},
+            {field : 'status',title : '状态',width : 50,sortable:true,formatter:function(value)
+            {
+				if (value=='0'){
+					return"申请";
+				}else if (value=='F'){
+					return "通过";
+				}else if(value=='G'){
+					return '配送完成';
+				}else{
+					return "未知";
+				}
+			}},
+            {field : 'begin',title : '开始时间',width : 150,sortable:true},
+            {field : 'end',title : '结束时间',width : 150,sortable:true},
+            {field : 'resourcename',title : '材料',width : 150,sortable:true},
+            {field : 'suppliercode',title : '供应商编号',width : 110,sortable:true},
+            {field : 'suppliername',title : '供应商名称',width : 80,sortable:true},
+            {field : 'norms',title : '品类',width : 250,sortable:true},
+            {field : 'number',title : '数量',width : 60,sortable:true,align:'right'},
+            {field : 'moneyunit',title : '单价',width : 60,sortable:true,align:'right',formatter:function(value){
+				return value.toFixed(2);}}
+			]] ,
+		onSelect: function(index,data){
+			if(data.suppliercode=='' || data.suppliername==null){
+				//console.log(data);
+				$('#material_gys_dlg').dialog('open');
+				$("#material_gys_dlg_h").attr('hpc',data.projectCode);
+				$("#material_gys_dlg_h").attr('hrecode',data.recordCode);
+				$("#material_gys_dlg_h").attr('hresourcecode',data.resourcecode);
+			}
+		}
+	});
+});
+</script>

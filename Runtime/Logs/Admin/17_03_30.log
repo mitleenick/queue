@@ -1,0 +1,2178 @@
+[ 2017-03-30T13:43:34+08:00 ] 119.147.207.158 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-03-30T13:43:34+08:00 ] 119.147.207.158 /index.php?m=&&m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001329s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001355s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000055s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000023s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000039s ]
+
+[ 2017-03-30T13:43:39+08:00 ] 101.226.68.197 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-03-30T13:43:39+08:00 ] 101.226.68.197 /index.php?m=&&m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000059s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001364s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001389s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000040s ]
+
+[ 2017-03-30T13:43:49+08:00 ] 219.146.90.226 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000060s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-03-30T13:43:49+08:00 ] 219.146.90.226 /index.php?m=&&m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001364s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001392s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000031s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000040s ]
+
+[ 2017-03-30T13:43:50+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Public&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-03-30T13:44:00+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_admin` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_admin`  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-03-30T13:44:00+08:00 ] 219.146.90.226 /index.php?m=&&m=Admin&c=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000061s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002591s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002617s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000041s ]
+
+[ 2017-03-30T13:48:21+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T13:50:20+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T13:50:25+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000074s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000106s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T13:50:40+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+
+[ 2017-03-30T13:59:14+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000080s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T14:00:57+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = '' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: bussiness /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 30 行.
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0001','1','2017-03-30 14:00:57','0','',NULL,NULL) [ RunTime:0.0004s ]
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/default/queue/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+
+[ 2017-03-30T14:01:47+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: bussiness /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 30 行.
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0003','1','2017-03-30 14:01:47','0','VIP',NULL,NULL) [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/default/queue/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+
+[ 2017-03-30T14:02:26+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: bussiness /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 30 行.
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0004','1','2017-03-30 14:02:26','0','VIP',NULL,NULL) [ RunTime:0.0004s ]
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/default/queue/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+
+[ 2017-03-30T14:02:28+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000046s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: bussiness /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 30 行.
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0005','1','2017-03-30 14:02:28','0','VIP',NULL,NULL) [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/default/queue/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+
+[ 2017-03-30T14:02:31+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: bussiness /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 30 行.
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0006','1','2017-03-30 14:02:31','0','VIP',NULL,NULL) [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/default/queue/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+
+[ 2017-03-30T14:02:46+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+
+[ 2017-03-30T14:03:58+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+
+[ 2017-03-30T14:04:32+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+
+[ 2017-03-30T14:04:35+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T14:05:12+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0007','1','2017-03-30 14:05:12','0','VIP','11',NULL) [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/default/queue/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+
+[ 2017-03-30T14:06:04+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T14:06:55+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2017-03-30T14:07:28+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000059s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2017-03-30T14:08:27+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+
+[ 2017-03-30T14:08:57+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0008','1','2017-03-30 14:08:57','0','VIP','11',NULL) [ RunTime:0.0004s ]
+
+[ 2017-03-30T14:11:33+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000099s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000079s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0008s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = '' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0002','1','2017-03-30 14:11:33','0','','',NULL) [ RunTime:0.0002s ]
+
+[ 2017-03-30T14:12:08+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = '' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0002','1','2017-03-30 14:12:08','0','','',NULL) [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() /alidata/www/default/queue/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `q_queue` WHERE (  ) 
+
+[ 2017-03-30T14:14:40+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = '' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0003','1','2017-03-30 14:14:40','0','','',NULL) [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` >= '0003'  [ RunTime:0.0001s ]
+
+[ 2017-03-30T14:16:22+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000053s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0008','1','2017-03-30 14:16:22','0','VIP','11',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0008'  [ RunTime:0.0194s ]
+
+[ 2017-03-30T14:24:51+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = '' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0004','1','2017-03-30 14:24:51','0','','',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0004'  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: endTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 47 行.
+NOTIC: [8] Undefined index: callTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 47 行.
+NOTIC: [8] Undefined index: endTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 47 行.
+NOTIC: [8] Undefined index: callTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 47 行.
+NOTIC: [8] Use of undefined constant conduct - assumed 'conduct' /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 52 行.
+NOTIC: [2] Division by zero /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 52 行.
+NOTIC: [8] Undefined variable: queueTime /alidata/www/default/queue/App/Admin/Controller/QueueController.class.php 第 47 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000063s ]
+
+[ 2017-03-30T14:25:46+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000052s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0009','1','2017-03-30 14:25:46','0','VIP','11',NULL) [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0009'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: endTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 47 行.
+NOTIC: [8] Undefined index: callTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 47 行.
+NOTIC: [8] Undefined index: endTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 47 行.
+NOTIC: [8] Undefined index: callTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 47 行.
+NOTIC: [8] Use of undefined constant conduct - assumed 'conduct' /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 52 行.
+NOTIC: [2] Division by zero /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 52 行.
+NOTIC: [8] Undefined variable: queueTime /alidata/www/default/queue/App/Admin/Controller/QueueController.class.php 第 48 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000055s ]
+
+[ 2017-03-30T14:27:30+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000056s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0010','1','2017-03-30 14:27:30','0','VIP','11',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0010'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: endTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 48 行.
+NOTIC: [8] Undefined index: callTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 48 行.
+NOTIC: [8] Undefined index: endTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 48 行.
+NOTIC: [8] Undefined index: callTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant conduct - assumed 'conduct' /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 53 行.
+NOTIC: [2] Division by zero /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 53 行.
+NOTIC: [8] Undefined variable: queueTime /alidata/www/default/queue/App/Admin/Controller/QueueController.class.php 第 48 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000056s ]
+
+[ 2017-03-30T14:28:21+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0011','1','2017-03-30 14:28:21','0','VIP','11',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0011'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: endTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 49 行.
+NOTIC: [8] Undefined index: callTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 49 行.
+NOTIC: [8] Undefined index: endTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 49 行.
+NOTIC: [8] Undefined index: callTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 49 行.
+NOTIC: [8] Use of undefined constant conduct - assumed 'conduct' /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 54 行.
+NOTIC: [2] Division by zero /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 54 行.
+NOTIC: [8] Undefined variable: queueTime /alidata/www/default/queue/App/Admin/Controller/QueueController.class.php 第 48 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000053s ]
+
+[ 2017-03-30T14:28:54+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0012','1','2017-03-30 14:28:54','0','VIP','11',NULL) [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0012'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: endTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 49 行.
+NOTIC: [8] Undefined index: callTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 49 行.
+NOTIC: [8] Undefined index: endTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 49 行.
+NOTIC: [8] Undefined index: callTime /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 49 行.
+NOTIC: [8] Use of undefined constant conduct - assumed 'conduct' /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 55 行.
+NOTIC: [2] Division by zero /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 55 行.
+NOTIC: [8] Undefined variable: queueTime /alidata/www/default/queue/App/Admin/Controller/QueueController.class.php 第 48 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000053s ]
+
+[ 2017-03-30T14:29:35+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000052s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0013','1','2017-03-30 14:29:35','0','VIP','11',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0013'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant conduct - assumed 'conduct' /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 55 行.
+NOTIC: [2] Division by zero /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 55 行.
+NOTIC: [8] Undefined variable: queueTime /alidata/www/default/queue/App/Admin/Controller/QueueController.class.php 第 48 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-03-30T14:30:29+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000058s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0007s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0014','1','2017-03-30 14:30:29','0','VIP','11',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0014'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant conduct - assumed 'conduct' /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 55 行.
+NOTIC: [2] Division by zero /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 55 行.
+NOTIC: [8] Undefined variable: queueTime /alidata/www/default/queue/App/Admin/Controller/QueueController.class.php 第 49 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000051s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-03-30T14:34:47+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000058s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0015','1','2017-03-30 14:34:47','0','VIP','11',NULL) [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0015'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant conduct - assumed 'conduct' /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 56 行.
+NOTIC: [2] Division by zero /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 56 行.
+NOTIC: [8] Undefined variable: queueTime /alidata/www/default/queue/App/Admin/Controller/QueueController.class.php 第 49 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000056s ]
+
+[ 2017-03-30T14:36:24+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0016','1','2017-03-30 14:36:24','0','VIP','11',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0016'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant conduct - assumed 'conduct' /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 56 行.
+NOTIC: [2] Division by zero /alidata/www/default/queue/App/Admin/Controller/StatisticsController.class.php 第 56 行.
+NOTIC: [8] Undefined variable: queueTime /alidata/www/default/queue/App/Admin/Controller/QueueController.class.php 第 49 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000056s ]
+
+[ 2017-03-30T14:37:27+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0017','1','2017-03-30 14:37:27','0','VIP','11',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0017'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000059s ]
+
+[ 2017-03-30T14:47:45+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+ERR: 非法操作:getAll
+
+[ 2017-03-30T14:47:59+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+ERR: 非法操作:getAll
+
+[ 2017-03-30T15:01:03+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000059s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-03-30T15:02:59+08:00 ] 180.153.201.79 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-03-30T15:02:59+08:00 ] 180.153.201.79 /index.php?m=&&m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000055s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001359s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000023s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000039s ]
+
+[ 2017-03-30T15:19:42+08:00 ] 123.234.133.49 /index.php?m=Admin&c=Queue&a=requestNum&data=jsondata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = '' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0005','1','2017-03-30 15:19:42','0','','',NULL) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0005'  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-03-30T15:19:42+08:00 ] 123.234.133.49 /index.php?m=&&m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001334s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001359s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000040s ]
+
+[ 2017-03-30T15:19:42+08:00 ] 123.234.133.49 /index.php?m=Admin&c=Public&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000061s ]
+
+[ 2017-03-30T15:44:17+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000089s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T15:44:59+08:00 ] 101.226.102.97 /index.php?m=Admin&c=Queue&a=requestNum&data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+
+[ 2017-03-30T15:54:55+08:00 ] 219.146.90.226 /index.php?m=Admin&c=Queue&a=requestNum&auth=VIP&bussiness=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000052s ]
+
+[ 2017-03-30T15:55:19+08:00 ] 113.108.80.205 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000053s ]
+
+[ 2017-03-30T15:55:31+08:00 ] 117.185.27.114 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+
+[ 2017-03-30T19:55:54+08:00 ] 113.129.220.18 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+
+[ 2017-03-30T19:56:00+08:00 ] 113.129.220.18 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-03-30T19:56:00+08:00 ] 113.129.220.18 /index.php?m=&&m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001395s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001433s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000031s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000050s ]
+
+[ 2017-03-30T19:56:00+08:00 ] 113.129.220.18 /index.php?m=Admin&c=Public&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000066s ]
+
+[ 2017-03-30T19:56:47+08:00 ] 113.129.220.18 /index.php?m=Admin&c=Queue&a=requestNum&data=jsondata%20%20%20%09%09$http://paiduiji.gengn.cn/index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000062s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-03-30T19:56:47+08:00 ] 113.129.220.18 /index.php?m=&&m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000055s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001344s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001370s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000041s ]
+
+[ 2017-03-30T19:56:48+08:00 ] 113.129.220.18 /index.php?m=Admin&c=Public&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000057s ]
+
+[ 2017-03-30T19:57:46+08:00 ] 113.129.220.18 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-03-30T19:58:19+08:00 ] 113.129.220.18 /index.php?m=&&m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001414s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001451s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000040s ]
+
+[ 2017-03-30T19:58:31+08:00 ] 113.129.220.18 /index.php?m=Admin&c=Public&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000065s ]
+
+[ 2017-03-30T20:47:12+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000052s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000060s ]
+
+[ 2017-03-30T20:47:17+08:00 ] 113.129.63.60 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-03-30T20:48:07+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-03-30T20:48:08+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000054s ]
+
+[ 2017-03-30T21:08:21+08:00 ] 144.0.16.121 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000054s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-03-30T21:08:21+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000059s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001464s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001492s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000044s ]
+
+[ 2017-03-30T21:08:21+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Public&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000059s ]
+
+[ 2017-03-30T21:08:28+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000096s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000056s ]
+SQL: SHOW COLUMNS FROM `q_admin` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `q_admin`  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: module /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [8] Undefined variable: var /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given /alidata/www/default/queue/ThinkPHP/Common/functions.php 第 990 行.
+
+[ 2017-03-30T21:08:28+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000053s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003032s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003065s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000055s ]
+
+[ 2017-03-30T21:08:40+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Bussiness&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+
+[ 2017-03-30T21:08:56+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Bussiness&a=setTime
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+SQL: SHOW COLUMNS FROM `q_shophour` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_shophour`  [ RunTime:0.0002s ]
+
+[ 2017-03-30T21:08:59+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Bussiness&a=setTime
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+SQL: SHOW COLUMNS FROM `q_shophour` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_shophour`  [ RunTime:0.0002s ]
+
+[ 2017-03-30T21:09:00+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Bussiness&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+
+[ 2017-03-30T21:09:02+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Bussiness&a=setTime
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000053s ]
+SQL: SHOW COLUMNS FROM `q_shophour` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_shophour`  [ RunTime:0.0002s ]
+
+[ 2017-03-30T21:10:22+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Bussiness&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000054s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002444s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002479s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000040s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000062s ]
+
+[ 2017-03-30T21:10:24+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Bussiness&a=setTime
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_shophour` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `q_shophour`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002504s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002546s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000021s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000037s ]
+
+[ 2017-03-30T21:10:25+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=Bussiness&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002059s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002098s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000040s ]
+
+[ 2017-03-30T21:10:29+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=History&a=queue
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000061s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001818s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001846s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000023s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000040s ]
+
+[ 2017-03-30T21:10:30+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=History&a=specialCall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001758s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001787s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000019s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000036s ]
+
+[ 2017-03-30T21:10:31+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=History&a=devolve
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000046s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000059s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001771s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001800s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000020s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000036s ]
+
+[ 2017-03-30T21:10:32+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=History&a=abandon
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000094s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001744s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001771s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000040s ]
+
+[ 2017-03-30T21:10:32+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=History&a=queue
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000059s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001682s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001710s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000019s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000035s ]
+
+[ 2017-03-30T21:10:34+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=vip
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001491s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001518s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000018s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000035s ]
+
+[ 2017-03-30T21:10:35+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=common
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000059s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001755s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001782s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000040s ]
+
+[ 2017-03-30T21:10:36+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=officer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000060s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001899s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001927s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000020s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000036s ]
+
+[ 2017-03-30T21:10:37+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=vip
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000059s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001523s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001550s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000020s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000036s ]
+
+[ 2017-03-30T21:13:36+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=common
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001764s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001793s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000041s ]
+
+[ 2017-03-30T21:13:36+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=officer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000066s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001889s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001918s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000022s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000039s ]
+
+[ 2017-03-30T21:13:38+08:00 ] 144.0.16.121 /index.php?m=&&m=Admin&c=User&a=vip
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000059s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001452s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001478s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000036s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000019s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000035s ]
+
+[ 2017-03-30T21:36:58+08:00 ] 113.129.63.60 /index.php?m=Admin&c=Queue&a=requestNum&data={%22auth%22:%22VIP%22,%22name%22:%22\u7528\u62371%22,%22icard%22:%22371327198712284312%22,%22avatar%22:%22test%22,%22address%22:%22\u5730\u5740%22,%22company%22:%2211%22,%22bussiness%22:%226%22}
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000059s ]
+
+[ 2017-03-30T21:37:20+08:00 ] 113.129.63.60 /index.php?m=Admin&c=Queue&a=requestNum&data={%22auth%22:%22VIP%22,%22name%22:%22\u7528\u62371%22,%22icard%22:%22371327198712284312%22,%22avatar%22:%22test%22,%22address%22:%22\u5730\u5740%22,%22company%22:%2211%22,%22bussiness%22:%226%22}
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T22:15:18+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000059s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000057s ]
+
+[ 2017-03-30T22:15:30+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000070s ]
+
+[ 2017-03-30T22:15:36+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000062s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000056s ]
+
+[ 2017-03-30T22:38:30+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000056s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000056s ]
+
+[ 2017-03-30T22:39:09+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000050s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000074s ]
+
+[ 2017-03-30T22:40:11+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Queue&a=requestNum&data={%22auth%22:%22VIP%22,%22name%22:%22\u7528\u62371%22,%22icard%22:%22371327198712284312%22,%22avatar%22:%22test%22,%22address%22:%22\u5730\u5740%22,%22company%22:%2211%22,%22bussiness%22:%226%22}
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T22:41:09+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000070s ]
+
+[ 2017-03-30T22:45:38+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000077s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000065s ]
+
+[ 2017-03-30T22:45:38+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000079s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T22:45:38+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000062s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000054s ]
+
+[ 2017-03-30T22:45:38+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000099s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000048s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000084s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000067s ]
+
+[ 2017-03-30T22:47:42+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000058s ]
+
+[ 2017-03-30T22:47:42+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T22:48:01+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000060s ]
+
+[ 2017-03-30T22:50:39+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000041s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000060s ]
+
+[ 2017-03-30T22:50:39+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T22:51:01+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000083s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000051s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000090s ]
+
+[ 2017-03-30T22:51:01+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000101s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000073s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000071s ]
+
+[ 2017-03-30T22:53:45+08:00 ] 101.226.125.19 /index.php?m=Admin&c=Queue&a=requestNum&data=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+
+[ 2017-03-30T22:56:14+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Bussiness&a=getAll
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_bussiness` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `q_bussiness`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000060s ]
+
+[ 2017-03-30T22:56:35+08:00 ] 113.129.229.36 /index.php?m=Admin&c=Queue&a=requestNum&data={%22auth%22:%22VIP%22,%22name%22:%22\u7528\u62371%22,%22icard%22:%22371327198712284312%22,%22avatar%22:%22test%22,%22address%22:%22\u5730\u5740%22,%22company%22:%2211%22,%22bussiness%22:%226%22}
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T22:57:48+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000052s ]
+
+[ 2017-03-30T23:00:03+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000065s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:06+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:08+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000046s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:10+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:49+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:50+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:50+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000055s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:51+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:52+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:53+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:53+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:53+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:54+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:54+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000059s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:54+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:55+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000046s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:00:55+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+ERR: Think\Controller:key方法不存在！
+
+[ 2017-03-30T23:01:46+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+
+[ 2017-03-30T23:04:04+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+
+[ 2017-03-30T23:04:07+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+
+[ 2017-03-30T23:04:08+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+
+[ 2017-03-30T23:04:08+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+
+[ 2017-03-30T23:04:09+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+
+[ 2017-03-30T23:04:09+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+
+[ 2017-03-30T23:04:09+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+
+[ 2017-03-30T23:04:10+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000062s ]
+
+[ 2017-03-30T23:04:10+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+
+[ 2017-03-30T23:04:11+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000059s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000055s ]
+
+[ 2017-03-30T23:04:15+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+
+[ 2017-03-30T23:04:17+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+
+[ 2017-03-30T23:04:18+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T23:04:18+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+
+[ 2017-03-30T23:04:19+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+
+[ 2017-03-30T23:04:20+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+
+[ 2017-03-30T23:04:21+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+
+[ 2017-03-30T23:04:49+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T23:05:12+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+
+[ 2017-03-30T23:05:24+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000052s ]
+
+[ 2017-03-30T23:05:25+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+
+[ 2017-03-30T23:05:26+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000052s ]
+
+[ 2017-03-30T23:05:26+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+
+[ 2017-03-30T23:05:27+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000056s ]
+
+[ 2017-03-30T23:06:45+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000051s ]
+
+[ 2017-03-30T23:06:46+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000046s ]
+
+[ 2017-03-30T23:06:46+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+
+[ 2017-03-30T23:06:46+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+
+[ 2017-03-30T23:06:47+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000078s ]
+
+[ 2017-03-30T23:06:47+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+
+[ 2017-03-30T23:06:47+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+
+[ 2017-03-30T23:06:47+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000046s ]
+
+[ 2017-03-30T23:06:48+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+
+[ 2017-03-30T23:06:48+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000046s ]
+
+[ 2017-03-30T23:06:48+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+
+[ 2017-03-30T23:06:49+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+
+[ 2017-03-30T23:06:59+08:00 ] 144.0.16.121 /index.php?m=Admin&c=Queue&a=requestNum&data=eyJhdXRoIjoiVklQIiwibmFtZSI6Ilx1NzUyOFx1NjIzNzEiLCJpY2FyZCI6IjM3MTMyNzE5ODcxMjI4NDMxMiIsImF2YXRhciI6InRlc3QiLCJhZGRyZXNzIjoiXHU1NzMwXHU1NzQwIiwiY29tcGFueSI6IjExIiwiYnVzc2luZXNzIjoiNiJ9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `q_queue` [ RunTime:0.0006s ]
+SQL: SELECT MAX(number) AS tp_max FROM `q_queue` WHERE `auth` = 'VIP' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uid /alidata/www/default/queue/App/Admin/Model/QueueModel.class.php 第 31 行.
+SQL: INSERT INTO `q_queue` (`number`,`sort`,`addTime`,`company`,`auth`,`bussiness`,`uid`) VALUES ('0018','1','2017-03-30 23:06:59','11','VIP','6',NULL) [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_queue` WHERE `number` < '0018'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `q_conduct` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `q_conduct`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000056s ]
+
